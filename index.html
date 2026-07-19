@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:auto}
+body{margin:0;background:#F9FAF5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+a:hover{color:#6E77EE}
+::selection{background:#6E77EE;color:#F9FAF5}
+input::placeholder{color:#B7BAC3}
+[data-svc]{transition:border-color .25s ease-out,transform .3s ease-out}
+[data-svc]:hover{border-color:#6E77EE!important;transform:translateY(-4px)}
+[data-lift]{transition:transform .3s ease-out,border-color .3s ease-out}
+[data-lift]:hover{transform:translateY(-4px);border-color:#6E77EE}
+[data-appr]{transition:border-left-color .3s ease-out,transform .3s ease-out}
+[data-appr]:hover{border-left-color:#6E77EE!important;transform:translateX(5px)}
+[data-soon]{transition:opacity .3s ease-out,border-color .3s ease-out}
+[data-soon]:hover{opacity:1!important;border-color:#B7BAC3}
+[data-appheader]{position:fixed;left:0;right:0;top:0;z-index:90;background:rgba(249,250,245,.9);backdrop-filter:blur(10px);border-bottom:1px solid #E4E4E4;will-change:transform}
+@media (max-width:720px){[data-appnav]{display:none}}
+[data-svc]:hover [data-dot]{opacity:1!important}
+[data-svc]:hover [data-svcnum]{color:#6E77EE!important}
+[data-nav]{position:relative}
+[data-nav]::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:0;background:#6E77EE;transition:width .3s ease-out}
+[data-nav]:hover::after{width:100%}
+[data-hicon]{transition:transform .3s ease-out,color .3s ease-out}
+[data-ficon]{transition:border-color .3s ease-out}
+[data-ficon]:hover{border-color:#6E77EE!important}
+[data-ficon]:hover [data-hicon]{transform:translateY(-2px);color:#6E77EE}
+@keyframes hero-eyebrow{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</helmet>
+
+<header data-appheader style="{{ headerStyle }}">
+  <div style="max-width:1240px;margin:0 auto;padding:14px clamp(20px,5vw,72px);display:flex;justify-content:space-between;align-items:center;box-sizing:border-box">
+    <a href="#top" onClick="{{ goTop }}" style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:600;font-size:15px;letter-spacing:-0.01em;color:#16181D">[ИМЯ]</a>
+    <nav style="display:flex;gap:30px;align-items:center">
+      <span data-appnav style="display:flex;gap:30px;align-items:center">
+        <a data-nav href="#process" onClick="{{ navProcess }}" style="font:500 14px 'Onest',sans-serif;color:rgba(22,24,29,.72)">Процесс</a>
+        <a data-nav href="#services" onClick="{{ navServices }}" style="font:500 14px 'Onest',sans-serif;color:rgba(22,24,29,.72)">Что даёт</a>
+        <a data-nav href="#about" onClick="{{ navAbout }}" style="font:500 14px 'Onest',sans-serif;color:rgba(22,24,29,.72)">Кто я</a>
+      </span>
+      <button onClick="{{ goForm }}" style="background:#6E77EE;color:#F9FAF5;font:500 14px 'Onest',sans-serif;padding:11px 20px;border:none;border-radius:2px;cursor:pointer;transition:background .25s" style-hover="background:#5A63DF">Бесплатный разбор</button>
+    </nav>
+  </div>
+</header>
+
+<section id="top" data-screen-label="01 Первый экран" style="position:relative;min-height:100vh;display:flex;flex-direction:column;background:#F9FAF5;overflow:hidden">
+  {{ heroDots }}
+  <header style="position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:26px clamp(20px,5vw,72px);max-width:1240px;width:100%;margin:0 auto;box-sizing:border-box">
+    <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:600;font-size:15px;letter-spacing:-0.01em;color:#16181D">[ИМЯ]</div>
+    <a href="#contact" onClick="{{ goFormNav }}" data-nav style="font:500 14px 'Onest',sans-serif;color:rgba(22,24,29,.72)">Бесплатный разбор</a>
+  </header>
+  <div style="position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;max-width:1240px;width:100%;margin:0 auto;box-sizing:border-box;padding:0 clamp(20px,5vw,72px) 12vh">
+    <p data-reveal="0" style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.55);margin:0 0 30px;display:flex;align-items:center;gap:14px">
+      <span style="width:26px;height:1px;background:#6E77EE;display:inline-block"></span>Маркетолог полного цикла · Молдова
+    </p>
+    <h1 data-reveal="80" style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(33px,4.6vw,62px);line-height:1.1;letter-spacing:-0.025em;color:#16181D;margin:0;max-width:16ch;text-wrap:balance">Маркетинг, который <span style="color:#6E77EE">работает</span> как система</h1>
+    <p data-reveal="160" style="font:400 clamp(16px,1.6vw,19px)/1.6 'Onest',sans-serif;color:rgba(22,24,29,.72);max-width:560px;margin:30px 0 44px;text-wrap:pretty">Стратегия, сайт, реклама и контент собираются в одну систему — и наконец видно, откуда приходят клиенты. Один человек вместо пяти подрядчиков.</p>
+    <div data-reveal="240" style="display:flex;gap:26px;align-items:center;flex-wrap:wrap">
+      <button onClick="{{ goForm }}" style="display:inline-flex;align-items:center;background:#6E77EE;color:#F9FAF5;font:500 16px 'Onest',sans-serif;padding:17px 32px;border:none;border-radius:2px;cursor:pointer;transition:background .25s,transform .25s" style-hover="background:#5A63DF;transform:translateY(-2px)">Бесплатный разбор</button>
+      <button onClick="{{ goProcess }}" style="display:inline-flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;font:500 16px 'Onest',sans-serif;color:#16181D;padding:16px 4px;transition:color .25s" style-hover="color:#6E77EE">Как это устроено <span style="font-size:17px;line-height:1">↓</span></button>
+    </div>
+    <div data-reveal="340" style="display:flex;flex-wrap:wrap;margin-top:clamp(52px,7vh,88px);border-top:1px solid #E4E4E4;padding-top:28px;max-width:720px;gap:0">
+      <div style="flex:1 1 150px;padding-right:28px;border-right:1px solid #E4E4E4">
+        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);color:#16181D;line-height:1">Один</div>
+        <div style="font:400 13.5px/1.5 'Onest',sans-serif;color:rgba(22,24,29,.6);margin-top:8px">ответственный за весь результат</div>
+      </div>
+      <div style="flex:1 1 150px;padding:0 28px;border-right:1px solid #E4E4E4">
+        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);color:#16181D;line-height:1">2–3&nbsp;нед.</div>
+        <div style="font:400 13.5px/1.5 'Onest',sans-serif;color:rgba(22,24,29,.6);margin-top:8px">до первых данных</div>
+      </div>
+      <div style="flex:1 1 150px;padding-left:28px">
+        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);color:#6E77EE;line-height:1">Бесплатно</div>
+        <div style="font:400 13.5px/1.5 'Onest',sans-serif;color:rgba(22,24,29,.6);margin-top:8px">первый разбор бизнеса</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Узнавание" style="padding:clamp(84px,9vw,140px) 0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Ситуация</p>
+    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0;max-width:860px;text-wrap:balance">Если что-то из этого про вас — дальше есть смысл читать</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:20px;margin-top:60px">
+      <div data-reveal="0" data-lift style="border:1px solid #E4E4E4;padding:38px 36px"><p style="font:500 clamp(18px,1.7vw,21px)/1.45 'Onest',sans-serif;color:#16181D;margin:0;text-wrap:pretty">«Реклама крутится, деньги уходят. Откуда берутся клиенты — не знаю»</p></div>
+      <div data-reveal="100" data-lift style="border:1px solid #E4E4E4;padding:38px 36px"><p style="font:500 clamp(18px,1.7vw,21px)/1.45 'Onest',sans-serif;color:#16181D;margin:0;text-wrap:pretty">«Сайт делал один, рекламу ведёт второй, соцсети третий. За результат не отвечает никто»</p></div>
+      <div data-reveal="200" data-lift style="border:1px solid #E4E4E4;padding:38px 36px"><p style="font:500 clamp(18px,1.7vw,21px)/1.45 'Onest',sans-serif;color:#16181D;margin:0;text-wrap:pretty">«Контент выходит регулярно. Зачем именно такой — объяснить не может никто»</p></div>
+      <div data-reveal="300" data-lift style="border:1px solid #E4E4E4;padding:38px 36px"><p style="font:500 clamp(18px,1.7vw,21px)/1.45 'Onest',sans-serif;color:#16181D;margin:0;text-wrap:pretty">«Каждый подрядчик показывает хорошие цифры. Продажи при этом не растут»</p></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="03 Как становится" style="background:#16181D;padding:clamp(84px,9vw,140px) 0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#B7BAC3;margin:0 0 22px">Подход</p>
+    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#F9FAF5;margin:0;max-width:820px;text-wrap:balance">Что <em>меняется</em>, когда всё в одних руках</h2>
+    <div data-accline style="height:2px;background:#6E77EE;width:110px;margin-top:30px"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:40px 0;margin-top:70px">
+      <div data-reveal="0" data-appr style="border-left:1px solid rgba(249,250,245,.14);padding:6px 30px 6px 24px">
+        <h3 style="font:600 17px/1.45 'Onest',sans-serif;color:#F9FAF5;margin:0 0 10px">Видно, сколько стоит один клиент.</h3>
+        <p style="font:400 15px/1.6 'Onest',sans-serif;color:#B7BAC3;margin:0">И можно решать, устраивает это или нет.</p>
+      </div>
+      <div data-reveal="100" data-appr style="border-left:1px solid rgba(249,250,245,.14);padding:6px 30px 6px 24px">
+        <h3 style="font:600 17px/1.45 'Onest',sans-serif;color:#F9FAF5;margin:0 0 10px">Понятно, какой канал приносит, а какой ест бюджет.</h3>
+        <p style="font:400 15px/1.6 'Onest',sans-serif;color:#B7BAC3;margin:0">Деньги перестают уходить в никуда.</p>
+      </div>
+      <div data-reveal="200" data-appr style="border-left:1px solid rgba(249,250,245,.14);padding:6px 30px 6px 24px">
+        <h3 style="font:600 17px/1.45 'Onest',sans-serif;color:#F9FAF5;margin:0 0 10px">Один человек отвечает за весь результат.</h3>
+        <p style="font:400 15px/1.6 'Onest',sans-serif;color:#B7BAC3;margin:0">Не нужно сводить отчёты пяти подрядчиков.</p>
+      </div>
+      <div data-reveal="300" data-appr style="border-left:1px solid rgba(249,250,245,.14);padding:6px 30px 6px 24px">
+        <h3 style="font:600 17px/1.45 'Onest',sans-serif;color:#F9FAF5;margin:0 0 10px">Решения принимаются по цифрам.</h3>
+        <p style="font:400 15px/1.6 'Onest',sans-serif;color:#B7BAC3;margin:0">А не по тому, что «вроде красиво получилось».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" data-screen-label="04 Процесс" style="padding:clamp(84px,9vw,140px) 0;background:#F9FAF5">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Процесс</p>
+    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0">Как выглядит работа</h2>
+    <div id="proc-list" style="position:relative;max-width:880px;margin:56px 0 0 auto;padding-left:clamp(30px,4.5vw,68px)">
+      <div style="position:absolute;left:4px;top:14px;bottom:14px;width:2px;background:#E4E4E4">
+        <div id="proc-fill" style="width:100%;height:0%;background:#6E77EE"></div>
+      </div>
+      <div data-reveal style="position:relative;display:grid;grid-template-columns:clamp(62px,8vw,108px) 1fr;gap:clamp(14px,3vw,40px);padding:44px 0;border-bottom:1px solid #E4E4E4">
+        <div data-procdot style="position:absolute;left:calc(5px - clamp(30px,4.5vw,68px));top:66px;width:9px;height:9px;border-radius:50%;background:#B7BAC3;transform:translate(-50%,-50%);transition:background .3s,transform .3s"></div>
+        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(28px,3vw,40px);color:#B7BAC3;line-height:1">01</div>
+        <div>
+          <h3 style="font:600 20px/1.3 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Разбор</h3>
+          <p style="font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.75);margin:0;max-width:62ch;text-wrap:pretty">Смотрю, что уже сделано: сайт, реклама, соцсети, цифры. Нахожу, где именно теряются деньги и клиенты. Это бесплатно и ни к чему не обязывает — по итогу вы получаете понимание своей ситуации, даже если мы не начнём работать.</p>
+        </div>
+      </div>
+      <div data-reveal style="position:relative;display:grid;grid-template-columns:clamp(62px,8vw,108px) 1fr;gap:clamp(14px,3vw,40px);padding:44px 0;border-bottom:1px solid #E4E4E4">
+        <div data-procdot style="position:absolute;left:calc(5px - clamp(30px,4.5vw,68px));top:66px;width:9px;height:9px;border-radius:50%;background:#B7BAC3;transform:translate(-50%,-50%);transition:background .3s,transform .3s"></div>
+        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(28px,3vw,40px);color:#B7BAC3;line-height:1">02</div>
+        <div>
+          <h3 style="font:600 20px/1.3 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Стратегия</h3>
+          <p style="font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.75);margin:0;max-width:62ch;text-wrap:pretty">Разбираемся, кто ваш главный клиент, чем вы отличаетесь от соседей по рынку и через какие каналы до этого клиента реально дотянуться. Без этого шага любая реклама — стрельба вслепую.</p>
+        </div>
+      </div>
+      <div data-reveal style="position:relative;display:grid;grid-template-columns:clamp(62px,8vw,108px) 1fr;gap:clamp(14px,3vw,40px);padding:44px 0;border-bottom:1px solid #E4E4E4">
+        <div data-procdot style="position:absolute;left:calc(5px - clamp(30px,4.5vw,68px));top:66px;width:9px;height:9px;border-radius:50%;background:#B7BAC3;transform:translate(-50%,-50%);transition:background .3s,transform .3s"></div>
+        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(28px,3vw,40px);color:#B7BAC3;line-height:1">03</div>
+        <div>
+          <h3 style="font:600 20px/1.3 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Сборка</h3>
+          <p style="font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.75);margin:0;max-width:62ch;text-wrap:pretty">Собираю то, чего не хватает: сайт или лендинг, аналитику, тексты, рекламные кампании, контент-план. Аналитика ставится сразу, а не после запуска — иначе первые недели данных будут потеряны.</p>
+        </div>
+      </div>
+      <div data-reveal style="position:relative;display:grid;grid-template-columns:clamp(62px,8vw,108px) 1fr;gap:clamp(14px,3vw,40px);padding:44px 0;border-bottom:1px solid #E4E4E4">
+        <div data-procdot style="position:absolute;left:calc(5px - clamp(30px,4.5vw,68px));top:66px;width:9px;height:9px;border-radius:50%;background:#B7BAC3;transform:translate(-50%,-50%);transition:background .3s,transform .3s"></div>
+        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(28px,3vw,40px);color:#B7BAC3;line-height:1">04</div>
+        <div>
+          <h3 style="font:600 20px/1.3 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Запуск и данные</h3>
+          <p style="font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.75);margin:0;max-width:62ch;text-wrap:pretty">Кампании стартуют с одного сегмента, не со всех сразу. Так быстрее становится понятно, что работает. Первые выводы — в течение двух-трёх недель.</p>
+        </div>
+      </div>
+      <div data-reveal style="position:relative;display:grid;grid-template-columns:clamp(62px,8vw,108px) 1fr;gap:clamp(14px,3vw,40px);padding:44px 0">
+        <div data-procdot style="position:absolute;left:calc(5px - clamp(30px,4.5vw,68px));top:66px;width:9px;height:9px;border-radius:50%;background:#B7BAC3;transform:translate(-50%,-50%);transition:background .3s,transform .3s"></div>
+        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(28px,3vw,40px);color:#B7BAC3;line-height:1">05</div>
+        <div>
+          <h3 style="font:600 20px/1.3 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Корректировка</h3>
+          <p style="font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.75);margin:0;max-width:62ch;text-wrap:pretty">Раз в месяц вы получаете честную картину: что сработало, что нет, что меняем. Если моя предыдущая гипотеза не подтвердилась — я говорю об этом первым.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" data-screen-label="05 Что даёт" style="padding:clamp(84px,9vw,140px) 0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <div style="border-top:1px solid #E4E4E4;margin-bottom:clamp(84px,9vw,140px)"></div>
+    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Что это даёт</p>
+    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0">Что маркетинг <em>даёт</em> бизнесу</h2>
+    <p data-reveal style="font:400 17px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:20px 0 0;max-width:520px;text-wrap:pretty">Не обязательно всё сразу. Начинаем с того, что даст результат быстрее.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px;margin-top:56px">
+      <div data-svc data-reveal="0" style="position:relative;border:1px solid #E4E4E4;padding:32px 30px">
+        <div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div>
+        <div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:24px;transition:color .25s">01</div>
+        <h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Стратегия и позиционирование</h3>
+        <p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0;text-wrap:pretty">Вы понимаете, кому продаёте и почему выбирают вас, а не соседа с такой же ценой.</p>
+      </div>
+      <div data-svc data-reveal="80" style="position:relative;border:1px solid #E4E4E4;padding:32px 30px">
+        <div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div>
+        <div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:24px;transition:color .25s">02</div>
+        <h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Сайт и лендинг</h3>
+        <p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0;text-wrap:pretty">Страница, которая объясняет ценность и приводит заявки. Аналитика встроена с первого дня.</p>
+      </div>
+      <div data-svc data-reveal="160" style="position:relative;border:1px solid #E4E4E4;padding:32px 30px">
+        <div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div>
+        <div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:24px;transition:color .25s">03</div>
+        <h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Реклама</h3>
+        <p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0;text-wrap:pretty">Бюджет уходит в каналы, которые приносят, а не в те, которые привычны.</p>
+      </div>
+      <div data-svc data-reveal="240" style="position:relative;border:1px solid #E4E4E4;padding:32px 30px">
+        <div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div>
+        <div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:24px;transition:color .25s">04</div>
+        <h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Контент и соцсети</h3>
+        <p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0;text-wrap:pretty">Публикации, которые готовят человека к покупке, а не просто заполняют ленту.</p>
+      </div>
+      <div data-svc data-reveal="320" style="position:relative;border:1px solid #E4E4E4;padding:32px 30px">
+        <div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div>
+        <div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:24px;transition:color .25s">05</div>
+        <h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Воронки и рассылки</h3>
+        <p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0;text-wrap:pretty">Человек, который не купил сегодня, не теряется, а постепенно доходит до решения.</p>
+      </div>
+      <div data-svc data-reveal="400" style="position:relative;border:1px solid #E4E4E4;padding:32px 30px">
+        <div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div>
+        <div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:24px;transition:color .25s">06</div>
+        <h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Мероприятия</h3>
+        <p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0;text-wrap:pretty">Событие, за участие в котором люди платят, потому что понимают, что получат.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="05б Две точки входа" style="padding:clamp(84px,9vw,140px) 0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px);text-align:center">
+    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">С чего начать</p>
+    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0">Дальше выбор <em>за вами</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px;margin-top:56px;text-align:left">
+      <sc-for list="{{ entries }}" as="en" hint-placeholder-count="2">
+        <div data-reveal style="border:1px solid #E4E4E4;align-self:start">
+          <button onClick="{{ en.toggle }}" style="width:100%;display:flex;align-items:center;gap:22px;padding:30px 28px;background:none;border:none;cursor:pointer;text-align:left">
+            <span style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:26px;color:#B7BAC3;line-height:1">{{ en.n }}</span>
+            <span style="flex:1;font:600 clamp(17px,1.6vw,19px)/1.35 'Onest',sans-serif;color:#16181D">{{ en.title }}</span>
+            <span style="{{ en.plusStyle }}">+</span>
+          </button>
+          <div style="{{ en.bodyStyle }}">
+            <div style="padding:0 28px 32px">
+              <p style="font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.72);margin:0;text-wrap:pretty">{{ en.body }}</p>
+              <button onClick="{{ en.choose }}" style="background:none;border:1px solid #16181D;color:#16181D;padding:14px 26px;font:500 15px 'Onest',sans-serif;cursor:pointer;margin-top:24px;border-radius:2px;transition:border-color .25s,color .25s" style-hover="border-color:#6E77EE;color:#6E77EE">{{ en.cta }}</button>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ showFuture }}" hint-placeholder-val="{{ true }}">
+<section data-screen-label="06 Разборы" style="padding:clamp(84px,9vw,140px) 0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <div style="border-top:1px solid #E4E4E4;margin-bottom:clamp(84px,9vw,140px)"></div>
+    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Скоро</p>
+    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0">Разборы</h2>
+    <p data-reveal style="font:400 17px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.72);margin:20px 0 0;max-width:60ch;text-wrap:pretty">Регулярно разбираю чужие бизнесы: что у них получилось, что нет и почему. Не для критики, а чтобы показать, как принимаются решения в маркетинге. Первые разборы скоро здесь.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:20px;margin-top:52px">
+      <div data-reveal="0" data-soon style="border:1px solid #E4E4E4;padding:30px 28px;opacity:.7">
+        <span style="display:inline-block;border:1px solid #E4E4E4;color:rgba(22,24,29,.5);font:500 12px 'Onest',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px">Скоро</span>
+        <p style="font:500 17px/1.45 'Onest',sans-serif;color:rgba(22,24,29,.55);margin:22px 0 0;text-wrap:pretty">Почему у отеля идеальная реклама и пустые номера</p>
+      </div>
+      <div data-reveal="100" data-soon style="border:1px solid #E4E4E4;padding:30px 28px;opacity:.7">
+        <span style="display:inline-block;border:1px solid #E4E4E4;color:rgba(22,24,29,.5);font:500 12px 'Onest',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px">Скоро</span>
+        <p style="font:500 17px/1.45 'Onest',sans-serif;color:rgba(22,24,29,.55);margin:22px 0 0;text-wrap:pretty">Кофейня с очередью и кофейня без. Разница не в кофе</p>
+      </div>
+      <div data-reveal="200" data-soon style="border:1px solid #E4E4E4;padding:30px 28px;opacity:.7">
+        <span style="display:inline-block;border:1px solid #E4E4E4;color:rgba(22,24,29,.5);font:500 12px 'Onest',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px">Скоро</span>
+        <p style="font:500 17px/1.45 'Onest',sans-serif;color:rgba(22,24,29,.55);margin:22px 0 0;text-wrap:pretty">Что не так с сайтами молдавских клиник</p>
+      </div>
+    </div>
+    <a href="/razbory" style="display:inline-block;pointer-events:none;border:1px solid #E4E4E4;color:#B7BAC3;font:500 15px 'Onest',sans-serif;padding:14px 26px;margin-top:32px;border-radius:2px">Все разборы — скоро</a>
+  </div>
+</section>
+
+<section data-screen-label="07 Блог" style="padding:clamp(84px,9vw,140px) 0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <div style="max-width:960px;margin-left:auto">
+      <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Блог</p>
+      <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0;max-width:700px;text-wrap:balance">Про маркетинг простым языком</h2>
+      <p data-reveal style="font:400 17px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.72);margin:20px 0 0;max-width:58ch;text-wrap:pretty">Пишу о том, как это работает на самом деле — без терминов, которыми принято пугать заказчика.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px;margin-top:52px">
+        <div data-reveal="0" data-soon style="border:1px solid #E4E4E4;padding:30px 28px;opacity:.7">
+          <span style="display:inline-block;border:1px solid #E4E4E4;color:rgba(22,24,29,.5);font:500 12px 'Onest',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px">Скоро</span>
+          <div style="height:11px;background:#E4E4E4;width:88%;margin-top:26px"></div>
+          <div style="height:11px;background:#E4E4E4;width:64%;margin-top:10px"></div>
+          <div style="height:11px;background:#E4E4E4;width:42%;margin-top:10px"></div>
+        </div>
+        <div data-reveal="100" data-soon style="border:1px solid #E4E4E4;padding:30px 28px;opacity:.7">
+          <span style="display:inline-block;border:1px solid #E4E4E4;color:rgba(22,24,29,.5);font:500 12px 'Onest',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px">Скоро</span>
+          <div style="height:11px;background:#E4E4E4;width:74%;margin-top:26px"></div>
+          <div style="height:11px;background:#E4E4E4;width:90%;margin-top:10px"></div>
+          <div style="height:11px;background:#E4E4E4;width:35%;margin-top:10px"></div>
+        </div>
+        <div data-reveal="200" data-soon style="border:1px solid #E4E4E4;padding:30px 28px;opacity:.7">
+          <span style="display:inline-block;border:1px solid #E4E4E4;color:rgba(22,24,29,.5);font:500 12px 'Onest',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px">Скоро</span>
+          <div style="height:11px;background:#E4E4E4;width:80%;margin-top:26px"></div>
+          <div style="height:11px;background:#E4E4E4;width:52%;margin-top:10px"></div>
+          <div style="height:11px;background:#E4E4E4;width:68%;margin-top:10px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<section data-screen-label="08 Кто я" style="padding:clamp(84px,9vw,140px) 0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <div style="border-top:1px solid #E4E4E4;margin-bottom:clamp(84px,9vw,140px)"></div>
+    <div id="about" style="display:flex;flex-wrap:wrap;gap:clamp(40px,5vw,80px);align-items:flex-start;scroll-margin-top:80px">
+      <div data-reveal style="flex:1 1 300px;max-width:360px">
+        <div style="aspect-ratio:3/4;border:1px solid #E4E4E4;position:relative">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="portrait-photo" shape="rect" fit="cover" placeholder="Вертикальное фото: естественный свет, спокойный фон" hint-size="100%,100%"></x-import>
+        </div>
+        <p style="font:400 12.5px/1.5 'Onest',sans-serif;color:rgba(22,24,29,.5);margin:12px 0 0">Обработка приглушённая, слегка холодная — в тон палитры.</p>
+      </div>
+      <div style="flex:1 1 420px;max-width:640px">
+        <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Кто я</p>
+        <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(26px,2.6vw,36px);line-height:1.2;letter-spacing:-0.02em;color:#16181D;margin:0 0 8px">[ИМЯ]</h2>
+        <p data-reveal style="font:500 16px/1.5 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0 0 28px">Маркетолог полного цикла. Работаю в Молдове, веду проекты на русском и румынском.</p>
+        <p data-reveal style="font:400 17px/1.7 'Onest',sans-serif;color:rgba(22,24,29,.78);margin:0 0 20px;max-width:62ch;text-wrap:pretty">Пришёл к тому, что маркетинг по частям почти не работает. Реклама без внятного позиционирования сжигает бюджет, красивый сайт без аналитики не даёт понять, что происходит, а контент без стратегии — это просто расход времени.</p>
+        <p data-reveal style="font:400 17px/1.7 'Onest',sans-serif;color:rgba(22,24,29,.78);margin:0;max-width:62ch;text-wrap:pretty">Поэтому беру проект целиком и отвечаю за результат один. Если что-то не работает — говорю об этом прямо, а не подкручиваю отчёт.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="09 Вопросы" style="padding:clamp(84px,9vw,140px) 0">
+  <div style="max-width:820px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Вопросы</p>
+    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0 0 32px">Что обычно спрашивают</h2>
+    <div data-reveal style="border-top:1px solid #E4E4E4">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+        <div style="border-bottom:1px solid #E4E4E4">
+          <button onClick="{{ f.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 2px;background:none;border:none;cursor:pointer;text-align:left;font:500 clamp(16px,1.6vw,18px)/1.4 'Onest',sans-serif;color:#16181D;transition:color .25s" style-hover="color:#6E77EE">
+            {{ f.q }}
+            <span style="{{ f.plusStyle }}">+</span>
+          </button>
+          <div style="{{ f.bodyStyle }}">
+            <p style="font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.72);margin:0;padding:0 2px 28px;max-width:62ch;text-wrap:pretty">{{ f.a }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="contact" data-screen-label="10 Финальный призыв" style="position:relative;background:#16181D;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:clamp(84px,9vw,120px) 0">
+  {{ finalDots }}
+  <div style="position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:flex;flex-direction:column;align-items:center;text-align:center">
+    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#B7BAC3;margin:0 0 22px">Контакт</p>
+    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(34px,4.6vw,62px);line-height:1.12;letter-spacing:-0.025em;color:#F9FAF5;margin:0">Начнём <em>с разговора</em></h2>
+    <p data-reveal style="font:400 17px/1.65 'Onest',sans-serif;color:#B7BAC3;margin:24px 0 0;max-width:560px;text-wrap:pretty">Час времени. Я смотрю ваш бизнес, вы получаете понятную картину и список того, что чинить в первую очередь. Без обязательств и без презентации моих услуг.</p>
+    <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+      <form onSubmit="{{ onSubmit }}" style="width:100%;max-width:460px;margin-top:52px;display:flex;flex-direction:column;gap:26px;text-align:left">
+        <input name="name" autocomplete="name" placeholder="Имя" aria-label="Имя" style="width:100%;box-sizing:border-box;background:none;border:none;border-bottom:1px solid rgba(249,250,245,.22);color:#F9FAF5;font:400 16px 'Onest',sans-serif;padding:12px 2px;outline:none;border-radius:0;transition:border-color .25s" style-focus="border-bottom-color:#6E77EE">
+        <input name="contact" placeholder="Телефон или Telegram" aria-label="Телефон или Telegram" style="width:100%;box-sizing:border-box;background:none;border:none;border-bottom:1px solid rgba(249,250,245,.22);color:#F9FAF5;font:400 16px 'Onest',sans-serif;padding:12px 2px;outline:none;border-radius:0;transition:border-color .25s" style-focus="border-bottom-color:#6E77EE">
+        <input name="site" placeholder="Ссылка на сайт или страницу в соцсетях" aria-label="Ссылка на сайт или соцсети" style="width:100%;box-sizing:border-box;background:none;border:none;border-bottom:1px solid rgba(249,250,245,.22);color:#F9FAF5;font:400 16px 'Onest',sans-serif;padding:12px 2px;outline:none;border-radius:0;transition:border-color .25s" style-focus="border-bottom-color:#6E77EE">
+        <button type="submit" style="display:inline-flex;align-items:center;justify-content:center;background:#6E77EE;color:#F9FAF5;font:500 16px 'Onest',sans-serif;padding:17px 32px;border:none;border-radius:2px;cursor:pointer;margin-top:12px;transition:background .25s" style-hover="background:#5A63DF">Записаться на разбор</button>
+        <p style="font:400 13px/1.5 'Onest',sans-serif;color:#B7BAC3;margin:0;text-align:center">Отвечаю в течение дня. Никаких рассылок и звонков без предупреждения.</p>
+      </form>
+    </sc-if>
+    <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:52px;max-width:460px">
+        <div style="width:8px;height:8px;border-radius:50%;background:#6E77EE;margin:0 auto 22px"></div>
+        <p style="font:500 20px/1.5 'Onest',sans-serif;color:#F9FAF5;margin:0;text-wrap:pretty">Заявка у меня. Посмотрю ваши материалы и отвечу в течение дня.</p>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<footer style="background:#16181D;border-top:1px solid rgba(249,250,245,.1);padding:56px 0 40px">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <div style="display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between;align-items:baseline">
+      <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:600;font-size:15px;color:#F9FAF5">[ИМЯ]</div>
+      <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+        <nav style="display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-serif;color:#B7BAC3">
+          <a data-nav href="/razbory">Разборы</a>
+          <a data-nav href="/blog">Блог</a>
+        </nav>
+        <div style="display:flex;gap:14px;align-items:center">
+          <a data-ficon href="https://instagram.com/username" aria-label="Instagram" title="Instagram" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid rgba(249,250,245,.16);border-radius:2px;color:#B7BAC3">
+            <svg data-hicon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+          </a>
+          <a data-ficon href="tel:+37360000000" aria-label="Телефон" title="Телефон" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid rgba(249,250,245,.16);border-radius:2px;color:#B7BAC3">
+            <svg data-hicon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h3l1.5 4-2 1.4a12 12 0 0 0 4.6 4.6l1.4-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A15.5 15.5 0 0 1 5 5.1 1.5 1.5 0 0 1 6.5 3.5z"></path></svg>
+          </a>
+          <a data-ficon href="mailto:hello@example.md" aria-label="Почта" title="Почта" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid rgba(249,250,245,.16);border-radius:2px;color:#B7BAC3">
+            <svg data-hicon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3.5 6.5 8.5 6 8.5-6"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p style="font:400 clamp(18px,2vw,22px)/1.5 'Onest',sans-serif;color:#B7BAC3;margin:72px 0 0;max-width:560px;text-wrap:pretty">Маркетинг перестаёт быть расходом, когда становится понятным.</p>
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 20px;margin-top:44px;font:400 13px 'Onest',sans-serif;color:rgba(183,186,195,.6)">
+      <span>© 2026</span>
+      <span>Молдова · русский и румынский</span>
+    </div>
+  </div>
+</footer>
+
+<sc-if value="{{ showSticky }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:80;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(249,250,245,.94);backdrop-filter:blur(8px);border-top:1px solid #E4E4E4;box-sizing:border-box">
+    <button onClick="{{ goFormSticky }}" style="width:100%;display:inline-flex;align-items:center;justify-content:center;background:#6E77EE;color:#F9FAF5;font:500 16px 'Onest',sans-serif;padding:16px 24px;border:none;border-radius:2px;cursor:pointer">Бесплатный разбор</button>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;headingFont&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Unbounded&quot;, &quot;Onest 800&quot;], &quot;default&quot;: &quot;Unbounded&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Типографика&quot;},
+  &quot;showFuture&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Секции&quot;},
+  &quot;stickyMobileCta&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Поведение&quot;}
+}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.reduced = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const N = 14, dots = [];
+    for (let i = 0; i < N; i++) {
+      dots.push({
+        sx: 6 + Math.random() * 88,
+        sy: 8 + Math.random() * 78,
+        tx: 35 + i * (30 / (N - 1)),
+        ty: 78,
+        accent: i === 9
+      });
+    }
+    this.dots = dots;
+    // final-section grid: 3 rows x 6 cols
+    this.fgrid = [];
+    for (let r = 0; r < 3; r++) for (let c = 0; c < 6; c++) this.fgrid.push({ x: 10 + c * 16, y: 22 + r * 28, accent: r === 1 && c === 3 });
+    this.state = { heroPlayed: this.reduced, openFaq: -1, openEntry: -1, sent: false, showSticky: false, showHeader: false, finalOn: this.reduced, formSource: '' };
+    this.depthFired = {};
+  }
+
+  track(ev, params) {
+    (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: ev }, params || {}));
+  }
+
+  goTo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 64;
+    window.scrollTo({ top: Math.max(0, top), behavior: this.reduced ? 'auto' : 'smooth' });
+  }
+
+  applyFontVars() {
+    const onest = (this.props.headingFont ?? 'Unbounded') !== 'Unbounded';
+    const r = document.documentElement;
+    r.style.setProperty('--hf', onest ? "'Onest'" : "'Unbounded'");
+    r.style.setProperty('--hwt', onest ? '800' : '600');
+  }
+
+  componentDidMount() {
+    this.applyFontVars();
+    if (!this.reduced) this.heroT = setTimeout(() => this.setState({ heroPlayed: true }), 400);
+    // scroll reveal
+    if (!this.reduced) {
+      const els = [...document.querySelectorAll('[data-reveal]')];
+      els.forEach(el => {
+        const d = el.getAttribute('data-reveal') || '0';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity .55s ease-out ' + d + 'ms, transform .55s ease-out ' + d + 'ms';
+      });
+      const lines = [...document.querySelectorAll('[data-accline]')];
+      lines.forEach(el => { el.style.width = '0px'; el.style.transition = 'width .9s ease-out .15s'; });
+      this.io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (!en.isIntersecting) return;
+          const el = en.target;
+          if (el.hasAttribute('data-accline')) el.style.width = '110px';
+          else { el.style.opacity = '1'; el.style.transform = 'none'; }
+          this.io.unobserve(el);
+        });
+      }, { threshold: 0.12 });
+      els.concat(lines).forEach(el => this.io.observe(el));
+    }
+    // final dots trigger
+    const contact = document.getElementById('contact');
+    if (contact && !this.reduced) {
+      this.fio = new IntersectionObserver(entries => {
+        if (entries.some(en => en.isIntersecting)) { this.setState({ finalOn: true }); this.fio.disconnect(); }
+      }, { threshold: 0.25 });
+      this.fio.observe(contact);
+    }
+    this.onScroll = () => this.handleScroll();
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.handleScroll();
+    if (matchMedia('(pointer: fine)').matches && !this.reduced) this.setupCursor();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.headingFont !== this.props.headingFont) this.applyFontVars();
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.heroT);
+    if (this.io) this.io.disconnect();
+    if (this.fio) this.fio.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    if (this.onMove) window.removeEventListener('mousemove', this.onMove);
+    if (this.cursorEl) this.cursorEl.remove();
+  }
+
+  handleScroll() {
+    const y = window.scrollY, h = window.innerHeight;
+    // sticky mobile CTA
+    const enabled = this.props.stickyMobileCta ?? true;
+    let show = enabled && !this.state.sent && window.innerWidth < 720 && y > h * 0.85;
+    const c = document.getElementById('contact');
+    if (show && c && c.getBoundingClientRect().top < h * 0.7) show = false;
+    if (show !== this.state.showSticky) this.setState({ showSticky: show });
+    // sticky top header — appears once hero is scrolled past
+    const showHeader = y > h * 0.65;
+    if (showHeader !== this.state.showHeader) this.setState({ showHeader: showHeader });
+    // process progress line
+    const list = document.getElementById('proc-list');
+    const fill = document.getElementById('proc-fill');
+    if (list && fill) {
+      const r = list.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (h * 0.55 - r.top) / r.height));
+      fill.style.height = (p * 100) + '%';
+      const dots = list.querySelectorAll('[data-procdot]');
+      const idx = Math.min(4, Math.floor(p * 5));
+      dots.forEach((d, i) => {
+        const passed = i < idx || p >= 1;
+        const cur = i === idx && p < 1 && p > 0;
+        d.style.background = passed || cur ? '#6E77EE' : '#B7BAC3';
+        d.style.transform = cur ? 'translate(-50%,-50%) scale(1.7)' : 'translate(-50%,-50%) scale(1)';
+      });
+    }
+    // scroll depth analytics
+    const sh = document.documentElement.scrollHeight;
+    if (sh > 0) {
+      const depth = ((y + h) / sh) * 100;
+      [25, 50, 75, 100].forEach(t => {
+        if (depth >= t && !this.depthFired[t]) { this.depthFired[t] = 1; this.track('scroll_depth', { value: t }); }
+      });
+    }
+  }
+
+  setupCursor() {
+    const d = document.createElement('div');
+    d.style.cssText = 'position:fixed;left:0;top:0;width:8px;height:8px;border-radius:50%;background:#16181D;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .22s,height .22s,background .22s,border .22s,opacity .3s;opacity:0;box-sizing:border-box';
+    document.body.appendChild(d);
+    this.cursorEl = d;
+    this.onMove = e => {
+      d.style.left = e.clientX + 'px';
+      d.style.top = e.clientY + 'px';
+      d.style.opacity = '1';
+      const t = e.target && e.target.closest && e.target.closest('a,button,[data-svc],input');
+      d.style.width = t ? '34px' : '8px';
+      d.style.height = t ? '34px' : '8px';
+      d.style.background = t ? 'rgba(110,119,238,.12)' : '#16181D';
+      d.style.border = t ? '1px solid rgba(110,119,238,.55)' : 'none';
+    };
+    window.addEventListener('mousemove', this.onMove, { passive: true });
+  }
+
+  renderHeroDots() {
+    const e = React.createElement, p = this.state.heroPlayed;
+    const tr = 'left 1.5s cubic-bezier(.22,.61,.36,1), top 1.5s cubic-bezier(.22,.61,.36,1)';
+    return e('div', { style: { position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1 }, 'aria-hidden': true },
+      e('div', { key: 'ln', style: { position: 'absolute', left: '50%', top: '78%', transform: 'translate(-50%,-50%)', height: '1px', width: p ? '30%' : '0%', background: '#E4E4E4', transition: 'width .6s ease-out 1.5s' } }),
+      this.dots.map((d, i) => e('div', {
+        key: i,
+        style: {
+          position: 'absolute', left: (p ? d.tx : d.sx) + '%', top: (p ? d.ty : d.sy) + '%',
+          width: d.accent ? '8px' : '6px', height: d.accent ? '8px' : '6px', borderRadius: '50%',
+          background: d.accent ? '#6E77EE' : '#B7BAC3', transform: 'translate(-50%,-50%)', transition: tr
+        }
+      }))
+    );
+  }
+
+  renderFinalDots() {
+    const e = React.createElement, on = this.state.finalOn;
+    const kids = [];
+    // horizontal lines per row
+    for (let r = 0; r < 3; r++) {
+      kids.push(e('div', {
+        key: 'h' + r,
+        style: { position: 'absolute', left: '10%', width: '80%', top: (22 + r * 28) + '%', height: '1px', background: 'rgba(249,250,245,.07)', transform: on ? 'scaleX(1)' : 'scaleX(0)', transformOrigin: 'left', transition: 'transform 1.8s ease-out ' + (0.3 + r * 0.25) + 's' }
+      }));
+    }
+    // vertical lines per column
+    for (let c = 0; c < 6; c++) {
+      kids.push(e('div', {
+        key: 'v' + c,
+        style: { position: 'absolute', top: '22%', height: '56%', left: (10 + c * 16) + '%', width: '1px', background: 'rgba(249,250,245,.05)', transform: on ? 'scaleY(1)' : 'scaleY(0)', transformOrigin: 'top', transition: 'transform 1.8s ease-out ' + (0.5 + c * 0.15) + 's' }
+      }));
+    }
+    this.fgrid.forEach((d, i) => {
+      kids.push(e('div', {
+        key: 'd' + i,
+        style: { position: 'absolute', left: d.x + '%', top: d.y + '%', width: d.accent ? '8px' : '6px', height: d.accent ? '8px' : '6px', borderRadius: '50%', background: d.accent ? '#6E77EE' : 'rgba(183,186,195,.35)', transform: 'translate(-50%,-50%)', opacity: on ? 1 : 0, transition: 'opacity .8s ease-out ' + (i * 0.05) + 's' }
+      }));
+    });
+    return e('div', { style: { position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1 }, 'aria-hidden': true }, kids);
+  }
+
+  renderVals() {
+    const acc = '#6E77EE';
+    const openFaq = this.state.openFaq, openEntry = this.state.openEntry;
+    const bodySt = open => ({ maxHeight: open ? '420px' : '0px', opacity: open ? 1 : 0, overflow: 'hidden', transition: 'max-height .5s ease-out, opacity .4s ease-out' });
+    const plusSt = open => ({ display: 'inline-block', flex: 'none', transition: 'transform .3s ease-out, color .3s', transform: open ? 'rotate(45deg)' : 'none', color: open ? acc : '#B7BAC3', fontSize: '26px', fontWeight: 300, lineHeight: 1, fontFamily: "'Onest',sans-serif" });
+
+    const faqData = [
+      { q: 'Сколько это стоит?', a: 'Зависит от объёма. Разовая задача вроде лендинга или настройки рекламы считается отдельно, ведение проекта — помесячно. Точную цифру называю после разбора, когда понятно, что именно нужно. Наугад не называю.' },
+      { q: 'Вы работаете один?', a: 'Да, стратегию, тексты, рекламу и аналитику веду сам — так не теряется логика между этапами. Для съёмки, дизайна или разработки подключаю проверенных людей, но общение и ответственность остаются на мне.' },
+      { q: 'У меня маленький бюджет. Есть смысл?', a: 'Часто да. Небольшой бюджет — это не повод не работать, а повод не размазывать его на все каналы сразу. Иногда правильный ответ — сначала починить сайт, а рекламу не запускать вовсе. На разборе скажу честно.' },
+      { q: 'Через сколько будет результат?', a: 'Первые данные — через две-три недели после запуска. Устойчивый результат по заявкам — обычно второй-третий месяц. Обещать продажи с первой недели я не буду.' },
+      { q: 'У меня уже есть маркетолог или SMM-щик.', a: 'Тогда, возможно, вам нужен не я, а стратегия, по которой они будут работать. Это тоже отдельная задача.' },
+      { q: 'Что происходит на бесплатном разборе?', a: 'Около часа разговора. Я заранее смотрю ваш сайт, рекламу и соцсети, потом показываю, что вижу: где теряются деньги, что стоит починить в первую очередь. Вы уходите с этим пониманием независимо от того, начнём мы работать или нет.' }
+    ];
+    const faqs = faqData.map((f, i) => ({
+      q: f.q, a: f.a,
+      toggle: () => { this.setState({ openFaq: openFaq === i ? -1 : i }); if (openFaq !== i) this.track('faq_open', { label: f.q }); },
+      bodyStyle: bodySt(openFaq === i),
+      plusStyle: plusSt(openFaq === i)
+    }));
+
+    const entryData = [
+      { n: '01', title: 'У меня уже что-то работает', body: 'Есть сайт, идёт реклама, ведутся соцсети — но непонятно, что из этого приносит результат. Начинаем с разбора того, что уже есть: чиню то, что теряет деньги, и убираю то, что их просто ест. Часто на этом этапе бюджет не нужно увеличивать вовсе.', cta: 'Разобрать то, что есть', src: 'audit' },
+      { n: '02', title: 'Начинаю с нуля', body: 'Есть продукт и желание, остального пока нет. Тогда собираем всё по порядку: сначала кому и что продаём, потом сайт, потом трафик. В таком порядке, а не наоборот — иначе реклама поведёт людей туда, где их нечем убедить.', cta: 'Собрать с нуля', src: 'from-zero' }
+    ];
+    const entries = entryData.map((en, i) => ({
+      n: en.n, title: en.title, body: en.body, cta: en.cta,
+      toggle: () => this.setState({ openEntry: openEntry === i ? -1 : i }),
+      choose: () => { this.setState({ formSource: en.src }); this.track('cta_click', { label: en.src }); this.goTo('contact'); },
+      bodyStyle: bodySt(openEntry === i),
+      plusStyle: plusSt(openEntry === i)
+    }));
+
+    return {
+      heroDots: this.renderHeroDots(),
+      finalDots: this.renderFinalDots(),
+      faqs, entries,
+      showFuture: this.props.showFuture ?? true,
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      showSticky: this.state.showSticky,
+      headerStyle: { transform: this.state.showHeader ? 'translateY(0)' : 'translateY(-100%)', opacity: this.state.showHeader ? 1 : 0, transition: 'transform .4s cubic-bezier(.22,.61,.36,1), opacity .3s ease-out', pointerEvents: this.state.showHeader ? 'auto' : 'none' },
+      goTop: e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: this.reduced ? 'auto' : 'smooth' }); },
+      navProcess: e => { e.preventDefault(); this.goTo('process'); },
+      navServices: e => { e.preventDefault(); this.goTo('services'); },
+      navAbout: e => { e.preventDefault(); this.goTo('about'); },
+      goForm: () => { this.track('cta_click', { label: 'hero_primary' }); this.goTo('contact'); },
+      goFormNav: e => { e.preventDefault(); this.track('cta_click', { label: 'header' }); this.goTo('contact'); },
+      goFormSticky: () => { this.track('cta_click', { label: 'sticky_mobile' }); this.goTo('contact'); },
+      goProcess: () => { this.track('cta_click', { label: 'how_it_works' }); this.goTo('process'); },
+      onSubmit: e => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        const name = String(fd.get('name') || '').trim();
+        const contact = String(fd.get('contact') || '').trim();
+        if (!name || !contact) { this.track('form_error', { label: 'empty_fields' }); return; }
+        this.track('form_submit', { source: this.state.formSource || 'direct' });
+        this.setState({ sent: true, showSticky: false });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

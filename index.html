@@ -71,7 +71,7 @@ html,body{overflow-x:hidden}
 </helmet>
 
 <header data-appheader style="{{ headerStyle }}">
-  <div style="max-width:1240px;margin:0 auto;padding:14px clamp(20px,5vw,72px);display:flex;justify-content:space-between;align-items:center;box-sizing:border-box">
+  <div style="max-width:1240px;margin:0 auto;padding:14px clamp(20px,5vw,72px);display:flex;justify-content:space-between;align-items:center">
     <a href="#top" onClick="{{ goTop }}" style="display:flex;align-items:center;gap:11px;text-decoration:none"><svg width="34" height="30" viewBox="0 0 116 100" style="display:block;flex:none" aria-hidden="true"><path d="M24,86 V32 L58,66 L92,32 V86" fill="none" stroke="#6E77EE" stroke-width="21" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12.5" cy="60" r="9.5" fill="#6E77EE"></circle><circle cx="41" cy="21" r="8" fill="#6E77EE"></circle><circle cx="58" cy="58" r="6" fill="#6E77EE"></circle></svg><span style="display:flex;flex-direction:column;line-height:1"><span style="font-family:'Unbounded',sans-serif;font-weight:700;font-size:14px;letter-spacing:-0.01em;color:#16181D">PUZZLES</span><span style="font-family:'Onest',sans-serif;font-size:8.5px;letter-spacing:0.28em;color:#B7BAC3;margin-top:3px">MARKETING</span></span></a>
     <nav style="display:flex;gap:30px;align-items:center">
       <span data-appnav style="display:flex;gap:30px;align-items:center">
@@ -86,11 +86,11 @@ html,body{overflow-x:hidden}
 
 <section id="top" data-screen-label="01 Первый экран" style="position:relative;min-height:100vh;display:flex;flex-direction:column;background:#F9FAF5;overflow:hidden">
   {{ heroDots }}
-  <header style="position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:26px clamp(20px,5vw,72px);max-width:1240px;width:100%;margin:0 auto;box-sizing:border-box">
+  <header style="position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:26px clamp(20px,5vw,72px);max-width:1240px;width:100%;margin:0 auto">
     <div style="display:flex;align-items:center;gap:11px"><svg width="34" height="30" viewBox="0 0 116 100" style="display:block;flex:none" aria-hidden="true"><path d="M24,86 V32 L58,66 L92,32 V86" fill="none" stroke="#6E77EE" stroke-width="21" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12.5" cy="60" r="9.5" fill="#6E77EE"></circle><circle cx="41" cy="21" r="8" fill="#6E77EE"></circle><circle cx="58" cy="58" r="6" fill="#6E77EE"></circle></svg><span style="display:flex;flex-direction:column;line-height:1"><span style="font-family:'Unbounded',sans-serif;font-weight:700;font-size:14px;letter-spacing:-0.01em;color:#16181D">PUZZLES</span><span style="font-family:'Onest',sans-serif;font-size:8.5px;letter-spacing:0.28em;color:#B7BAC3;margin-top:3px">MARKETING</span></span></div>
     <a href="#contact" onClick="{{ goFormNav }}" data-nav style="font:500 14px 'Onest',sans-serif;color:rgba(22,24,29,.72)">Бесплатная консультация</a>
   </header>
-  <div style="position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;max-width:1240px;width:100%;margin:0 auto;box-sizing:border-box;padding:0 clamp(20px,5vw,72px) 12vh">
+  <div style="position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;max-width:1240px;width:100%;margin:0 auto;padding:0 clamp(20px,5vw,72px) 12vh">
     <p data-reveal="0" style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.55);margin:0 0 30px;display:flex;align-items:center;gap:14px">
       <span style="width:26px;height:1px;background:#6E77EE;display:inline-block"></span>Маркетинг полного цикла
     </p>

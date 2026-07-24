@@ -1,799 +1,634 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
-<title>Puzzles Marketing — маркетинг полного цикла</title>
-<meta name="description" content="Puzzles Marketing — маркетинг полного цикла: стратегия, сайт, реклама и контент как одна система.">
-<meta property="og:title" content="Puzzles Marketing — маркетинг полного цикла">
-<meta property="og:description" content="Маркетинг, который работает как система.">
+<title>Puzzles Marketing — комплексный маркетинг полного цикла</title>
+<meta name="description" content="Puzzles Marketing — комплексный маркетинг полного цикла: стратегия, позиционирование, сайт, реклама и контент как одна система. Бесплатная консультация и разбор бизнеса.">
+<link rel="canonical" href="https://nikitaapostol-hub.github.io/">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'><path%20d='M28,18%20H40%20A10,10%200%200%200%2060,18%20H72%20A10,10%200%200%201%2082,28%20V72%20A10,10%200%200%201%2072,82%20H28%20A10,10%200%200%201%2018,72%20V62%20A10,10%200%200%201%2018,40%20V28%20A10,10%200%200%201%2028,18%20Z'%20fill='%236E77EE'/></svg>">
+<meta property="og:site_name" content="Puzzles Marketing">
+<meta property="og:title" content="Puzzles Marketing — комплексный маркетинг полного цикла">
+<meta property="og:description" content="Стратегия, сайт, реклама и контент как одна система. Маркетинг, который работает как система.">
+<meta property="og:url" content="https://nikitaapostol-hub.github.io/">
+<meta property="og:image" content="https://nikitaapostol-hub.github.io/og-image.png">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F9FAF5">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Cpath%20d='M28,18%20H40%20A10,10%200%200%200%2060,18%20H72%20A10,10%200%200%201%2082,28%20V72%20A10,10%200%200%201%2072,82%20H28%20A10,10%200%200%201%2018,72%20V62%20A10,10%200%200%201%2018,40%20V28%20A10,10%200%200%201%2028,18%20Z'%20fill='%236E77EE'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-html{scroll-behavior:auto}
-body{margin:0;background:#F9FAF5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+:root{--bg:#F9FAF5;--ink:#16181D;--accent:#6E77EE;--line:#E4E4E4;--muted:#B7BAC3}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Onest',sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-a:hover{color:#6E77EE}
-::selection{background:#6E77EE;color:#F9FAF5}
-input::placeholder{color:#B7BAC3}
-[data-svc]{transition:border-color .25s ease-out,transform .3s ease-out}
-[data-svc]:hover{border-color:#6E77EE!important;transform:translateY(-4px)}
-[data-lift]{transition:transform .3s ease-out,border-color .3s ease-out}
-[data-lift]:hover{transform:translateY(-4px);border-color:#6E77EE}
-[data-appr]{transition:border-left-color .3s ease-out,transform .3s ease-out}
-[data-appr]:hover{border-left-color:#6E77EE!important;transform:translateX(5px)}
-[data-soon]{transition:opacity .3s ease-out,border-color .3s ease-out}
-[data-soon]:hover{opacity:1!important;border-color:#B7BAC3}
-[data-appheader]{position:fixed;left:0;right:0;top:0;z-index:90;background:rgba(249,250,245,.9);backdrop-filter:blur(10px);border-bottom:1px solid #E4E4E4;will-change:transform}
-@media (max-width:720px){[data-appnav]{display:none}}
-[data-svc]:hover [data-dot]{opacity:1!important}
-[data-svc]:hover [data-svcnum]{color:#6E77EE!important}
-[data-nav]{position:relative}
-[data-nav]::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:0;background:#6E77EE;transition:width .3s ease-out}
-[data-nav]:hover::after{width:100%}
-[data-hicon]{transition:transform .3s ease-out,color .3s ease-out}
-[data-ficon]{transition:border-color .3s ease-out}
-[data-ficon]:hover{border-color:#6E77EE!important}
-[data-ficon]:hover [data-hicon]{transform:translateY(-2px);color:#6E77EE}
-@keyframes hero-eyebrow{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
-html,body{overflow-x:hidden}
-[data-ideacols]{display:grid;grid-template-columns:repeat(3,1fr)}
-[data-ideacols]>div{border-left:1px solid #E4E4E4;padding:34px 24px 6px}
-[data-ideacols]>div:first-child{border-left:none;padding-left:0}
-@media (max-width:768px){
-  [data-screen-label]:not(#top):not(#contact){padding-top:clamp(56px,11vw,84px)!important;padding-bottom:clamp(56px,11vw,84px)!important}
-}
-@media (max-width:560px){
-  [data-pstep]{grid-template-columns:1fr!important;gap:8px!important}
-  [data-herostats]{flex-direction:column}
-  [data-herostats]>div{flex:1 1 auto!important;border-right:none!important;padding:16px 0!important;border-top:1px solid #E4E4E4}
-  [data-herostats]>div:first-child{border-top:none;padding-top:0!important}
-  [data-ideacols]{grid-template-columns:1fr}
-  [data-ideacols]>div{border-left:none!important;border-top:1px solid #E4E4E4;padding:24px 0 6px!important}
-  [data-ideacols]>div:first-child{border-top:none;padding-top:0!important}
-}
+::selection{background:var(--accent);color:var(--bg)}
+h1,h2,h3{font-family:'Unbounded',sans-serif;font-weight:600;letter-spacing:-0.02em;margin:0}
+em{font-style:italic}
+input::placeholder{color:var(--muted)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+.sec{padding:clamp(64px,9vw,140px) 0;position:relative}
+.eyebrow{font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.6);margin:0 0 22px;display:flex;align-items:center;gap:12px}
+.eyebrow .n{color:var(--accent);font-weight:600}
+.eyebrow.on-dark{color:var(--muted)}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+h1{font-size:clamp(36px,4.9vw,66px);line-height:1.08}
+h2{font-size:clamp(28px,3.4vw,46px);line-height:1.14}
+.lede{font:400 clamp(16px,1.6vw,19px)/1.6 'Onest',sans-serif;color:rgba(22,24,29,.72)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:500 16px 'Onest',sans-serif;border:none;cursor:pointer;border-radius:3px;transition:background .25s,transform .25s,color .25s,border-color .25s}
+.btn-primary{background:var(--accent);color:var(--bg);padding:17px 32px}
+.btn-primary:hover{background:#5A63DF;transform:translateY(-2px)}
+.btn-ghost{background:none;color:var(--ink);padding:16px 4px}
+.btn-ghost:hover{color:var(--accent)}
+.btn-line{background:none;border:1px solid var(--ink);color:var(--ink);padding:14px 26px;font:500 15px 'Onest',sans-serif}
+.btn-line:hover{border-color:var(--accent);color:var(--accent)}
+/* logo lockup */
+.lock{display:flex;align-items:center;gap:11px}
+.lock .mark{width:34px;height:33px;flex:none;display:block}
+.lock .wm{display:flex;flex-direction:column;line-height:1}
+.lock .wm b{font-family:'Unbounded',sans-serif;font-weight:700;font-size:15px;letter-spacing:-0.01em}
+.lock .wm span{font-family:'Onest',sans-serif;font-size:8.5px;letter-spacing:0.3em;color:var(--muted);margin-top:3px}
+.lock.dark .wm b{color:var(--bg)}
+.lock.light .wm b{color:var(--ink)}
+/* header */
+header.site{position:fixed;left:0;right:0;top:0;z-index:90;background:rgba(249,250,245,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transform:translateY(-100%);opacity:0;transition:transform .4s cubic-bezier(.22,.61,.36,1),opacity .3s;pointer-events:none}
+header.site.show{transform:none;opacity:1;pointer-events:auto}
+header.site .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:13px;padding-bottom:13px}
+header.site nav{display:flex;gap:30px;align-items:center}
+.navlink{position:relative;font:500 14px 'Onest',sans-serif;color:rgba(22,24,29,.72)}
+.navlink::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:0;background:var(--accent);transition:width .3s}
+.navlink:hover::after{width:100%}
+@media(max-width:720px){.navlink{display:none}}
+header.site .btn-primary{padding:11px 20px;font-size:14px}
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden}
+.hero .bar{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:26px clamp(20px,5vw,72px);max-width:1240px;width:100%;margin:0 auto}
+.hero .in{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:12vh}
+.hero .eyebrow .dash{width:26px;height:1px;background:var(--accent);display:inline-block}
+.hero h1{max-width:17ch;text-wrap:balance}
+.hero h1 .a{color:var(--accent)}
+.hero .lede{max-width:560px;margin:30px 0 44px;text-wrap:pretty}
+.hero .cta{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.stats{display:flex;flex-wrap:wrap;margin-top:clamp(52px,7vh,88px);border-top:1px solid var(--line);padding-top:28px;max-width:720px}
+.stats>div{flex:1 1 150px;padding:0 28px;border-right:1px solid var(--line)}
+.stats>div:first-child{padding-left:0}
+.stats>div:last-child{border-right:0}
+.stats .k{font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1}
+.stats .k.a{color:var(--accent)}
+.stats .v{font:400 13.5px/1.5 'Onest',sans-serif;color:rgba(22,24,29,.6);margin-top:8px}
+.bgpz{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.bgpz .p{position:absolute;opacity:.08}
+.bgpz svg{display:block}
+/* grids & cards */
+.grid{display:grid;gap:20px;margin-top:56px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.card{position:relative;border:1px solid var(--line);padding:32px 30px;transition:transform .25s,border-color .25s;background:var(--bg)}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.card .pzc{position:absolute;top:16px;right:16px;width:17px;height:17px;color:var(--muted);opacity:.5;transition:transform .2s,color .2s}
+.card:hover .pzc{color:var(--accent);opacity:1;transform:rotate(15deg) scale(1.12)}
+.card .num{font-family:'Unbounded',sans-serif;font-weight:500;font-size:14px;color:var(--muted);margin-bottom:22px;transition:color .2s}
+.card:hover .num{color:var(--accent)}
+.card h3{font:600 18px/1.35 'Onest',sans-serif}
+.quote{position:relative;border:1px solid var(--line);padding:38px 36px;transition:transform .25s,border-color .25s;background:var(--bg)}
+.quote:hover{transform:translateY(-4px);border-color:var(--accent)}
+.quote .pzc{position:absolute;top:16px;right:16px;width:16px;height:16px;color:var(--muted);opacity:0;transition:transform .25s,opacity .25s,color .25s}
+.quote:hover .pzc{color:var(--accent);opacity:1;transform:rotate(12deg)}
+.quote p{font:500 clamp(18px,1.7vw,21px)/1.45 'Onest',sans-serif;margin:0;text-wrap:pretty;max-width:38ch}
+.soon{border:1px solid var(--line);padding:30px 28px;opacity:.7;transition:opacity .3s,border-color .3s}
+.soon:hover{opacity:1;border-color:var(--muted)}
+.tag{display:inline-block;border:1px solid var(--line);color:rgba(22,24,29,.5);font:500 12px 'Onest',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px}
+/* inverse */
+.inv{background:var(--ink);color:var(--bg)}
+.inv h2{color:var(--bg)}
+.inv .lede{color:var(--muted)}
+.accline{height:2px;background:var(--accent);width:0;margin-top:30px;transition:width .9s ease-out .1s}
+.changes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:40px 0;margin-top:70px}
+.changes .it{border-left:1px solid rgba(249,250,245,.14);padding:6px 30px 6px 24px;transition:border-left-color .25s,transform .25s}
+.changes .it:hover{border-left-color:var(--accent);transform:translateX(5px)}
+.changes h3{font:600 17px/1.45 'Onest',sans-serif;color:var(--bg);margin:0 0 10px}
+.changes p{font:400 15px/1.6 'Onest',sans-serif;color:var(--muted);margin:0}
+/* process */
+.proc{position:relative;max-width:840px;margin:56px 0 0;padding-left:clamp(40px,5vw,64px)}
+.pstep{position:relative;display:grid;grid-template-columns:clamp(56px,7vw,96px) 1fr;gap:clamp(14px,3vw,40px);padding:34px 18px;border-bottom:1px solid var(--line);border-radius:6px;transition:transform .25s,background .25s}
+.pstep:last-child{border-bottom:0}
+.pstep:hover{transform:translateY(-4px);background:rgba(110,119,238,.04)}
+.pstep .pc{position:absolute;left:calc(6px - clamp(40px,5vw,64px));top:44px;width:24px;height:24px;transform:translateX(-50%);transition:transform .3s}
+.pstep:hover .pc{transform:translateX(-50%) rotate(9deg) scale(1.1)}
+.pstep .pc svg{display:block}
+.pstep .no{font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(26px,3vw,38px);color:var(--muted);line-height:1;transition:color .25s}
+.pstep:hover .no{color:var(--accent)}
+.pstep h3{font:600 20px/1.3 'Onest',sans-serif;margin:0 0 12px}
+.pstep p{font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.75);margin:0;max-width:62ch;text-wrap:pretty}
+/* entries */
+.entries{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px;margin-top:56px}
+.entry{border:1px solid var(--line);align-self:start;transition:border-color .25s}
+.entry:hover{border-color:var(--accent)}
+.entry .top{display:flex;align-items:center;gap:20px;padding:30px 28px;cursor:pointer}
+.entry .top .no{font-family:'Unbounded',sans-serif;font-weight:500;font-size:26px;color:var(--muted);line-height:1}
+.entry .top .t{flex:1;font:600 clamp(17px,1.6vw,19px)/1.35 'Onest',sans-serif}
+.entry .top .pk{width:20px;height:20px;color:var(--muted);transition:transform .35s,color .35s;flex:none}
+.entry.open .top .pk{transform:translateX(6px) rotate(90deg);color:var(--accent)}
+.entry .body{max-height:0;opacity:0;overflow:hidden;transition:max-height .45s ease-out,opacity .35s}
+.entry.open .body{max-height:340px;opacity:1}
+.entry .body .in{padding:0 28px 30px}
+.entry .body p{font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.72);margin:0 0 22px;text-wrap:pretty}
+/* about / manifest */
+.about{display:flex;flex-wrap:wrap;gap:clamp(40px,5vw,72px);align-items:flex-start}
+.about .vis{flex:1 1 300px;max-width:360px;aspect-ratio:4/4;border:1px solid var(--line);border-radius:8px;position:relative;overflow:hidden;background:#fff}
+.about .vis svg{display:block}
+.about .txt{flex:1 1 420px;max-width:640px}
+.about .txt p{font:400 17px/1.7 'Onest',sans-serif;color:rgba(22,24,29,.8);margin:0 0 20px;max-width:64ch;text-wrap:pretty}
+.about .txt p:last-child{margin-bottom:0}
+/* faq */
+.faqwrap{max-width:780px;border-top:1px solid var(--line);margin-top:32px}
+.qa{border-bottom:1px solid var(--line)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 2px;background:none;border:none;cursor:pointer;text-align:left;font:500 clamp(16px,1.6vw,18px)/1.4 'Onest',sans-serif;color:var(--ink);transition:color .25s}
+.qa button:hover{color:var(--accent)}
+.qa .pk{width:18px;height:18px;flex:none;color:var(--muted);transition:transform .3s,color .3s}
+.qa.open .pk{transform:rotate(90deg);color:var(--accent)}
+.qa .ans{max-height:0;opacity:0;overflow:hidden;transition:max-height .45s ease-out,opacity .35s}
+.qa.open .ans{max-height:360px;opacity:1}
+.qa .ans p{font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.72);margin:0;padding:0 2px 28px;max-width:64ch;text-wrap:pretty}
+/* final */
+.final{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.final .wrap{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;width:100%}
+.final h2{color:var(--bg)}
+.final .lede{max-width:560px;margin-top:24px}
+.final form{width:100%;max-width:460px;margin-top:52px;display:flex;flex-direction:column;gap:26px}
+.final input{width:100%;background:none;border:none;border-bottom:1px solid rgba(249,250,245,.22);color:var(--bg);font:400 16px 'Onest',sans-serif;padding:12px 2px;outline:none;transition:border-color .25s}
+.final input:focus{border-bottom-color:var(--accent)}
+.final .note{font:400 13px/1.5 'Onest',sans-serif;color:var(--muted);margin:0}
+.sent{max-width:460px;margin-top:52px;display:none}
+.sent svg{display:block;margin:0 0 20px}
+.sent p{font:500 20px/1.5 'Onest',sans-serif;color:var(--bg);margin:0}
+.finalpz{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.finalpz .fp{position:absolute}
+.finalpz svg{display:block}
+/* footer */
+footer.site{background:var(--ink);color:var(--muted);border-top:1px solid rgba(249,250,245,.1);padding:56px 0 40px}
+footer.site .row{display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between;align-items:baseline}
+footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-serif}
+.ficons{display:flex;gap:14px;align-items:center}
+.ficons a{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid rgba(249,250,245,.16);border-radius:3px;color:var(--muted);transition:border-color .25s,color .25s}
+.ficons a:hover{border-color:var(--accent);color:var(--accent)}
+.ficons svg{display:block}
+.motto{font:400 clamp(18px,2vw,22px)/1.5 'Onest',sans-serif;color:var(--muted);margin:72px 0 0;max-width:560px;text-wrap:pretty}
+.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 20px;margin-top:44px;font:400 13px 'Onest',sans-serif;color:rgba(183,186,195,.6)}
+/* sticky mobile cta */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:80;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(249,250,245,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);display:none}
+.sticky .btn-primary{width:100%;justify-content:center;padding:16px 24px}
+@media(max-width:720px){.sticky.show{display:block}}
+/* intro */
+.intro{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .5s ease-out}
+.intro.hide{opacity:0;pointer-events:none}
+.intro .stage{position:relative;width:220px;height:260px}
+.intro .ip{position:absolute;left:50%;top:92px;width:80px;height:80px;margin-left:-40px;transition:transform .7s cubic-bezier(.34,1.4,.5,1)}
+.intro .ip svg{display:block}
+.intro .wm{position:absolute;left:50%;bottom:6px;transform:translateX(-50%);text-align:center;opacity:0;transition:opacity .5s ease-out .7s}
+.intro .wm b{display:block;font-family:'Unbounded',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:var(--ink)}
+.intro .wm span{font-family:'Onest',sans-serif;font-size:11px;letter-spacing:.34em;color:var(--muted);padding-left:.34em}
+/* reveal */
+[data-rv]{opacity:0;transform:translateY(20px);transition:opacity .55s ease-out,transform .55s ease-out}
+[data-rv].in{opacity:1;transform:none}
+/* motion */
 @keyframes pzdrift{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 @keyframes pzpulse{0%,100%{opacity:.5}50%{opacity:1}}
-[data-dot] svg{transition:transform .2s ease-out,color .2s ease-out;display:block}
-[data-svc]:hover [data-dot]{opacity:1!important;color:#6E77EE!important}
-[data-svc]:hover [data-dot] svg{transform:rotate(15deg) scale(1.12)}
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  [data-rv]{opacity:1;transform:none}
+  .intro{display:none}
+}
+/* responsive */
+@media(max-width:768px){.sec{padding:clamp(56px,11vw,84px) 0}}
+@media(max-width:560px){
+  .pstep{grid-template-columns:1fr!important;gap:8px}
+  .stats{flex-direction:column;max-width:none}
+  .stats>div{flex:1 1 auto;border-right:0;padding:16px 0!important;border-top:1px solid var(--line)}
+  .stats>div:first-child{border-top:0;padding-top:0!important}
+}
 </style>
-</helmet>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Puzzles Marketing", "description": "Комплексный маркетинг полного цикла: стратегия, позиционирование, сайт, реклама и контент как одна система.", "url": "https://nikitaapostol-hub.github.io/", "image": "https://nikitaapostol-hub.github.io/og-image.png", "areaServed": "Online", "priceRange": "$$", "knowsLanguage": ["ru", "ro"], "serviceType": ["Маркетинговая стратегия", "Позиционирование", "Сайт и лендинг", "Реклама", "Контент и SMM", "Аналитика"]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит маркетинг под ключ?", "acceptedAnswer": {"@type": "Answer", "text": "Зависит от объёма. Разовая задача вроде лендинга или настройки рекламы считается отдельно, ведение проекта — помесячно. Точная цифра определяется после консультации, когда понятно, что именно нужно."}}, {"@type": "Question", "name": "Как организован процесс?", "acceptedAnswer": {"@type": "Answer", "text": "Стратегия, тексты, реклама и аналитика ведутся в рамках одного процесса — так не теряется логика между этапами. При необходимости для съёмки, дизайна или разработки подключаются проверенные специалисты, но управление и ответственность остаются в одном месте."}}, {"@type": "Question", "name": "Чем маркетинг отличается от таргетолога или SMM?", "acceptedAnswer": {"@type": "Answer", "text": "Таргетолог настраивает рекламу, SMM ведёт соцсети — это отдельные инструменты. Маркетинг решает, что и кому вообще продавать, через какие каналы и в каком порядке, и связывает инструменты в одну систему."}}, {"@type": "Question", "name": "У меня маленький бюджет. Есть смысл?", "acceptedAnswer": {"@type": "Answer", "text": "Часто да. Небольшой бюджет — повод не размазывать его на все каналы сразу. Иногда правильный ответ — сначала починить сайт, а рекламу не запускать вовсе. Это будет прямо сказано на консультации."}}, {"@type": "Question", "name": "Через сколько будет результат?", "acceptedAnswer": {"@type": "Answer", "text": "Первые данные — через две-три недели после запуска. Устойчивый результат по заявкам — обычно второй-третий месяц."}}, {"@type": "Question", "name": "Что происходит на бесплатной консультации?", "acceptedAnswer": {"@type": "Answer", "text": "Около часа разговора. Заранее изучаются сайт, реклама и соцсети, затем показывается полная картина: где теряются деньги, что стоит починить в первую очередь."}}]}]</script>
+</head>
+<body>
 
-<header data-appheader style="{{ headerStyle }}">
-  <div style="max-width:1240px;margin:0 auto;padding:14px clamp(20px,5vw,72px);display:flex;justify-content:space-between;align-items:center">
-    <a href="#top" onClick="{{ goTop }}" style="display:flex;align-items:center;gap:11px;text-decoration:none"><svg width="34" height="30" viewBox="0 0 116 100" style="display:block;flex:none" aria-hidden="true"><path d="M24,86 V32 L58,66 L92,32 V86" fill="none" stroke="#6E77EE" stroke-width="21" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12.5" cy="60" r="9.5" fill="#6E77EE"></circle><circle cx="41" cy="21" r="8" fill="#6E77EE"></circle><circle cx="58" cy="58" r="6" fill="#6E77EE"></circle></svg><span style="display:flex;flex-direction:column;line-height:1"><span style="font-family:'Unbounded',sans-serif;font-weight:700;font-size:14px;letter-spacing:-0.01em;color:#16181D">PUZZLES</span><span style="font-family:'Onest',sans-serif;font-size:8.5px;letter-spacing:0.28em;color:#B7BAC3;margin-top:3px">MARKETING</span></span></a>
-    <nav style="display:flex;gap:30px;align-items:center">
-      <span data-appnav style="display:flex;gap:30px;align-items:center">
-        <a data-nav href="#process" onClick="{{ navProcess }}" style="font:500 14px 'Onest',sans-serif;color:rgba(22,24,29,.72)">Процесс</a>
-        <a data-nav href="#services" onClick="{{ navServices }}" style="font:500 14px 'Onest',sans-serif;color:rgba(22,24,29,.72)">Что даёт</a>
-        <a data-nav href="#about" onClick="{{ navAbout }}" style="font:500 14px 'Onest',sans-serif;color:rgba(22,24,29,.72)">Кто я</a>
-      </span>
-      <button onClick="{{ goForm }}" style="background:#6E77EE;color:#F9FAF5;font:500 14px 'Onest',sans-serif;padding:11px 20px;border:none;border-radius:2px;cursor:pointer;transition:background .25s" style-hover="background:#5A63DF">Бесплатная консультация</button>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="pzmark" viewBox="250 668 580 572"><path fill="#6E77EE" d="M 392.731 821.175 C 411.637 820.131 474.107 816.784 488.268 829.943 C 518.696 858.218 539.801 902.492 566.001 934.992 C 589.709 964.402 626.62 902.48 655.07 942.132 C 678.735 972.092 647.989 1014.07 615.004 1002.96 C 596.558 996.749 572.744 972.93 567.74 1011.91 C 566.08 1026.41 567.146 1044.31 567.228 1059.28 C 567.473 1088.27 567.562 1117.27 567.495 1146.26 C 540.777 1139.37 538.382 1126.42 523.226 1107.54 C 513.081 1094.91 492.015 1057.13 480.397 1050.81 C 473.817 1051.11 471.775 1055.88 470.766 1061.8 L 470.961 1156.96 C 470.989 1169.16 471.905 1194.07 471.039 1205.53 C 470.842 1208.44 470.127 1211.29 468.928 1213.95 C 461.451 1230.44 441.034 1225.94 426.629 1226.55 C 404.942 1227.26 368.306 1229.18 361.61 1200.76 C 354.91 1172.32 360.733 1129.35 359.107 1099.4 C 358.496 1088.14 361.894 1063.84 348.151 1058.85 C 323.984 1050.09 311.753 1083.63 282.2 1066.63 C 273.305 1061.48 266.883 1052.95 264.408 1042.97 C 260.134 1025.16 269.207 1005.84 285.898 997.667 C 310.413 985.666 324.123 1013.22 346.219 1008.53 C 362.219 1005.13 359.217 974.411 359.151 962.082 L 358.788 895.855 C 358.625 865.199 354.344 830.697 392.731 821.175 z"/><path fill="#6E77EE" d="M 679.967 821.256 C 691.228 820.422 746.886 820.134 756.309 822.365 C 762.746 823.881 768.729 826.911 773.761 831.204 C 781.611 837.951 787.865 851.082 787.823 861.371 C 787.65 903.811 789.235 946.675 787.21 989.011 C 786.724 992.599 784.079 997.05 781.554 999.512 C 764.057 1016.57 749.401 990.409 730.531 991.662 C 708.359 993.135 690.74 1012.59 691.636 1034.19 C 692.776 1061.67 722.018 1082.05 747.793 1071.28 C 754.585 1068.4 760.533 1059.47 769.464 1059.39 C 784.14 1059.59 787.806 1073.27 787.904 1085.37 C 788.23 1114.9 788.026 1144.44 788.017 1173.97 C 787.989 1190.41 788.06 1201.9 776.037 1214.68 C 763.623 1227.87 749.597 1226.98 732.865 1227 C 725.417 1227 717.855 1227.08 710.336 1226.84 C 702.361 1226.44 687.758 1227.63 682.114 1220.8 C 672.285 1208.9 675.644 1180.7 675.782 1165.55 C 675.795 1133.29 675.487 1101.03 676.101 1068.77 C 677.757 1064.64 671.677 1044.28 665.125 1050.37 C 637.726 1075.84 617.493 1134.43 580.686 1146.81 C 579.46 1103.17 581.029 1058.02 580.572 1014.21 C 580.346 992.553 602.437 1012.47 610.535 1015.08 C 629.755 1021.29 650.693 1015.39 664.182 999.945 C 673.339 989.669 677.944 976.123 676.946 962.396 C 675.71 948.484 668.991 935.635 658.272 926.682 C 647.209 917.588 633.484 913.945 619.219 915.799 C 612.358 916.692 600.707 927.919 595.587 922.526 C 594.493 914.947 613.298 890.833 618.109 883.965 L 645.623 843.859 C 654.672 830.81 664.211 824.07 679.967 821.256 z"/></symbol></svg>
+
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="stage" id="introStage">
+    <div class="ip" data-i="0"><svg viewBox="0 0 100 100" width="80" height="80"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#16181D"/></svg></div>
+    <div class="ip" data-i="1"><svg viewBox="0 0 100 100" width="80" height="80"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg></div>
+    <div class="ip" data-i="2"><svg viewBox="0 0 100 100" width="80" height="80"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#16181D"/></svg></div>
+    <div class="ip" data-i="3"><svg viewBox="0 0 100 100" width="80" height="80"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#16181D"/></svg></div>
+    <div class="wm"><b>PUZZLES</b><span>MARKETING</span></div>
+  </div>
+</div>
+
+<header class="site" id="topbar">
+  <div class="wrap">
+    <a href="#top" class="lock light" aria-label="Puzzles Marketing"><svg class="mark"><use href="#pzmark"/></svg><span class="wm"><b>PUZZLES</b><span>MARKETING</span></span></a>
+    <nav aria-label="Основная навигация">
+      <a class="navlink" href="#process">Процесс</a>
+      <a class="navlink" href="#services">Что даёт</a>
+      <a class="navlink" href="#approach">Подход</a>
+      <a class="btn btn-primary" href="#contact">Бесплатная консультация</a>
     </nav>
   </div>
 </header>
 
-<section id="top" data-screen-label="01 Первый экран" style="position:relative;min-height:100vh;display:flex;flex-direction:column;background:#F9FAF5;overflow:hidden">
-  {{ heroDots }}
-  <header style="position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:26px clamp(20px,5vw,72px);max-width:1240px;width:100%;margin:0 auto">
-    <div style="display:flex;align-items:center;gap:11px"><svg width="34" height="30" viewBox="0 0 116 100" style="display:block;flex:none" aria-hidden="true"><path d="M24,86 V32 L58,66 L92,32 V86" fill="none" stroke="#6E77EE" stroke-width="21" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12.5" cy="60" r="9.5" fill="#6E77EE"></circle><circle cx="41" cy="21" r="8" fill="#6E77EE"></circle><circle cx="58" cy="58" r="6" fill="#6E77EE"></circle></svg><span style="display:flex;flex-direction:column;line-height:1"><span style="font-family:'Unbounded',sans-serif;font-weight:700;font-size:14px;letter-spacing:-0.01em;color:#16181D">PUZZLES</span><span style="font-family:'Onest',sans-serif;font-size:8.5px;letter-spacing:0.28em;color:#B7BAC3;margin-top:3px">MARKETING</span></span></div>
-    <a href="#contact" onClick="{{ goFormNav }}" data-nav style="font:500 14px 'Onest',sans-serif;color:rgba(22,24,29,.72)">Бесплатная консультация</a>
-  </header>
-  <div style="position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;max-width:1240px;width:100%;margin:0 auto;padding:0 clamp(20px,5vw,72px) 12vh">
-    <p data-reveal="0" style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.55);margin:0 0 30px;display:flex;align-items:center;gap:14px">
-      <span style="width:26px;height:1px;background:#6E77EE;display:inline-block"></span>Маркетинг полного цикла
-    </p>
-    <h1 data-reveal="80" style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(36px,4.9vw,66px);line-height:1.1;letter-spacing:-0.025em;color:#16181D;margin:0;max-width:16ch;text-wrap:balance">Маркетинг, который <span style="color:#6E77EE">работает</span> как система</h1>
-    <p data-reveal="160" style="font:400 clamp(16px,1.6vw,19px)/1.6 'Onest',sans-serif;color:rgba(22,24,29,.72);max-width:560px;margin:30px 0 44px;text-wrap:pretty">Стратегия, сайт, реклама и контент работают как одна система — видно, откуда приходят клиенты, а не только куда уходит бюджет.</p>
-    <div data-reveal="240" style="display:flex;gap:26px;align-items:center;flex-wrap:wrap">
-      <button onClick="{{ goForm }}" style="display:inline-flex;align-items:center;background:#6E77EE;color:#F9FAF5;font:500 16px 'Onest',sans-serif;padding:17px 32px;border:none;border-radius:2px;cursor:pointer;transition:background .25s,transform .25s" style-hover="background:#5A63DF;transform:translateY(-2px)">Бесплатная консультация</button>
-      <button onClick="{{ goProcess }}" style="display:inline-flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;font:500 16px 'Onest',sans-serif;color:#16181D;padding:16px 4px;transition:color .25s" style-hover="color:#6E77EE">Как это устроено <span style="font-size:17px;line-height:1">↓</span></button>
+<main>
+<section class="hero" id="top">
+  <div class="bgpz" id="heroBg" aria-hidden="true"></div>
+  <div class="bar">
+    <div class="lock light"><svg class="mark"><use href="#pzmark"/></svg><span class="wm"><b>PUZZLES</b><span>MARKETING</span></span></div>
+    <a class="navlink" href="#contact">Бесплатная консультация</a>
+  </div>
+  <div class="wrap in">
+    <p class="eyebrow" data-rv><span class="dash"></span>Маркетинг полного цикла</p>
+    <h1 data-rv>Маркетинг, который <span class="a">работает</span> как система</h1>
+    <p class="lede" data-rv>Стратегия, сайт, реклама и контент работают как одна система — видно, откуда приходят клиенты, а не только куда уходит бюджет.</p>
+    <div class="cta" data-rv>
+      <a class="btn btn-primary" href="#contact">Бесплатная консультация</a>
+      <a class="btn btn-ghost" href="#process">Как это устроено <span aria-hidden="true">↓</span></a>
     </div>
-    <div data-reveal="340" data-herostats style="display:flex;flex-wrap:wrap;margin-top:clamp(52px,7vh,88px);border-top:1px solid #E4E4E4;padding-top:28px;max-width:720px;gap:0">
-      <div style="flex:1 1 150px;padding-right:28px;border-right:1px solid #E4E4E4">
-        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);color:#16181D;line-height:1">Комплексно</div>
-        <div style="font:400 13.5px/1.5 'Onest',sans-serif;color:rgba(22,24,29,.6);margin-top:8px">весь процесс без разрывов между этапами</div>
-      </div>
-      <div style="flex:1 1 150px;padding:0 28px;border-right:1px solid #E4E4E4">
-        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);color:#16181D;line-height:1">2–3&nbsp;нед.</div>
-        <div style="font:400 13.5px/1.5 'Onest',sans-serif;color:rgba(22,24,29,.6);margin-top:8px">до первых данных</div>
-      </div>
-      <div style="flex:1 1 150px;padding-left:28px">
-        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);color:#6E77EE;line-height:1">Бесплатно</div>
-        <div style="font:400 13.5px/1.5 'Onest',sans-serif;color:rgba(22,24,29,.6);margin-top:8px">первая консультация</div>
-      </div>
+    <div class="stats" data-rv>
+      <div><div class="k">Комплексно</div><div class="v">весь процесс без разрывов между этапами</div></div>
+      <div><div class="k">2–3 нед.</div><div class="v">до первых данных</div></div>
+      <div><div class="k a">Бесплатно</div><div class="v">первая консультация</div></div>
     </div>
   </div>
 </section>
 
-<section data-screen-label="01б Идея" style="padding:clamp(84px,9vw,140px) 0">
-  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
-    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Идея</p>
-    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0;max-width:760px;text-wrap:balance">Маркетинг — это <em>не реклама</em></h2>
+<section class="sec" id="idea">
+  <div class="wrap">
+    <p class="eyebrow" data-rv><span class="n">01</span> Идея</p>
+    <h2 data-rv>Что такое маркетинг <em>на самом деле</em></h2>
     <div style="max-width:68ch;margin-top:34px;display:flex;flex-direction:column;gap:20px">
-      <p data-reveal style="font:400 clamp(16px,1.5vw,18px)/1.7 'Onest',sans-serif;color:rgba(22,24,29,.78);margin:0;text-wrap:pretty">Реклама — то, что видно. Маркетинг — то, что решает, куда идут деньги и почему.</p>
-      <p data-reveal style="font:400 clamp(16px,1.5vw,18px)/1.7 'Onest',sans-serif;color:rgba(22,24,29,.78);margin:0;text-wrap:pretty">Пока на эти вопросы отвечают в разных местах — сайт у одного, реклама у другого, соцсети у третьего — ответы расходятся между собой. Это чувствуется, даже если не объяснить словами. Маркетинг, который работает как система, отвечает на всё это согласованно:</p>
+      <p class="lede" data-rv>Маркетинг часто путают с рекламой. Реклама — это только то, что видно снаружи: баннеры, посты, объявления. Сам маркетинг начинается гораздо раньше и отвечает на вопросы, от которых зависит всё остальное.</p>
+      <p class="lede" data-rv>Кому этот продукт действительно нужен. Почему человек выберет именно его, а не то же самое у соседа. В какой момент он готов принять решение и что ему для этого не хватает. Пока на эти вопросы отвечают в разных местах и по-разному, бизнес тратит силы вхолостую. Когда на них есть общий ответ — каждый рубль в рекламе начинает работать, потому что за ним стоит понимание.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px;margin-top:clamp(44px,6vw,64px)">
-      <div data-svc data-reveal="0" style="position:relative;border:1px solid #E4E4E4;padding:30px 28px"><div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div><div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:22px;transition:color .25s">01</div><h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0">Кому вы нужны</h3></div>
-      <div data-svc data-reveal="80" style="position:relative;border:1px solid #E4E4E4;padding:30px 28px"><div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div><div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:22px;transition:color .25s">02</div><h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0">Почему выбирают вас</h3></div>
-      <div data-svc data-reveal="160" style="position:relative;border:1px solid #E4E4E4;padding:30px 28px"><div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div><div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:22px;transition:color .25s">03</div><h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0">Как об этом узнают</h3></div>
-      <div data-svc data-reveal="0" style="position:relative;border:1px solid #E4E4E4;padding:30px 28px"><div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div><div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:22px;transition:color .25s">04</div><h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0">Что убеждает выбрать именно сейчас</h3></div>
-      <div data-svc data-reveal="80" style="position:relative;border:1px solid #E4E4E4;padding:30px 28px"><div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div><div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:22px;transition:color .25s">05</div><h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0">Что удерживает клиента после первой покупки</h3></div>
-      <div data-svc data-reveal="160" style="position:relative;border:1px solid #E4E4E4;padding:30px 28px"><div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div><div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:22px;transition:color .25s">06</div><h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0">Откуда видно, что это работает</h3></div>
-    </div>
-  </div>
-</section>
-
-<section data-screen-label="02 Узнавание" style="padding:clamp(84px,9vw,140px) 0">
-  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
-    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Ситуация</p>
-    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0;max-width:860px;text-wrap:balance">Если что-то из этого про вас — дальше есть смысл читать</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:20px;margin-top:60px">
-      <div data-reveal="0" data-lift style="border:1px solid #E4E4E4;padding:38px 36px"><p style="font:500 clamp(18px,1.7vw,21px)/1.45 'Onest',sans-serif;color:#16181D;margin:0;text-wrap:pretty">«Реклама крутится, деньги уходят. Откуда берутся клиенты — не знаю»</p></div>
-      <div data-reveal="100" data-lift style="border:1px solid #E4E4E4;padding:38px 36px"><p style="font:500 clamp(18px,1.7vw,21px)/1.45 'Onest',sans-serif;color:#16181D;margin:0;text-wrap:pretty">«Сайт делал один, рекламу ведёт второй, соцсети третий. За результат не отвечает никто»</p></div>
-      <div data-reveal="200" data-lift style="border:1px solid #E4E4E4;padding:38px 36px"><p style="font:500 clamp(18px,1.7vw,21px)/1.45 'Onest',sans-serif;color:#16181D;margin:0;text-wrap:pretty">«Контент выходит регулярно. Зачем именно такой — объяснить не может никто»</p></div>
-      <div data-reveal="300" data-lift style="border:1px solid #E4E4E4;padding:38px 36px"><p style="font:500 clamp(18px,1.7vw,21px)/1.45 'Onest',sans-serif;color:#16181D;margin:0;text-wrap:pretty">«Каждый подрядчик показывает хорошие цифры. Продажи при этом не растут»</p></div>
+    <div class="grid g3">
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">01</div><h3>Кому вы нужны</h3></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">02</div><h3>Почему выбирают вас</h3></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">03</div><h3>Как об этом узнают</h3></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">04</div><h3>Что убеждает выбрать именно сейчас</h3></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">05</div><h3>Что удерживает клиента после первой покупки</h3></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">06</div><h3>Откуда видно, что это работает</h3></div>
     </div>
   </div>
 </section>
 
-<section data-screen-label="03 Как становится" style="background:#16181D;padding:clamp(84px,9vw,140px) 0">
-  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
-    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#B7BAC3;margin:0 0 22px">Подход</p>
-    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#F9FAF5;margin:0;max-width:820px;text-wrap:balance">Что <em>меняется</em>, когда всё работает как система</h2>
-    <div data-accline style="height:2px;background:#6E77EE;width:110px;margin-top:30px"></div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:40px 0;margin-top:70px">
-      <div data-reveal="0" data-appr style="border-left:1px solid rgba(249,250,245,.14);padding:6px 30px 6px 24px">
-        <h3 style="font:600 17px/1.45 'Onest',sans-serif;color:#F9FAF5;margin:0 0 10px">Видно, сколько стоит один клиент.</h3>
-        <p style="font:400 15px/1.6 'Onest',sans-serif;color:#B7BAC3;margin:0">И можно решать, устраивает это или нет.</p>
-      </div>
-      <div data-reveal="100" data-appr style="border-left:1px solid rgba(249,250,245,.14);padding:6px 30px 6px 24px">
-        <h3 style="font:600 17px/1.45 'Onest',sans-serif;color:#F9FAF5;margin:0 0 10px">Понятно, какой канал приносит, а какой ест бюджет.</h3>
-        <p style="font:400 15px/1.6 'Onest',sans-serif;color:#B7BAC3;margin:0">Деньги перестают уходить в никуда.</p>
-      </div>
-      <div data-reveal="200" data-appr style="border-left:1px solid rgba(249,250,245,.14);padding:6px 30px 6px 24px">
-        <h3 style="font:600 17px/1.45 'Onest',sans-serif;color:#F9FAF5;margin:0 0 10px">Ответственность не размазана между подрядчиками.</h3>
-        <p style="font:400 15px/1.6 'Onest',sans-serif;color:#B7BAC3;margin:0">За результат отвечает один процесс, а не пять разных отчётов.</p>
-      </div>
-      <div data-reveal="300" data-appr style="border-left:1px solid rgba(249,250,245,.14);padding:6px 30px 6px 24px">
-        <h3 style="font:600 17px/1.45 'Onest',sans-serif;color:#F9FAF5;margin:0 0 10px">Решения принимаются по цифрам.</h3>
-        <p style="font:400 15px/1.6 'Onest',sans-serif;color:#B7BAC3;margin:0">А не по тому, что «вроде красиво получилось».</p>
-      </div>
+<section class="sec" id="why" style="padding-top:0">
+  <div class="wrap">
+    <hr class="rule">
+    <div style="max-width:820px;padding-top:clamp(56px,9vw,120px)">
+      <p class="eyebrow" data-rv><span class="n">02</span> Зачем маркетинг</p>
+      <h2 data-rv>Почему без маркетинга <em>не обойтись</em></h2>
+      <p class="lede" data-rv style="margin-top:28px">Можно делать лучший продукт в городе и остаться незамеченным. Рынок не выбирает лучшее — он выбирает то, что понял и запомнил. Маркетинг — это работа, которая переводит реальную ценность бизнеса на язык, понятный клиенту, и доводит её до него в нужный момент.</p>
+      <p class="lede" data-rv style="margin-top:20px">Без этой работы даже сильный бизнес остаётся неполным: продукт есть, а спроса на него нет; клиенты есть, но приходят случайно и непредсказуемо. Маркетинг превращает случайность в систему — и бизнес наконец начинает расти не рывками, а управляемо.</p>
     </div>
   </div>
 </section>
 
-<section id="process" data-screen-label="04 Процесс" style="padding:clamp(84px,9vw,140px) 0;background:#F9FAF5">
-  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
-    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Процесс</p>
-    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0">Как выглядит работа</h2>
-    <div id="proc-list" style="position:relative;max-width:820px;margin:56px 0 0;padding-left:clamp(30px,4.5vw,60px)">
-      <div data-reveal data-pstep style="position:relative;display:grid;grid-template-columns:clamp(62px,8vw,108px) 1fr;gap:clamp(14px,3vw,40px);padding:44px 0;border-bottom:1px solid #E4E4E4">
-        <div data-procdot style="position:absolute;left:calc(5px - clamp(30px,4.5vw,68px));top:66px;width:9px;height:9px;border-radius:50%;background:#B7BAC3;transform:translate(-50%,-50%);transition:background .3s,transform .3s"></div>
-        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(28px,3vw,40px);color:#B7BAC3;line-height:1">01</div>
-        <div>
-          <h3 style="font:600 20px/1.3 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Консультация</h3>
-          <p style="font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.75);margin:0;max-width:62ch;text-wrap:pretty">Разбирается всё, что уже сделано: сайт, реклама, соцсети, цифры. Так находится, где именно теряются деньги и клиенты. Это бесплатно и ни к чему не обязывает — понимание своей ситуации остаётся у вас, даже если дальнейшая работа не начнётся.</p>
-        </div>
-      </div>
-      <div data-reveal data-pstep style="position:relative;display:grid;grid-template-columns:clamp(62px,8vw,108px) 1fr;gap:clamp(14px,3vw,40px);padding:44px 0;border-bottom:1px solid #E4E4E4">
-        <div data-procdot style="position:absolute;left:calc(5px - clamp(30px,4.5vw,68px));top:66px;width:9px;height:9px;border-radius:50%;background:#B7BAC3;transform:translate(-50%,-50%);transition:background .3s,transform .3s"></div>
-        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(28px,3vw,40px);color:#B7BAC3;line-height:1">02</div>
-        <div>
-          <h3 style="font:600 20px/1.3 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Стратегия</h3>
-          <p style="font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.75);margin:0;max-width:62ch;text-wrap:pretty">Определяется, кто главный клиент, чем бизнес отличается от соседей по рынку и через какие каналы до этого клиента реально дотянуться. Без этого шага любая реклама — стрельба вслепую.</p>
-        </div>
-      </div>
-      <div data-reveal data-pstep style="position:relative;display:grid;grid-template-columns:clamp(62px,8vw,108px) 1fr;gap:clamp(14px,3vw,40px);padding:44px 0;border-bottom:1px solid #E4E4E4">
-        <div data-procdot style="position:absolute;left:calc(5px - clamp(30px,4.5vw,68px));top:66px;width:9px;height:9px;border-radius:50%;background:#B7BAC3;transform:translate(-50%,-50%);transition:background .3s,transform .3s"></div>
-        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(28px,3vw,40px);color:#B7BAC3;line-height:1">03</div>
-        <div>
-          <h3 style="font:600 20px/1.3 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Сборка</h3>
-          <p style="font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.75);margin:0;max-width:62ch;text-wrap:pretty">Собирается то, чего не хватает: сайт или лендинг, аналитика, тексты, рекламные кампании, контент-план. Аналитика подключается сразу, а не после запуска — иначе первые недели данных теряются без возврата.</p>
-        </div>
-      </div>
-      <div data-reveal data-pstep style="position:relative;display:grid;grid-template-columns:clamp(62px,8vw,108px) 1fr;gap:clamp(14px,3vw,40px);padding:44px 0;border-bottom:1px solid #E4E4E4">
-        <div data-procdot style="position:absolute;left:calc(5px - clamp(30px,4.5vw,68px));top:66px;width:9px;height:9px;border-radius:50%;background:#B7BAC3;transform:translate(-50%,-50%);transition:background .3s,transform .3s"></div>
-        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(28px,3vw,40px);color:#B7BAC3;line-height:1">04</div>
-        <div>
-          <h3 style="font:600 20px/1.3 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Запуск и данные</h3>
-          <p style="font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.75);margin:0;max-width:62ch;text-wrap:pretty">Кампании запускаются с одного сегмента, а не со всех сразу — так быстрее видно, что действительно работает. Первые выводы формируются в течение двух-трёх недель.</p>
-        </div>
-      </div>
-      <div data-reveal data-pstep style="position:relative;display:grid;grid-template-columns:clamp(62px,8vw,108px) 1fr;gap:clamp(14px,3vw,40px);padding:44px 0">
-        <div data-procdot style="position:absolute;left:calc(5px - clamp(30px,4.5vw,68px));top:66px;width:9px;height:9px;border-radius:50%;background:#B7BAC3;transform:translate(-50%,-50%);transition:background .3s,transform .3s"></div>
-        <div style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:clamp(28px,3vw,40px);color:#B7BAC3;line-height:1">05</div>
-        <div>
-          <h3 style="font:600 20px/1.3 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Корректировка</h3>
-          <p style="font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.75);margin:0;max-width:62ch;text-wrap:pretty">Раз в месяц формируется честная картина: что сработало, что нет, что меняется дальше. Если предыдущая гипотеза не подтвердилась, это называется прямо, а не сглаживается в отчёте.</p>
-        </div>
-      </div>
+<section class="sec" id="situation">
+  <div class="wrap">
+    <p class="eyebrow" data-rv><span class="n">03</span> Ситуация</p>
+    <h2 data-rv style="max-width:860px;text-wrap:balance">Если что-то из этого про вас — дальше есть смысл читать</h2>
+    <div class="grid g2">
+      <div class="quote" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><p>«Реклама крутится, деньги уходят. Откуда берутся клиенты — не знаю»</p></div>
+      <div class="quote" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><p>«Сайт делал один, рекламу ведёт второй, соцсети третий. За результат не отвечает никто»</p></div>
+      <div class="quote" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><p>«Контент выходит регулярно. Зачем именно такой — объяснить не может никто»</p></div>
+      <div class="quote" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><p>«Каждый подрядчик показывает хорошие цифры. Продажи при этом не растут»</p></div>
     </div>
   </div>
 </section>
 
-<section id="services" data-screen-label="05 Что даёт" style="padding:clamp(84px,9vw,140px) 0">
-  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
-    <div style="border-top:1px solid #E4E4E4;margin-bottom:clamp(84px,9vw,140px)"></div>
-    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Что это даёт</p>
-    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0">Что маркетинг <em>даёт</em> бизнесу</h2>
-    <p data-reveal style="font:400 17px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:20px 0 0;max-width:520px;text-wrap:pretty">Не обязательно всё сразу. Начинаем с того, что даст результат быстрее.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px;margin-top:56px">
-      <div data-svc data-reveal="0" style="position:relative;border:1px solid #E4E4E4;padding:32px 30px">
-        <div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div>
-        <div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:24px;transition:color .25s">01</div>
-        <h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Стратегия и позиционирование</h3>
-        <p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0;text-wrap:pretty">Вы понимаете, кому продаёте и почему выбирают вас, а не соседа с такой же ценой.</p>
+<section class="sec inv" id="changes">
+  <div class="wrap">
+    <p class="eyebrow on-dark" data-rv><span class="n">04</span> Результат</p>
+    <h2 data-rv style="max-width:820px;text-wrap:balance">Что <em>меняется</em>, когда всё работает как система</h2>
+    <div class="accline" data-accline></div>
+    <div class="changes">
+      <div class="it" data-rv><h3>Видно, сколько стоит один клиент.</h3><p>И можно решать, устраивает это или нет.</p></div>
+      <div class="it" data-rv><h3>Понятно, какой канал приносит, а какой ест бюджет.</h3><p>Деньги перестают уходить в никуда.</p></div>
+      <div class="it" data-rv><h3>Ответственность не размазана между подрядчиками.</h3><p>За результат отвечает один процесс, а не пять разных отчётов.</p></div>
+      <div class="it" data-rv><h3>Решения принимаются по цифрам.</h3><p>А не по тому, что «вроде красиво получилось».</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <p class="eyebrow" data-rv><span class="n">05</span> Процесс</p>
+    <h2 data-rv>Как выглядит работа</h2>
+    <div class="proc" id="proc">
+      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no">01</div><div><h3>Консультация</h3><p>Разбирается всё, что уже сделано: сайт, реклама, соцсети, цифры. Так находится, где именно теряются деньги и клиенты. Это бесплатно и ни к чему не обязывает — понимание своей ситуации остаётся у вас, даже если дальнейшая работа не начнётся.</p></div></div>
+      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no">02</div><div><h3>Стратегия</h3><p>Определяется, кто главный клиент, чем бизнес отличается от соседей по рынку и через какие каналы до этого клиента реально дотянуться. Без этого шага любая реклама — стрельба вслепую.</p></div></div>
+      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no">03</div><div><h3>Сборка</h3><p>Собирается то, чего не хватает: сайт или лендинг, аналитика, тексты, рекламные кампании, контент-план. Аналитика подключается сразу, а не после запуска — иначе первые недели данных теряются без возврата.</p></div></div>
+      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no">04</div><div><h3>Запуск и данные</h3><p>Кампании запускаются с одного сегмента, а не со всех сразу — так быстрее видно, что действительно работает. Первые выводы формируются в течение двух-трёх недель.</p></div></div>
+      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no">05</div><div><h3>Корректировка</h3><p>Раз в месяц формируется честная картина: что сработало, что нет, что меняется дальше. Если предыдущая гипотеза не подтвердилась, это называется прямо, а не сглаживается в отчёте.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <hr class="rule" style="margin-bottom:clamp(56px,9vw,120px)">
+    <p class="eyebrow" data-rv><span class="n">06</span> Что это даёт</p>
+    <h2 data-rv>Что маркетинг <em>даёт</em> бизнесу</h2>
+    <p class="lede" data-rv style="margin-top:20px;max-width:520px">Не обязательно всё сразу. Начинаем с того, что даст результат быстрее.</p>
+    <div class="grid g3">
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">01</div><h3 style="margin-bottom:12px">Стратегия и позиционирование</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Вы понимаете, кому продаёте и почему выбирают вас, а не соседа с такой же ценой.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">02</div><h3 style="margin-bottom:12px">Сайт и лендинг</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Страница, которая объясняет ценность и приводит заявки. Аналитика встроена с первого дня.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">03</div><h3 style="margin-bottom:12px">Реклама</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Бюджет уходит в каналы, которые приносят, а не в те, которые привычны.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">04</div><h3 style="margin-bottom:12px">Контент и соцсети</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Публикации, которые готовят человека к покупке, а не просто заполняют ленту.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">05</div><h3 style="margin-bottom:12px">Воронки и рассылки</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Человек, который не купил сегодня, не теряется, а постепенно доходит до решения.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">06</div><h3 style="margin-bottom:12px">Мероприятия</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Событие, за участие в котором люди платят, потому что понимают, что получат.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="start">
+  <div class="wrap">
+    <p class="eyebrow" data-rv><span class="n">07</span> С чего начать</p>
+    <h2 data-rv>Дальше выбор <em>за вами</em></h2>
+    <div class="entries" id="entries">
+      <div class="entry" data-rv data-entry>
+        <div class="top"><span class="no">01</span><span class="t">У меня уже что-то работает</span><svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></div>
+        <div class="body"><div class="in"><p>Есть сайт, идёт реклама, ведутся соцсети — но непонятно, что из этого приносит результат. Начинаем с разбора того, что уже есть: чиню то, что теряет деньги, и убираю то, что их просто ест. Часто на этом этапе бюджет не нужно увеличивать вовсе.</p><a class="btn btn-line" href="#contact">Разобрать то, что есть</a></div></div>
       </div>
-      <div data-svc data-reveal="80" style="position:relative;border:1px solid #E4E4E4;padding:32px 30px">
-        <div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div>
-        <div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:24px;transition:color .25s">02</div>
-        <h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Сайт и лендинг</h3>
-        <p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0;text-wrap:pretty">Страница, которая объясняет ценность и приводит заявки. Аналитика встроена с первого дня.</p>
-      </div>
-      <div data-svc data-reveal="160" style="position:relative;border:1px solid #E4E4E4;padding:32px 30px">
-        <div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div>
-        <div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:24px;transition:color .25s">03</div>
-        <h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Реклама</h3>
-        <p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0;text-wrap:pretty">Бюджет уходит в каналы, которые приносят, а не в те, которые привычны.</p>
-      </div>
-      <div data-svc data-reveal="240" style="position:relative;border:1px solid #E4E4E4;padding:32px 30px">
-        <div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div>
-        <div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:24px;transition:color .25s">04</div>
-        <h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Контент и соцсети</h3>
-        <p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0;text-wrap:pretty">Публикации, которые готовят человека к покупке, а не просто заполняют ленту.</p>
-      </div>
-      <div data-svc data-reveal="320" style="position:relative;border:1px solid #E4E4E4;padding:32px 30px">
-        <div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div>
-        <div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:24px;transition:color .25s">05</div>
-        <h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Воронки и рассылки</h3>
-        <p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0;text-wrap:pretty">Человек, который не купил сегодня, не теряется, а постепенно доходит до решения.</p>
-      </div>
-      <div data-svc data-reveal="400" style="position:relative;border:1px solid #E4E4E4;padding:32px 30px">
-        <div data-dot style="position:absolute;top:18px;right:18px;width:6px;height:6px;border-radius:50%;background:#6E77EE;opacity:0;transition:opacity .25s"></div>
-        <div data-svcnum style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:14px;color:#B7BAC3;margin-bottom:24px;transition:color .25s">06</div>
-        <h3 style="font:600 18px/1.35 'Onest',sans-serif;color:#16181D;margin:0 0 12px">Мероприятия</h3>
-        <p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0;text-wrap:pretty">Событие, за участие в котором люди платят, потому что понимают, что получат.</p>
+      <div class="entry" data-rv data-entry>
+        <div class="top"><span class="no">02</span><span class="t">Начинаю с нуля</span><svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></div>
+        <div class="body"><div class="in"><p>Есть продукт и желание, остального пока нет. Тогда собираем всё по порядку: сначала кому и что продаём, потом сайт, потом трафик. В таком порядке, а не наоборот — иначе реклама поведёт людей туда, где их нечем убедить.</p><a class="btn btn-line" href="#contact">Собрать с нуля</a></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section data-screen-label="05б Две точки входа" style="padding:clamp(84px,9vw,140px) 0">
-  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
-    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">С чего начать</p>
-    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0">Дальше выбор <em>за вами</em></h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px;margin-top:56px;text-align:left">
-      <sc-for list="{{ entries }}" as="en" hint-placeholder-count="2">
-        <div data-reveal onMouseEnter="{{ en.enter }}" onMouseLeave="{{ en.leave }}" style="border:1px solid #E4E4E4;align-self:start">
-          <button onClick="{{ en.toggle }}" style="width:100%;display:flex;align-items:center;gap:22px;padding:30px 28px;background:none;border:none;cursor:pointer;text-align:left">
-            <span style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:500;font-size:26px;color:#B7BAC3;line-height:1">{{ en.n }}</span>
-            <span style="flex:1;font:600 clamp(17px,1.6vw,19px)/1.35 'Onest',sans-serif;color:#16181D">{{ en.title }}</span>
-            <span style="{{ en.plusStyle }}">+</span>
-          </button>
-          <div style="{{ en.bodyStyle }}">
-            <div style="padding:0 28px 32px">
-              <p style="font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.72);margin:0;text-wrap:pretty">{{ en.body }}</p>
-              <button onClick="{{ en.choose }}" style="background:none;border:1px solid #16181D;color:#16181D;padding:14px 26px;font:500 15px 'Onest',sans-serif;cursor:pointer;margin-top:24px;border-radius:2px;transition:border-color .25s,color .25s" style-hover="border-color:#6E77EE;color:#6E77EE">{{ en.cta }}</button>
-            </div>
-          </div>
-        </div>
-      </sc-for>
+<section class="sec" id="razbory">
+  <div class="wrap">
+    <hr class="rule" style="margin-bottom:clamp(56px,9vw,120px)">
+    <p class="eyebrow" data-rv><span class="n">08</span> Скоро</p>
+    <h2 data-rv>Разборы</h2>
+    <p class="lede" data-rv style="margin-top:20px;max-width:60ch">Регулярно разбираю чужие бизнесы: что у них получилось, что нет и почему. Не для критики, а чтобы показать, как принимаются решения в маркетинге. Первые разборы скоро здесь.</p>
+    <div class="grid g3">
+      <article class="soon" data-rv><span class="tag">Скоро</span><p style="font:500 17px/1.45 'Onest',sans-serif;color:rgba(22,24,29,.55);margin:22px 0 0">Почему у отеля идеальная реклама и пустые номера</p></article>
+      <article class="soon" data-rv><span class="tag">Скоро</span><p style="font:500 17px/1.45 'Onest',sans-serif;color:rgba(22,24,29,.55);margin:22px 0 0">Кофейня с очередью и кофейня без. Разница не в кофе</p></article>
+      <article class="soon" data-rv><span class="tag">Скоро</span><p style="font:500 17px/1.45 'Onest',sans-serif;color:rgba(22,24,29,.55);margin:22px 0 0">Что не так с сайтами клиник</p></article>
     </div>
+    <a href="/razbory" class="btn btn-line" style="margin-top:32px;pointer-events:none;color:var(--muted);border-color:var(--line)">Все разборы — скоро</a>
   </div>
 </section>
 
-<sc-if value="{{ showFuture }}" hint-placeholder-val="{{ true }}">
-<section data-screen-label="06 Разборы" style="padding:clamp(84px,9vw,140px) 0">
-  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
-    <div style="border-top:1px solid #E4E4E4;margin-bottom:clamp(84px,9vw,140px)"></div>
-    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Скоро</p>
-    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0">Разборы</h2>
-    <p data-reveal style="font:400 17px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.72);margin:20px 0 0;max-width:60ch;text-wrap:pretty">Регулярно разбираю чужие бизнесы: что у них получилось, что нет и почему. Не для критики, а чтобы показать, как принимаются решения в маркетинге. Первые разборы скоро здесь.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:20px;margin-top:52px">
-      <div data-reveal="0" data-soon style="border:1px solid #E4E4E4;padding:30px 28px;opacity:.7">
-        <span style="display:inline-block;border:1px solid #E4E4E4;color:rgba(22,24,29,.5);font:500 12px 'Onest',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px">Скоро</span>
-        <p style="font:500 17px/1.45 'Onest',sans-serif;color:rgba(22,24,29,.55);margin:22px 0 0;text-wrap:pretty">Почему у отеля идеальная реклама и пустые номера</p>
-      </div>
-      <div data-reveal="100" data-soon style="border:1px solid #E4E4E4;padding:30px 28px;opacity:.7">
-        <span style="display:inline-block;border:1px solid #E4E4E4;color:rgba(22,24,29,.5);font:500 12px 'Onest',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px">Скоро</span>
-        <p style="font:500 17px/1.45 'Onest',sans-serif;color:rgba(22,24,29,.55);margin:22px 0 0;text-wrap:pretty">Кофейня с очередью и кофейня без. Разница не в кофе</p>
-      </div>
-      <div data-reveal="200" data-soon style="border:1px solid #E4E4E4;padding:30px 28px;opacity:.7">
-        <span style="display:inline-block;border:1px solid #E4E4E4;color:rgba(22,24,29,.5);font:500 12px 'Onest',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px">Скоро</span>
-        <p style="font:500 17px/1.45 'Onest',sans-serif;color:rgba(22,24,29,.55);margin:22px 0 0;text-wrap:pretty">Что не так с сайтами молдавских клиник</p>
-      </div>
-    </div>
-    <a href="/razbory" style="display:inline-block;pointer-events:none;border:1px solid #E4E4E4;color:#B7BAC3;font:500 15px 'Onest',sans-serif;padding:14px 26px;margin-top:32px;border-radius:2px">Все разборы — скоро</a>
-  </div>
-</section>
-
-<section data-screen-label="07 Блог" style="padding:clamp(84px,9vw,140px) 0">
-  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+<section class="sec" id="blog">
+  <div class="wrap">
     <div style="max-width:960px">
-      <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Блог</p>
-      <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0;max-width:700px;text-wrap:balance">Про маркетинг простым языком</h2>
-      <p data-reveal style="font:400 17px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.72);margin:20px 0 0;max-width:58ch;text-wrap:pretty">Пишу о том, как это работает на самом деле — без терминов, которыми принято пугать заказчика.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px;margin-top:52px">
-        <div data-reveal="0" data-soon style="border:1px solid #E4E4E4;padding:30px 28px;opacity:.7">
-          <span style="display:inline-block;border:1px solid #E4E4E4;color:rgba(22,24,29,.5);font:500 12px 'Onest',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px">Скоро</span>
-          <div style="height:11px;background:#E4E4E4;width:88%;margin-top:26px"></div>
-          <div style="height:11px;background:#E4E4E4;width:64%;margin-top:10px"></div>
-          <div style="height:11px;background:#E4E4E4;width:42%;margin-top:10px"></div>
-        </div>
-        <div data-reveal="100" data-soon style="border:1px solid #E4E4E4;padding:30px 28px;opacity:.7">
-          <span style="display:inline-block;border:1px solid #E4E4E4;color:rgba(22,24,29,.5);font:500 12px 'Onest',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px">Скоро</span>
-          <div style="height:11px;background:#E4E4E4;width:74%;margin-top:26px"></div>
-          <div style="height:11px;background:#E4E4E4;width:90%;margin-top:10px"></div>
-          <div style="height:11px;background:#E4E4E4;width:35%;margin-top:10px"></div>
-        </div>
-        <div data-reveal="200" data-soon style="border:1px solid #E4E4E4;padding:30px 28px;opacity:.7">
-          <span style="display:inline-block;border:1px solid #E4E4E4;color:rgba(22,24,29,.5);font:500 12px 'Onest',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px">Скоро</span>
-          <div style="height:11px;background:#E4E4E4;width:80%;margin-top:26px"></div>
-          <div style="height:11px;background:#E4E4E4;width:52%;margin-top:10px"></div>
-          <div style="height:11px;background:#E4E4E4;width:68%;margin-top:10px"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-</sc-if>
-
-<section data-screen-label="08 Кто я" style="padding:clamp(84px,9vw,140px) 0">
-  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
-    <div style="border-top:1px solid #E4E4E4;margin-bottom:clamp(84px,9vw,140px)"></div>
-    <div id="about" style="display:flex;flex-wrap:wrap;gap:clamp(40px,5vw,80px);align-items:flex-start;scroll-margin-top:80px">
-      <div data-reveal style="flex:1 1 300px;max-width:360px">
-        <div style="aspect-ratio:3/4;border:1px solid #E4E4E4;position:relative">
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="portrait-photo" shape="rect" fit="cover" placeholder="Вертикальное фото: естественный свет, спокойный фон" hint-size="100%,100%"></x-import>
-        </div>
-        <p style="font:400 12.5px/1.5 'Onest',sans-serif;color:rgba(22,24,29,.5);margin:12px 0 0">Обработка приглушённая, слегка холодная — в тон палитры.</p>
-      </div>
-      <div style="flex:1 1 420px;max-width:640px">
-        <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Как это устроено</p>
-        <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(26px,2.6vw,36px);line-height:1.2;letter-spacing:-0.02em;color:#16181D;margin:0 0 8px">[ИМЯ]</h2>
-        <p data-reveal style="font:500 16px/1.5 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0 0 28px">Маркетинг полного цикла. Работа на русском и румынском.</p>
-        <p data-reveal style="font:400 17px/1.7 'Onest',sans-serif;color:rgba(22,24,29,.78);margin:0 0 20px;max-width:62ch;text-wrap:pretty">Маркетинг по частям почти не работает. Реклама без внятного позиционирования сжигает бюджет, сайт без аналитики не даёт понять, что происходит, контент без стратегии — просто расход времени.</p>
-        <p data-reveal style="font:400 17px/1.7 'Onest',sans-serif;color:rgba(22,24,29,.78);margin:0;max-width:62ch;text-wrap:pretty">Поэтому весь процесс ведётся как один проект — от анализа до результата, без разрывов между этапами и без потери контекста на стыках. Если что-то не работает, это называется прямо, а не сглаживается в отчёте.</p>
-        <p data-reveal style="font:400 17px/1.7 'Onest',sans-serif;color:rgba(22,24,29,.78);margin:20px 0 0;max-width:62ch;text-wrap:pretty">Работает под именем Puzzles Marketing — маркетинг полного цикла, где стратегия, сайт, реклама и контент собраны в одну систему.</p>
+      <p class="eyebrow" data-rv><span class="n">09</span> Блог</p>
+      <h2 data-rv style="max-width:700px;text-wrap:balance">Про маркетинг простым языком</h2>
+      <p class="lede" data-rv style="margin-top:20px;max-width:58ch">Пишу о том, как это работает на самом деле — без терминов, которыми принято пугать заказчика.</p>
+      <div class="grid g3">
+        <article class="soon" data-rv><span class="tag">Скоро</span><div style="height:11px;background:var(--line);width:88%;margin-top:26px"></div><div style="height:11px;background:var(--line);width:64%;margin-top:10px"></div><div style="height:11px;background:var(--line);width:42%;margin-top:10px"></div></article>
+        <article class="soon" data-rv><span class="tag">Скоро</span><div style="height:11px;background:var(--line);width:74%;margin-top:26px"></div><div style="height:11px;background:var(--line);width:90%;margin-top:10px"></div><div style="height:11px;background:var(--line);width:35%;margin-top:10px"></div></article>
+        <article class="soon" data-rv><span class="tag">Скоро</span><div style="height:11px;background:var(--line);width:80%;margin-top:26px"></div><div style="height:11px;background:var(--line);width:52%;margin-top:10px"></div><div style="height:11px;background:var(--line);width:68%;margin-top:10px"></div></article>
       </div>
     </div>
   </div>
 </section>
 
-<section data-screen-label="09 Вопросы" style="padding:clamp(84px,9vw,140px) 0">
-  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
-    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.62);margin:0 0 22px">Вопросы</p>
-    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(29px,3.4vw,46px);line-height:1.16;letter-spacing:-0.02em;color:#16181D;margin:0 0 32px">Что обычно спрашивают</h2>
-    <div data-reveal style="border-top:1px solid #E4E4E4;max-width:780px">
-      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
-        <div style="border-bottom:1px solid #E4E4E4">
-          <button onClick="{{ f.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 2px;background:none;border:none;cursor:pointer;text-align:left;font:500 clamp(16px,1.6vw,18px)/1.4 'Onest',sans-serif;color:#16181D;transition:color .25s" style-hover="color:#6E77EE">
-            {{ f.q }}
-            <span style="{{ f.plusStyle }}">+</span>
-          </button>
-          <div style="{{ f.bodyStyle }}">
-            <p style="font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.72);margin:0;padding:0 2px 28px;max-width:62ch;text-wrap:pretty">{{ f.a }}</p>
-          </div>
-        </div>
-      </sc-for>
+<section class="sec" id="approach">
+  <div class="wrap">
+    <hr class="rule" style="margin-bottom:clamp(56px,9vw,120px)">
+    <div class="about">
+      <div class="vis" data-rv><div class="bgpz" id="aboutPz" style="position:absolute;inset:0"></div></div>
+      <div class="txt">
+        <p class="eyebrow" data-rv><span class="n">10</span> Подход</p>
+        <h2 data-rv style="font-size:clamp(26px,2.6vw,36px);margin-bottom:24px">Один процесс, а не набор услуг</h2>
+        <p data-rv>Маркетинг по частям почти не работает. Реклама без внятного позиционирования сжигает бюджет. Сайт без аналитики не показывает, что на самом деле происходит. Контент без стратегии — расход времени, который не приближает к продажам.</p>
+        <p data-rv>Поэтому здесь всё ведётся как один процесс: от анализа рынка до запуска и корректировки. Стратегия, тексты, реклама и цифры не передаются между разными руками и не теряют смысл на стыках — они остаются частью одной логики.</p>
+        <p data-rv>Puzzles Marketing — это про комплексный маркетинг полного цикла. Не набор услуг по отдельности, а цельная работа, в которой каждая часть усиливает остальные.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="contact" data-screen-label="10 Финальный призыв" style="position:relative;background:#16181D;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:clamp(84px,9vw,120px) 0">
-  {{ finalDots }}
-  <div style="position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:flex;flex-direction:column;align-items:flex-start;text-align:left">
-    <p data-reveal style="font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#B7BAC3;margin:0 0 22px">Контакт</p>
-    <h2 data-reveal style="font-family:var(--hf,'Unbounded'),sans-serif;font-weight:var(--hwt,600);font-size:clamp(34px,4.6vw,62px);line-height:1.12;letter-spacing:-0.025em;color:#F9FAF5;margin:0">Начнём <em>с разговора</em></h2>
-    <p data-reveal style="font:400 17px/1.65 'Onest',sans-serif;color:#B7BAC3;margin:24px 0 0;max-width:560px;text-wrap:pretty">Час консультации: разбор бизнеса даёт понятную картину того, что чинить в первую очередь. Без обязательств и без презентации услуг.</p>
-    <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
-      <form onSubmit="{{ onSubmit }}" style="width:100%;max-width:460px;margin-top:52px;display:flex;flex-direction:column;gap:26px;text-align:left">
-        <input name="name" autocomplete="name" placeholder="Имя" aria-label="Имя" style="width:100%;box-sizing:border-box;background:none;border:none;border-bottom:1px solid rgba(249,250,245,.22);color:#F9FAF5;font:400 16px 'Onest',sans-serif;padding:12px 2px;outline:none;border-radius:0;transition:border-color .25s" style-focus="border-bottom-color:#6E77EE">
-        <input name="contact" placeholder="Телефон или Telegram" aria-label="Телефон или Telegram" style="width:100%;box-sizing:border-box;background:none;border:none;border-bottom:1px solid rgba(249,250,245,.22);color:#F9FAF5;font:400 16px 'Onest',sans-serif;padding:12px 2px;outline:none;border-radius:0;transition:border-color .25s" style-focus="border-bottom-color:#6E77EE">
-        <input name="site" placeholder="Ссылка на сайт или страницу в соцсетях" aria-label="Ссылка на сайт или соцсети" style="width:100%;box-sizing:border-box;background:none;border:none;border-bottom:1px solid rgba(249,250,245,.22);color:#F9FAF5;font:400 16px 'Onest',sans-serif;padding:12px 2px;outline:none;border-radius:0;transition:border-color .25s" style-focus="border-bottom-color:#6E77EE">
-        <button type="submit" onMouseEnter="{{ finalEnter }}" onMouseLeave="{{ finalLeave }}" style="display:inline-flex;align-items:center;justify-content:center;background:#6E77EE;color:#F9FAF5;font:500 16px 'Onest',sans-serif;padding:17px 32px;border:none;border-radius:2px;cursor:pointer;margin-top:12px;transition:background .25s" style-hover="background:#5A63DF">Записаться на консультацию</button>
-        <p style="font:400 13px/1.5 'Onest',sans-serif;color:#B7BAC3;margin:0">Ответ — в течение дня. Никаких рассылок и звонков без предупреждения.</p>
-      </form>
-    </sc-if>
-    <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
-      <div style="margin-top:52px;max-width:460px">
-        <svg viewBox="0 0 100 100" width="26" height="26" style="display:block;margin:0 auto 22px"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"></path></svg>
-        <p style="font:500 20px/1.5 'Onest',sans-serif;color:#F9FAF5;margin:0;text-wrap:pretty">Заявка принята. Материалы будут изучены, ответ — в течение дня.</p>
-      </div>
-    </sc-if>
+<section class="sec" id="faq">
+  <div class="wrap">
+    <p class="eyebrow" data-rv><span class="n">11</span> Вопросы</p>
+    <h2 data-rv>Что обычно спрашивают</h2>
+    <div class="faqwrap" data-rv id="faq">
+      <div class="qa"><button aria-expanded="false">Сколько стоит маркетинг под ключ?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Зависит от объёма. Разовая задача вроде лендинга или настройки рекламы считается отдельно, ведение проекта — помесячно. Точная цифра определяется после консультации, когда понятно, что именно нужно. Наугад она не называется.</p></div></div>
+      <div class="qa"><button aria-expanded="false">Как организован процесс?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Стратегия, тексты, реклама и аналитика ведутся в рамках одного процесса — так не теряется логика между этапами. При необходимости для съёмки, дизайна или разработки подключаются проверенные специалисты, но управление и ответственность остаются в одном месте.</p></div></div>
+      <div class="qa"><button aria-expanded="false">Чем маркетинг отличается от таргетолога или SMM?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Таргетолог настраивает рекламу, SMM ведёт соцсети — это отдельные инструменты. Маркетинг решает, что и кому вообще продавать, через какие каналы и в каком порядке, и связывает инструменты в одну систему. Без этой рамки каждый инструмент работает сам по себе и на общий результат влияет слабо.</p></div></div>
+      <div class="qa"><button aria-expanded="false">У меня маленький бюджет. Есть смысл?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Часто да. Небольшой бюджет — это не повод не работать, а повод не размазывать его на все каналы сразу. Иногда правильный ответ — сначала починить сайт, а рекламу не запускать вовсе. Это будет прямо сказано на консультации.</p></div></div>
+      <div class="qa"><button aria-expanded="false">Через сколько будет результат?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Первые данные — через две-три недели после запуска. Устойчивый результат по заявкам — обычно второй-третий месяц. Обещать продажи с первой недели никто не станет.</p></div></div>
+      <div class="qa"><button aria-expanded="false">Что происходит на бесплатной консультации?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Около часа разговора. Заранее изучаются сайт, реклама и соцсети, затем показывается полная картина: где теряются деньги, что стоит починить в первую очередь. Понимание своей ситуации остаётся у вас независимо от того, начнётся ли дальнейшая работа.</p></div></div>
+    </div>
   </div>
 </section>
 
-<footer style="background:#16181D;border-top:1px solid rgba(249,250,245,.1);padding:56px 0 40px">
-  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
-    <div style="display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between;align-items:baseline">
-      <div style="display:flex;align-items:center;gap:11px"><svg width="34" height="30" viewBox="0 0 116 100" style="display:block;flex:none" aria-hidden="true"><path d="M24,86 V32 L58,66 L92,32 V86" fill="none" stroke="#6E77EE" stroke-width="21" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12.5" cy="60" r="9.5" fill="#6E77EE"></circle><circle cx="41" cy="21" r="8" fill="#6E77EE"></circle><circle cx="58" cy="58" r="6" fill="#6E77EE"></circle></svg><span style="display:flex;flex-direction:column;line-height:1"><span style="font-family:'Unbounded',sans-serif;font-weight:700;font-size:14px;letter-spacing:-0.01em;color:#F9FAF5">PUZZLES</span><span style="font-family:'Onest',sans-serif;font-size:8.5px;letter-spacing:0.28em;color:#B7BAC3;margin-top:3px">MARKETING</span></span></div>
+<section class="final inv" id="contact">
+  <div class="finalpz" id="finalPz" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow on-dark" data-rv><span class="n">12</span> Контакт</p>
+    <h2 data-rv>Начнём <em>с разговора</em></h2>
+    <p class="lede" data-rv>Час консультации: разбор бизнеса даёт понятную картину того, что чинить в первую очередь. Без обязательств и без презентации услуг.</p>
+    <form data-rv id="leadForm" novalidate>
+      <input name="name" autocomplete="name" placeholder="Имя" aria-label="Имя" required>
+      <input name="contact" placeholder="Телефон или Telegram" aria-label="Телефон или Telegram" required>
+      <input name="site" placeholder="Ссылка на сайт или страницу в соцсетях" aria-label="Ссылка на сайт или соцсети">
+      <button class="btn btn-primary" type="submit" id="submitBtn" style="justify-content:center;margin-top:12px">Записаться на консультацию</button>
+      <p class="note">Ответ — в течение дня. Никаких рассылок и звонков без предупреждения.</p>
+    </form>
+    <div class="sent" id="sentMsg"><svg viewBox="0 0 100 100" width="26" height="26"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><p>Заявка принята. Материалы будут изучены, ответ — в течение дня.</p></div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="row">
+      <div class="lock dark"><svg class="mark"><use href="#pzmark"/></svg><span class="wm"><b>PUZZLES</b><span>MARKETING</span></span></div>
       <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
-        <nav style="display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-serif;color:#B7BAC3">
-          <a data-nav href="/razbory">Разборы</a>
-          <a data-nav href="/blog">Блог</a>
-        </nav>
-        <div style="display:flex;gap:14px;align-items:center">
-          <a data-ficon href="https://instagram.com/username" aria-label="Instagram" title="Instagram" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid rgba(249,250,245,.16);border-radius:2px;color:#B7BAC3">
-            <svg data-hicon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>
-          </a>
-          <a data-ficon href="tel:+37360000000" aria-label="Телефон" title="Телефон" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid rgba(249,250,245,.16);border-radius:2px;color:#B7BAC3">
-            <svg data-hicon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h3l1.5 4-2 1.4a12 12 0 0 0 4.6 4.6l1.4-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A15.5 15.5 0 0 1 5 5.1 1.5 1.5 0 0 1 6.5 3.5z"></path></svg>
-          </a>
-          <a data-ficon href="mailto:hello@example.md" aria-label="Почта" title="Почта" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid rgba(249,250,245,.16);border-radius:2px;color:#B7BAC3">
-            <svg data-hicon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3.5 6.5 8.5 6 8.5-6"></path></svg>
-          </a>
+        <nav aria-label="Разделы"><a href="/razbory">Разборы</a><a href="/blog">Блог</a></nav>
+        <div class="ficons">
+          <a href="https://instagram.com/username" aria-label="Instagram" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="tel:+37360000000" aria-label="Телефон"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h3l1.5 4-2 1.4a12 12 0 0 0 4.6 4.6l1.4-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A15.5 15.5 0 0 1 5 5.1 1.5 1.5 0 0 1 6.5 3.5z"/></svg></a>
+          <a href="mailto:hello@example.md" aria-label="Почта"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg></a>
         </div>
       </div>
     </div>
-    <p style="font:400 clamp(18px,2vw,22px)/1.5 'Onest',sans-serif;color:#B7BAC3;margin:72px 0 0;max-width:560px;text-wrap:pretty">Маркетинг перестаёт быть расходом, когда становится понятным.</p>
-    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 20px;margin-top:44px;font:400 13px 'Onest',sans-serif;color:rgba(183,186,195,.6)">
-      <span>© 2026</span>
-      <span>русский и румынский</span>
-    </div>
+    <p class="motto">Маркетинг перестаёт быть расходом, когда становится понятным.</p>
+    <div class="legal"><span>© 2026 Puzzles Marketing</span><span>Комплексный маркетинг полного цикла</span></div>
   </div>
 </footer>
 
-<sc-if value="{{ showSticky }}" hint-placeholder-val="{{ false }}">
-  <div style="position:fixed;left:0;right:0;bottom:0;z-index:80;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(249,250,245,.94);backdrop-filter:blur(8px);border-top:1px solid #E4E4E4;box-sizing:border-box">
-    <button onClick="{{ goFormSticky }}" style="width:100%;display:inline-flex;align-items:center;justify-content:center;background:#6E77EE;color:#F9FAF5;font:500 16px 'Onest',sans-serif;padding:16px 24px;border:none;border-radius:2px;cursor:pointer">Бесплатная консультация</button>
-  </div>
-</sc-if>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{
-  &quot;headingFont&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Unbounded&quot;, &quot;Onest 800&quot;], &quot;default&quot;: &quot;Unbounded&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Типографика&quot;},
-  &quot;showFuture&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Секции&quot;},
-  &quot;stickyMobileCta&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Поведение&quot;}
-}">
-class Component extends DCLogic {
-  constructor(props) {
-    super(props);
-    this.reduced = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
-    this.canHover = typeof matchMedia !== 'undefined' && matchMedia('(hover:hover) and (pointer:fine)').matches;
-    this.PZ = 'M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z';
-    this.heroPieces = [
-      { x: 10, y: 20, rot: -14, size: 130, dur: 9, delay: 0 },
-      { x: 80, y: 14, rot: 22, size: 92, dur: 11, delay: 1.3 },
-      { x: 72, y: 66, rot: -26, size: 160, dur: 10, delay: .6 },
-      { x: 20, y: 74, rot: 12, size: 104, dur: 12, delay: 1.9 }
-    ];
-    this.introPieces = [
-      { fx: -190, fy: -150, tx: -37, ty: -37, rot: -28, size: 80, delay: 0 },
-      { fx: 200, fy: -110, tx: 37, ty: -37, rot: 32, size: 80, delay: .12 },
-      { fx: -170, fy: 160, tx: -37, ty: 37, rot: 20, size: 80, delay: .22 },
-      { fx: 180, fy: 150, tx: 37, ty: 37, rot: -22, size: 80, delay: .16 }
-    ];
-    this.introAccent = 1;
-    this.finalCols = 3; this.finalRows = 2; this.finalPS = 70; this.finalGapR = 1; this.finalGapC = 1;
-    this.playIntro = !this.reduced && typeof sessionStorage !== 'undefined' && !sessionStorage.getItem('pz_intro');
-    this.state = { openFaq: -1, openEntry: -1, sent: false, showSticky: false, showHeader: false, finalOn: this.reduced, formSource: '', introDone: !this.playIntro, introAssembled: false, introHide: false, finalSnap: false };
-    this.depthFired = {};
-  }
+<div class="sticky" id="sticky"><a class="btn btn-primary" href="#contact">Бесплатная консультация</a></div>
 
-  track(ev, params) {
-    (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: ev }, params || {}));
-  }
+<script>
+(function(){
+"use strict";
+var PZ="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z";
+var reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+var canHover=matchMedia("(hover:hover) and (pointer:fine)").matches;
+function el(t,cls){var e=document.createElement(t);if(cls)e.className=cls;return e;}
+function pzSVG(size,fill,stroke,sw){return '<svg viewBox="0 0 100 100" width="'+size+'" height="'+size+'"><path d="'+PZ+'" fill="'+(fill||'none')+'"'+(stroke?' stroke="'+stroke+'" stroke-width="'+(sw||6)+'"':'')+'/></svg>';}
 
-  typo() {
-    var dash = / (—|–) /g;
-    var prep = /(^|[\s(«„"])((?:во|со|ко|до|из|по|не|ни|за|на|от|об|но|в|с|у|к|и|а|о)) (?=\S)/gi;
-    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-      acceptNode: function (node) {
-        var t = node.parentNode && node.parentNode.nodeName;
-        if (t === 'SCRIPT' || t === 'STYLE') return NodeFilter.FILTER_REJECT;
-        return NodeFilter.FILTER_ACCEPT;
-      }
-    });
-    var nodes = [], n;
-    while ((n = w.nextNode())) nodes.push(n);
-    nodes.forEach(function (node) {
-      var s = node.nodeValue;
-      if (!s || s.indexOf(' ') === -1) return;
-      var r = s.replace(dash, ' $1 ').replace(prep, function (m, p1, p2) { return p1 + p2 + ' '; });
-      if (r !== s) node.nodeValue = r;
-    });
-  }
-
-  goTo(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 64;
-    window.scrollTo({ top: Math.max(0, top), behavior: this.reduced ? 'auto' : 'smooth' });
-  }
-
-  applyFontVars() {
-    const onest = (this.props.headingFont ?? 'Unbounded') !== 'Unbounded';
-    const r = document.documentElement;
-    r.style.setProperty('--hf', onest ? "'Onest'" : "'Unbounded'");
-    r.style.setProperty('--hwt', onest ? '800' : '600');
-  }
-
-  componentDidMount() {
-    this.applyFontVars();
-    this.typoT = setTimeout(() => this.typo(), 60);
-    this.injectPuzzles();
-    if (this.playIntro) {
-      try { sessionStorage.setItem('pz_intro', '1'); } catch (e) {}
-      document.documentElement.style.overflow = 'hidden';
-      this.introT1 = setTimeout(() => this.setState({ introAssembled: true }), 800);
-      this.introT2 = setTimeout(() => this.setState({ introHide: true }), 2500);
-      this.introT3 = setTimeout(() => this.endIntro(), 3050);
-    }
-    if (!this.reduced) {
-      const els = [...document.querySelectorAll('[data-reveal]')];
-      els.forEach(el => {
-        const d = el.getAttribute('data-reveal') || '0';
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity .55s ease-out ' + d + 'ms, transform .55s ease-out ' + d + 'ms';
-      });
-      const lines = [...document.querySelectorAll('[data-accline]')];
-      lines.forEach(el => { el.style.width = '0px'; el.style.transition = 'width .9s ease-out .15s'; });
-      this.io = new IntersectionObserver(entries => {
-        entries.forEach(en => {
-          if (!en.isIntersecting) return;
-          const el = en.target;
-          if (el.hasAttribute('data-accline')) el.style.width = '110px';
-          else { el.style.opacity = '1'; el.style.transform = 'none'; }
-          this.io.unobserve(el);
-        });
-      }, { threshold: 0.12 });
-      els.concat(lines).forEach(el => this.io.observe(el));
-    }
-    const contact = document.getElementById('contact');
-    if (contact && !this.reduced) {
-      this.fio = new IntersectionObserver(entries => {
-        if (entries.some(en => en.isIntersecting)) { this.setState({ finalOn: true }); this.fio.disconnect(); }
-      }, { threshold: 0.25 });
-      this.fio.observe(contact);
-    }
-    this.onScroll = () => this.handleScroll();
-    window.addEventListener('scroll', this.onScroll, { passive: true });
-    window.addEventListener('resize', this.onScroll);
-    this.handleScroll();
-    if (this.canHover) this.setupCursor();
-  }
-
-  endIntro() {
-    document.documentElement.style.overflow = '';
-    this.setState({ introDone: true });
-  }
-
-  skipIntro() {
-    if (this.state.introDone) return;
-    clearTimeout(this.introT1); clearTimeout(this.introT2); clearTimeout(this.introT3);
-    this.setState({ introAssembled: true, introHide: true });
-    this.introT3 = setTimeout(() => this.endIntro(), 450);
-  }
-
-  injectPuzzles() {
-    const PZ = this.PZ;
-    document.querySelectorAll('[data-dot]').forEach(d => {
-      d.style.background = 'none'; d.style.borderRadius = '0';
-      d.style.width = '17px'; d.style.height = '17px'; d.style.opacity = '.5'; d.style.color = '#B7BAC3';
-      d.innerHTML = '<svg viewBox="0 0 100 100" width="17" height="17" style="display:block"><path d="' + PZ + '" fill="currentColor"></path></svg>';
-    });
-    document.querySelectorAll('[data-procdot]').forEach(d => {
-      d.style.background = 'none'; d.style.borderRadius = '0';
-      d.style.width = '22px'; d.style.height = '22px';
-      d.innerHTML = '<svg viewBox="0 0 100 100" width="22" height="22" style="display:block"><path d="' + PZ + '" fill="none" stroke="#B7BAC3" stroke-width="6"></path></svg>';
-    });
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.headingFont !== this.props.headingFont) this.applyFontVars();
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.typoT);
-    clearTimeout(this.introT1); clearTimeout(this.introT2); clearTimeout(this.introT3);
-    if (this.io) this.io.disconnect();
-    if (this.fio) this.fio.disconnect();
-    window.removeEventListener('scroll', this.onScroll);
-    window.removeEventListener('resize', this.onScroll);
-    if (this.onMove) window.removeEventListener('mousemove', this.onMove);
-    if (this.cursorEl) this.cursorEl.remove();
-  }
-
-  handleScroll() {
-    const y = window.scrollY, h = window.innerHeight;
-    // sticky mobile CTA
-    const enabled = this.props.stickyMobileCta ?? true;
-    let show = enabled && !this.state.sent && window.innerWidth < 720 && y > h * 0.85;
-    const c = document.getElementById('contact');
-    if (show && c && c.getBoundingClientRect().top < h * 0.7) show = false;
-    if (show !== this.state.showSticky) this.setState({ showSticky: show });
-    // sticky top header — appears once hero is scrolled past
-    const showHeader = y > h * 0.65;
-    if (showHeader !== this.state.showHeader) this.setState({ showHeader: showHeader });
-    // process progress — puzzle pieces fill in
-    const list = document.getElementById('proc-list');
-    if (list) {
-      const r = list.getBoundingClientRect();
-      const p = Math.min(1, Math.max(0, (h * 0.55 - r.top) / r.height));
-      const pieces = list.querySelectorAll('[data-procdot]');
-      const idx = Math.min(pieces.length - 1, Math.floor(p * pieces.length));
-      pieces.forEach((d, i) => {
-        const passed = i < idx || p >= 1;
-        const cur = i === idx && p > 0 && p < 1;
-        const on = passed || cur;
-        const path = d.querySelector('path');
-        if (path) { path.setAttribute('stroke', on ? '#6E77EE' : '#B7BAC3'); path.setAttribute('fill', on ? '#6E77EE' : 'none'); }
-        d.style.transition = 'transform .3s ease-out';
-        d.style.transform = 'translate(-50%,-50%) scale(' + (cur ? 1.32 : 1) + ')';
-      });
-    }
-    // scroll depth analytics
-    const sh = document.documentElement.scrollHeight;
-    if (sh > 0) {
-      const depth = ((y + h) / sh) * 100;
-      [25, 50, 75, 100].forEach(t => {
-        if (depth >= t && !this.depthFired[t]) { this.depthFired[t] = 1; this.track('scroll_depth', { value: t }); }
-      });
-    }
-  }
-
-  setupCursor() {
-    const d = document.createElement('div');
-    d.style.cssText = 'position:fixed;left:0;top:0;width:8px;height:8px;border-radius:50%;background:#16181D;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .22s,height .22s,background .22s,border .22s,opacity .3s;opacity:0;box-sizing:border-box';
-    document.body.appendChild(d);
-    this.cursorEl = d;
-    this.onMove = e => {
-      d.style.left = e.clientX + 'px';
-      d.style.top = e.clientY + 'px';
-      d.style.opacity = '1';
-      const t = e.target && e.target.closest && e.target.closest('a,button,[data-svc],input');
-      d.style.width = t ? '34px' : '8px';
-      d.style.height = t ? '34px' : '8px';
-      d.style.background = t ? 'rgba(110,119,238,.12)' : '#16181D';
-      d.style.border = t ? '1px solid rgba(110,119,238,.55)' : 'none';
-    };
-    window.addEventListener('mousemove', this.onMove, { passive: true });
-  }
-
-  pz(o) {
-    const e = React.createElement;
-    return e('svg', { viewBox: '0 0 100 100', width: o.size, height: o.size, style: o.style || { display: 'block' }, 'aria-hidden': true },
-      e('path', { d: this.PZ, fill: o.fill || 'none', stroke: o.stroke || 'none', strokeWidth: o.sw || 0 }));
-  }
-
-  renderHeroDots() {
-    const e = React.createElement;
-    const bg = e('div', { key: 'hbg', style: { position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 1 }, 'aria-hidden': true },
-      this.heroPieces.map((pp, i) => e('div', {
-        key: 'hp' + i,
-        style: { position: 'absolute', left: pp.x + '%', top: pp.y + '%', opacity: .09, animation: this.reduced ? 'none' : ('pzdrift ' + pp.dur + 's ease-in-out infinite'), animationDelay: pp.delay + 's' }
-      }, e('div', { style: { transform: 'rotate(' + pp.rot + 'deg)' } }, this.pz({ size: pp.size, fill: '#B7BAC3' })))));
-    return [bg, this.renderIntro()];
-  }
-
-  renderIntro() {
-    const e = React.createElement;
-    if (this.state.introDone) return e('div', { key: 'intro', style: { display: 'none' } });
-    const asm = this.state.introAssembled;
-    const pieces = this.introPieces.map((pp, i) => e('div', {
-      key: 'ip' + i,
-      style: {
-        position: 'absolute', left: '50%', top: '46%', width: pp.size, height: pp.size, marginLeft: -pp.size / 2, marginTop: -pp.size / 2,
-        transform: 'translate(' + (asm ? pp.tx : pp.fx) + 'px,' + (asm ? pp.ty : pp.fy) + 'px) rotate(' + (asm ? 0 : pp.rot) + 'deg) scale(' + (asm ? 1 : .85) + ')',
-        transition: 'transform .7s cubic-bezier(.34,1.4,.5,1) ' + pp.delay + 's'
-      }
-    }, this.pz({ size: pp.size, fill: i === this.introAccent ? '#6E77EE' : '#16181D' })));
-    const word = e('div', { key: 'w', style: { position: 'absolute', left: '50%', top: 'calc(46% + 82px)', transform: 'translateX(-50%)', textAlign: 'center', opacity: asm ? 1 : 0, transition: 'opacity .5s ease-out .7s' } },
-      e('div', { style: { fontFamily: "'Unbounded',sans-serif", fontWeight: 700, fontSize: '24px', letterSpacing: '-0.01em', color: '#16181D' } }, 'PUZZLES'),
-      e('div', { style: { fontFamily: "'Onest',sans-serif", fontSize: '11px', letterSpacing: '0.34em', color: '#B7BAC3', marginTop: '5px', paddingLeft: '0.34em' } }, 'MARKETING'));
-    return e('div', { key: 'intro', onClick: () => this.skipIntro(), style: { position: 'fixed', inset: 0, zIndex: 9999, background: '#F9FAF5', cursor: 'pointer', opacity: this.state.introHide ? 0 : 1, transition: 'opacity .5s ease-out', pointerEvents: this.state.introHide ? 'none' : 'auto' } },
-      pieces.concat([word]));
-  }
-
-  renderFinalDots() {
-    const e = React.createElement, on = this.state.finalOn, snap = this.state.finalSnap || this.state.sent;
-    const cols = this.finalCols, rows = this.finalRows, ps = this.finalPS, gr = this.finalGapR, gc = this.finalGapC;
-    const gw = cols * ps;
-    const baseTop = '30%';
-    const kids = [];
-    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
-      if (r === gr && c === gc) continue;
-      const idx = r * cols + c;
-      kids.push(e('div', {
-        key: 'fp' + idx,
-        style: { position: 'absolute', left: 'calc(76% - ' + (gw / 2) + 'px + ' + (c * ps) + 'px)', top: 'calc(' + baseTop + ' + ' + (r * ps) + 'px)', width: ps, height: ps, opacity: on ? 1 : 0, transition: 'opacity .6s ease-out ' + (idx * 0.08) + 's' }
-      }, this.pz({ size: ps, fill: 'none', stroke: 'rgba(249,250,245,.13)', sw: 3 })));
-    }
-    const gapLeft = 'calc(76% - ' + (gw / 2) + 'px + ' + (gc * ps) + 'px)';
-    const restLeft = 'calc(76% - ' + (gw / 2) + 'px + ' + (gw + 34) + 'px)';
-    const gapTop = 'calc(' + baseTop + ' + ' + (gr * ps) + 'px)';
-    kids.push(e('div', {
-      key: 'loose',
-      style: {
-        position: 'absolute', left: snap ? gapLeft : restLeft, top: gapTop, width: ps, height: ps,
-        transform: 'scale(' + (snap ? 1 : .9) + ') rotate(' + (snap ? 0 : -6) + 'deg)',
-        transition: 'left .6s cubic-bezier(.34,1.4,.5,1), transform .6s cubic-bezier(.34,1.4,.5,1)',
-        animation: (snap || this.reduced) ? 'none' : 'pzpulse 2s ease-in-out infinite'
-      }
-    }, this.pz({ size: ps, fill: '#6E77EE' })));
-    return e('div', { style: { position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 1 }, 'aria-hidden': true }, kids);
-  }
-
-  renderVals() {
-    const acc = '#6E77EE';
-    const openFaq = this.state.openFaq, openEntry = this.state.openEntry;
-    const bodySt = open => ({ maxHeight: open ? '420px' : '0px', opacity: open ? 1 : 0, overflow: 'hidden', transition: 'max-height .5s ease-out, opacity .4s ease-out' });
-    const plusSt = open => ({ display: 'inline-block', flex: 'none', transition: 'transform .3s ease-out, color .3s', transform: open ? 'rotate(45deg)' : 'none', color: open ? acc : '#B7BAC3', fontSize: '26px', fontWeight: 300, lineHeight: 1, fontFamily: "'Onest',sans-serif" });
-
-    const faqData = [
-      { q: 'Сколько это стоит?', a: 'Зависит от объёма. Разовая задача вроде лендинга или настройки рекламы считается отдельно, ведение проекта — помесячно. Точная цифра определяется после разбора, когда понятно, что именно нужно. Наугад она не называется.' },
-      { q: 'Как организован процесс?', a: 'Стратегия, тексты, реклама и аналитика ведутся в рамках одного процесса — так не теряется логика между этапами. При необходимости для съёмки, дизайна или разработки подключаются проверенные специалисты, но управление и ответственность остаются в одном месте.' },
-      { q: 'У меня маленький бюджет. Есть смысл?', a: 'Часто да. Небольшой бюджет — это не повод не работать, а повод не размазывать его на все каналы сразу. Иногда правильный ответ — сначала починить сайт, а рекламу не запускать вовсе. Это будет прямо сказано на консультации.' },
-      { q: 'Через сколько будет результат?', a: 'Первые данные — через две-три недели после запуска. Устойчивый результат по заявкам — обычно второй-третий месяц. Обещать продажи с первой недели я не буду.' },
-      { q: 'У меня уже есть маркетолог или SMM-щик.', a: 'Тогда, возможно, нужен не полный процесс, а стратегия, по которой будет работать текущая команда. Это тоже отдельная задача.' },
-      { q: 'Что происходит на бесплатной консультации?', a: 'Около часа разговора. Заранее изучаются сайт, реклама и соцсети, затем показывается полная картина: где теряются деньги, что стоит починить в первую очередь. Понимание своей ситуации остаётся у вас независимо от того, начнётся ли дальнейшая работа.' }
-    ];
-    const faqs = faqData.map((f, i) => ({
-      q: f.q, a: f.a,
-      toggle: () => { this.setState({ openFaq: openFaq === i ? -1 : i }); if (openFaq !== i) this.track('faq_open', { label: f.q }); },
-      bodyStyle: bodySt(openFaq === i),
-      plusStyle: plusSt(openFaq === i)
-    }));
-
-    const entryData = [
-      { n: '01', title: 'У меня уже что-то работает', body: 'Есть сайт, идёт реклама, ведутся соцсети — но непонятно, что из этого приносит результат. Начинаем с разбора того, что уже есть: чиню то, что теряет деньги, и убираю то, что их просто ест. Часто на этом этапе бюджет не нужно увеличивать вовсе.', cta: 'Разобрать то, что есть', src: 'audit' },
-      { n: '02', title: 'Начинаю с нуля', body: 'Есть продукт и желание, остального пока нет. Тогда собираем всё по порядку: сначала кому и что продаём, потом сайт, потом трафик. В таком порядке, а не наоборот — иначе реклама поведёт людей туда, где их нечем убедить.', cta: 'Собрать с нуля', src: 'from-zero' }
-    ];
-    const entries = entryData.map((en, i) => ({
-      n: en.n, title: en.title, body: en.body, cta: en.cta,
-      toggle: () => this.setState({ openEntry: openEntry === i ? -1 : i }),
-      enter: () => { if (this.canHover) this.setState({ openEntry: i }); },
-      leave: () => { if (this.canHover) this.setState({ openEntry: -1 }); },
-      choose: () => { this.setState({ formSource: en.src }); this.track('cta_click', { label: en.src }); this.goTo('contact'); },
-      bodyStyle: Object.assign({}, bodySt(openEntry === i), { transform: openEntry === i ? 'translateX(0)' : 'translateX(-10px)', transition: 'max-height .5s ease-out, opacity .4s ease-out, transform .5s ease-out' }),
-      plusStyle: plusSt(openEntry === i)
-    }));
-
-    return {
-      heroDots: this.renderHeroDots(),
-      finalDots: this.renderFinalDots(),
-      faqs, entries,
-      showFuture: this.props.showFuture ?? true,
-      sent: this.state.sent,
-      notSent: !this.state.sent,
-      showSticky: this.state.showSticky,
-      headerStyle: { transform: this.state.showHeader ? 'translateY(0)' : 'translateY(-100%)', opacity: this.state.showHeader ? 1 : 0, transition: 'transform .4s cubic-bezier(.22,.61,.36,1), opacity .3s ease-out', pointerEvents: this.state.showHeader ? 'auto' : 'none' },
-      goTop: e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: this.reduced ? 'auto' : 'smooth' }); },
-      navProcess: e => { e.preventDefault(); this.goTo('process'); },
-      navServices: e => { e.preventDefault(); this.goTo('services'); },
-      navAbout: e => { e.preventDefault(); this.goTo('about'); },
-      goForm: () => { this.track('cta_click', { label: 'hero_primary' }); this.goTo('contact'); },
-      finalEnter: () => { if (this.canHover) this.setState({ finalSnap: true }); },
-      finalLeave: () => { if (this.canHover && !this.state.sent) this.setState({ finalSnap: false }); },
-      goFormNav: e => { e.preventDefault(); this.track('cta_click', { label: 'header' }); this.goTo('contact'); },
-      goFormSticky: () => { this.track('cta_click', { label: 'sticky_mobile' }); this.goTo('contact'); },
-      goProcess: () => { this.track('cta_click', { label: 'how_it_works' }); this.goTo('process'); },
-      onSubmit: e => {
-        e.preventDefault();
-        const fd = new FormData(e.target);
-        const name = String(fd.get('name') || '').trim();
-        const contact = String(fd.get('contact') || '').trim();
-        if (!name || !contact) { this.track('form_error', { label: 'empty_fields' }); return; }
-        this.track('form_submit', { source: this.state.formSource || 'direct' });
-        this.setState({ sent: true, showSticky: false });
-      }
-    };
-  }
+/* typographer: nbsp for dashes and short prepositions */
+function typo(){
+  var dash=/ (—|–) /g;
+  var prep=/(^|[\s(«„"])((?:во|со|ко|до|из|по|не|ни|за|на|от|об|но|в|с|у|к|и|а|о)) (?=\S)/gi;
+  var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var t=n.parentNode&&n.parentNode.nodeName;return (t==='SCRIPT'||t==='STYLE')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT;}});
+  var nodes=[],n;while((n=w.nextNode()))nodes.push(n);
+  nodes.forEach(function(node){var s=node.nodeValue;if(!s||s.indexOf(' ')===-1)return;var r=s.replace(dash,' $1 ').replace(prep,function(m,p1,p2){return p1+p2+' ';});if(r!==s)node.nodeValue=r;});
 }
+
+/* hero + about background silhouettes */
+function fillBg(host,pieces){
+  pieces.forEach(function(p,i){
+    var d=el('div','p');
+    d.style.cssText='left:'+p.x+'%;top:'+p.y+'%;'+(reduced?'':'animation:pzdrift '+p.dur+'s ease-in-out infinite '+p.delay+'s;');
+    d.innerHTML='<div style="transform:rotate('+p.rot+'deg)">'+pzSVG(p.size,p.fill||'#B7BAC3')+'</div>';
+    host.appendChild(d);
+  });
+}
+
+/* reveal on scroll */
+function reveal(){
+  var els=[].slice.call(document.querySelectorAll('[data-rv]'));
+  if(reduced){els.forEach(function(e){e.classList.add('in');});document.querySelectorAll('[data-accline]').forEach(function(l){l.style.width='110px';});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:0.12});
+  els.forEach(function(e){io.observe(e);});
+  var lines=[].slice.call(document.querySelectorAll('[data-accline]'));
+  var lio=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.style.width='110px';lio.unobserve(x.target);}});},{threshold:0.4});
+  lines.forEach(function(l){lio.observe(l);});
+}
+
+/* process fill on scroll */
+function processScroll(){
+  var proc=document.getElementById('proc');if(!proc)return;
+  var pcs=[].slice.call(proc.querySelectorAll('.pc path'));
+  function upd(){
+    var r=proc.getBoundingClientRect(),h=innerHeight;
+    var p=Math.min(1,Math.max(0,(h*0.55-r.top)/r.height));
+    var idx=Math.min(pcs.length-1,Math.floor(p*pcs.length));
+    pcs.forEach(function(path,i){var on=(i<idx)||p>=1||(i===idx&&p>0&&p<1);path.setAttribute('stroke',on?'#6E77EE':'#B7BAC3');path.setAttribute('fill',on?'#6E77EE':'none');});
+  }
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+}
+
+/* final assembly */
+function finalAssembly(){
+  var host=document.getElementById('finalPz');if(!host)return;
+  var cols=3,rows=2,ps=70,gr=1,gc=1,gw=cols*ps;
+  var anchor='calc(76% - '+(gw/2)+'px';
+  var loose;
+  for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
+    if(r===gr&&c===gc)continue;
+    var idx=r*cols+c;
+    var d=el('div','fp');
+    d.style.cssText='left:'+anchor+' + '+(c*ps)+'px);top:calc(30% + '+(r*ps)+'px);width:'+ps+'px;height:'+ps+'px;opacity:0;transition:opacity .6s ease-out '+(idx*0.08)+'s';
+    d.innerHTML=pzSVG(ps,'none','rgba(249,250,245,.13)',3);
+    host.appendChild(d);
+  }
+  loose=el('div','fp');
+  var gapLeft=anchor+' + '+(gc*ps)+'px)';
+  var restLeft=anchor+' + '+(gw+34)+'px)';
+  var gapTop='calc(30% + '+(gr*ps)+'px)';
+  loose.style.cssText='top:'+gapTop+';width:'+ps+'px;height:'+ps+'px;left:'+restLeft+';transition:left .6s cubic-bezier(.34,1.4,.5,1),transform .6s cubic-bezier(.34,1.4,.5,1);transform:scale(.9) rotate(-6deg);'+(reduced?'':'animation:pzpulse 2s ease-in-out infinite;');
+  loose.innerHTML=pzSVG(ps,'#6E77EE');
+  host.appendChild(loose);
+  var contact=document.getElementById('contact');
+  var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){host.querySelectorAll('.fp').forEach(function(x){x.style.opacity='1';});io.disconnect();}},{threshold:0.2});
+  io.observe(contact);
+  var sent=false;
+  function snap(on){loose.style.left=on?gapLeft:restLeft;loose.style.transform=on?'scale(1) rotate(0deg)':'scale(.9) rotate(-6deg)';loose.style.animation=(on||reduced)?'none':'pzpulse 2s ease-in-out infinite';}
+  var btn=document.getElementById('submitBtn');
+  if(btn&&canHover){btn.addEventListener('mouseenter',function(){snap(true);});btn.addEventListener('mouseleave',function(){if(!sent)snap(false);});}
+  window.__finalSnap=function(){sent=true;snap(true);};
+}
+
+/* faq */
+function faq(){
+  document.querySelectorAll('#faq .qa').forEach(function(qa){
+    var btn=qa.querySelector('button');
+    btn.addEventListener('click',function(){
+      var open=qa.classList.contains('open');
+      qa.classList.toggle('open',!open);btn.setAttribute('aria-expanded',String(!open));
+    });
+  });
+}
+
+/* entries hover-reveal + tap */
+function entries(){
+  document.querySelectorAll('#entries [data-entry]').forEach(function(en){
+    var top=en.querySelector('.top');
+    function open(v){en.classList.toggle('open',v);}
+    if(canHover){en.addEventListener('mouseenter',function(){open(true);});en.addEventListener('mouseleave',function(){open(false);});}
+    top.addEventListener('click',function(){open(!en.classList.contains('open'));});
+  });
+}
+
+/* sticky header + mobile cta */
+function sticky(){
+  var bar=document.getElementById('topbar'),st=document.getElementById('sticky'),contact=document.getElementById('contact');
+  function upd(){
+    var y=scrollY,h=innerHeight;
+    bar.classList.toggle('show',y>h*0.65);
+    var show=innerWidth<720&&y>h*0.85&&!(contact.getBoundingClientRect().top<h*0.7)&&!document.getElementById('sentMsg').offsetParent;
+    st.classList.toggle('show',show&&document.getElementById('leadForm').style.display!=='none');
+  }
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+}
+
+/* form */
+function form(){
+  var f=document.getElementById('leadForm');if(!f)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=(f.elements['name'].value||'').trim(),contact=(f.elements['contact'].value||'').trim();
+    if(!name||!contact){f.elements['name'].focus();return;}
+    f.style.display='none';document.getElementById('sentMsg').style.display='block';
+    document.getElementById('sticky').classList.remove('show');
+    if(window.__finalSnap)window.__finalSnap();
+  });
+}
+
+/* intro */
+function intro(){
+  var ov=document.getElementById('intro');if(!ov)return;
+  var play=!reduced&&!sessionStorage.getItem('pz_intro');
+  if(!play){ov.parentNode.removeChild(ov);return;}
+  try{sessionStorage.setItem('pz_intro','1');}catch(e){}
+  document.documentElement.style.overflow='hidden';
+  var pcs=[].slice.call(ov.querySelectorAll('.ip'));
+  var from=[[-150,-120,-26],[150,-90,30],[-140,140,20],[150,130,-22]];
+  var to=[[-40,-40,0],[40,-40,0],[-40,40,0],[40,40,0]];
+  pcs.forEach(function(p,i){p.style.transform='translate('+from[i][0]+'px,'+from[i][1]+'px) rotate('+from[i][2]+'deg) scale(.85)';p.style.transitionDelay=(i*0.08)+'s';});
+  var wm=ov.querySelector('.wm');
+  function end(){document.documentElement.style.overflow='';if(ov.parentNode)ov.parentNode.removeChild(ov);}
+  var t1=setTimeout(function(){pcs.forEach(function(p,i){p.style.transform='translate('+to[i][0]+'px,'+to[i][1]+'px) rotate(0deg) scale(1)';});wm.style.opacity='1';},700);
+  var t2=setTimeout(function(){ov.classList.add('hide');},2400);
+  var t3=setTimeout(end,2950);
+  ov.addEventListener('click',function(){clearTimeout(t1);clearTimeout(t2);clearTimeout(t3);ov.classList.add('hide');setTimeout(end,400);});
+}
+
+/* custom cursor dot */
+function cursor(){
+  if(!canHover||reduced)return;
+  var d=el('div');d.style.cssText='position:fixed;left:0;top:0;width:8px;height:8px;border-radius:50%;background:#16181D;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s,border .2s,opacity .3s;opacity:0';
+  document.body.appendChild(d);
+  addEventListener('mousemove',function(e){d.style.left=e.clientX+'px';d.style.top=e.clientY+'px';d.style.opacity='1';var t=e.target.closest&&e.target.closest('a,button,.card,.quote,.entry,input');d.style.width=t?'32px':'8px';d.style.height=t?'32px':'8px';d.style.background=t?'rgba(110,119,238,.12)':'#16181D';d.style.border=t?'1px solid rgba(110,119,238,.5)':'none';},{passive:true});
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  fillBg(document.getElementById('heroBg'),[{x:10,y:20,rot:-14,size:130,dur:9,delay:0},{x:80,y:14,rot:22,size:92,dur:11,delay:1.3},{x:72,y:66,rot:-26,size:160,dur:10,delay:.6},{x:20,y:74,rot:12,size:104,dur:12,delay:1.9}]);
+  var ap=document.getElementById('aboutPz');if(ap)fillBg(ap,[{x:6,y:10,rot:-8,size:120,dur:10,delay:0,fill:'#E4E4E4'},{x:52,y:20,rot:14,size:100,dur:11,delay:.8,fill:'#E4E4E4'},{x:18,y:52,rot:-18,size:130,dur:12,delay:.4,fill:'#E4E4E4'},{x:58,y:58,rot:8,size:96,dur:10,delay:1.4,fill:'#6E77EE'}]);
+  typo();reveal();processScroll();finalAssembly();faq();entries();sticky();form();cursor();intro();
+});
+})();
 </script>
 </body>
 </html>

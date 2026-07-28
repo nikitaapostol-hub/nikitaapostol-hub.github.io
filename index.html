@@ -97,6 +97,13 @@ header.site .btn-primary{padding:11px 20px;font-size:14px}
 .card:hover .num{color:var(--accent)}
 .card h3{font:600 18px/1.35 'Onest',sans-serif}
 .cardnote{font:400 14.5px/1.55 'Onest',sans-serif;color:rgba(22,24,29,.6);margin:10px 0 0}
+.catwrap{display:inline-flex;align-items:center;gap:8px}
+.caticon{width:11px;height:11px;flex:none;color:var(--accent)}
+.cat{font:500 12px 'Onest',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.readtime{font:400 12px 'Onest',sans-serif;color:rgba(22,24,29,.4);margin-left:2px}
+#blog .card h3{margin-top:14px}
+#blog .card .readmore{display:inline-flex;align-items:center;gap:6px;font:500 14px 'Onest',sans-serif;color:var(--ink);margin-top:18px;transition:gap .2s,color .2s}
+#blog .card:hover .readmore{gap:10px;color:var(--accent)}
 .contrastlist{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
 .contrastlist li{display:flex;align-items:flex-start;gap:12px;font:400 16px/1.55 'Onest',sans-serif;color:rgba(22,24,29,.8)}
 .contrastlist .pzb{width:13px;height:13px;flex:none;margin-top:5px}
@@ -402,16 +409,42 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
 
 <section class="sec" id="blog">
   <div class="wrap">
-    <div style="max-width:960px">
+    <div style="max-width:700px">
       <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Блог</p>
       <h2 data-rv style="max-width:700px;text-wrap:balance">Про маркетинг простым&nbsp;языком</h2>
       <p class="lede" data-rv style="margin-top:20px;max-width:58ch">О том, как это работает на самом деле — без терминов, которыми принято пугать заказчика.</p>
-      <div class="grid g3">
-        <article class="soon" data-rv><span class="tag">Скоро</span><div style="height:11px;background:var(--line);width:88%;margin-top:26px"></div><div style="height:11px;background:var(--line);width:64%;margin-top:10px"></div><div style="height:11px;background:var(--line);width:42%;margin-top:10px"></div></article>
-        <article class="soon" data-rv><span class="tag">Скоро</span><div style="height:11px;background:var(--line);width:74%;margin-top:26px"></div><div style="height:11px;background:var(--line);width:90%;margin-top:10px"></div><div style="height:11px;background:var(--line);width:35%;margin-top:10px"></div></article>
-        <article class="soon" data-rv><span class="tag">Скоро</span><div style="height:11px;background:var(--line);width:80%;margin-top:26px"></div><div style="height:11px;background:var(--line);width:52%;margin-top:10px"></div><div style="height:11px;background:var(--line);width:68%;margin-top:10px"></div></article>
-      </div>
     </div>
+    <div class="grid g2">
+      <a class="card" data-rv href="/blog/sales-funnel">
+        <svg class="pzc" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg>
+        <span class="catwrap"><svg class="caticon" style="transform:rotate(0deg)" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><span class="cat">Основы</span><span class="readtime">· 3 мин</span></span>
+        <h3>Что такое воронка продаж простыми словами</h3>
+        <p class="cardnote">Путь от знакомства с бизнесом до покупки — и почему на каждом этапе нужно своё сообщение.</p>
+        <span class="readmore">Читать <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" data-rv href="/blog/custdev">
+        <svg class="pzc" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg>
+        <span class="catwrap"><svg class="caticon" style="transform:rotate(90deg)" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><span class="cat">Инструменты</span><span class="readtime">· 2 мин</span></span>
+        <h3>Что такое CustDev и зачем он нужен</h3>
+        <p class="cardnote">Как проверить бизнес-идею на реальном спросе до того, как в неё вложены деньги.</p>
+        <span class="readmore">Читать <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" data-rv href="/blog/ads-no-clients">
+        <svg class="pzc" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg>
+        <span class="catwrap"><svg class="caticon" style="transform:rotate(180deg)" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><span class="cat">Реклама и продажи</span><span class="readtime">· 2 мин</span></span>
+        <h3>Почему реклама не приносит клиентов</h3>
+        <p class="cardnote">Хорошие показатели рекламы и ноль продаж — это не парадокс, а диагностируемая ситуация.</p>
+        <span class="readmore">Читать <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" data-rv href="/blog/marketing-cost">
+        <svg class="pzc" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg>
+        <span class="catwrap"><svg class="caticon" style="transform:rotate(270deg)" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><span class="cat">Процессы и организация</span><span class="readtime">· 3 мин</span></span>
+        <h3>Сколько стоят услуги маркетолога</h3>
+        <p class="cardnote">Единой цены не существует — итоговая стоимость складывается из модели оплаты, объёма задач и чёткости запроса.</p>
+        <span class="readmore">Читать <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+    <a href="/blog" class="btn btn-line" style="margin-top:32px">Все статьи <span aria-hidden="true">→</span></a>
   </div>
 </section>
 

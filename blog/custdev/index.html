@@ -77,6 +77,20 @@ header.site .btn-primary{padding:11px 20px;font-size:14px}
 .prose h2{font-size:clamp(20px,2.2vw,25px);margin:40px 0 16px}
 .prose p{font:400 clamp(16px,1.5vw,18px)/1.75 'Onest',sans-serif;color:rgba(22,24,29,.78);margin:0 0 20px}
 .prose p:last-child{margin-bottom:0}
+.prose p.chunk-start{margin-top:38px}
+.prose p.pullquote{border-left:2px solid var(--accent);padding-left:26px;margin:44px 0 0!important;font:500 clamp(19px,2vw,23px)/1.5 'Onest',sans-serif!important;color:var(--ink)!important}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr))}
+.catwrap{display:inline-flex;align-items:center;gap:8px}
+.caticon{width:11px;height:11px;flex:none;color:var(--accent)}
+.readtime{font:400 12px 'Onest',sans-serif;color:rgba(22,24,29,.4);margin-left:2px}
+.card.featured{grid-column:1/-1;padding:clamp(36px,4vw,54px)}
+.card.featured .pzc{width:28px;height:28px;top:24px;right:24px}
+.card.featured h3{font-size:clamp(24px,2.8vw,34px);margin-top:20px;max-width:28ch;line-height:1.2}
+.card.featured .cardnote{font:400 16.5px/1.65 'Onest',sans-serif;max-width:62ch;margin-top:16px}
+.card.featured .readmore{margin-top:24px}
+.article-hero{padding-top:clamp(120px,15vw,190px);padding-bottom:0}
+.article-hero h1{margin-top:28px}
+.readprogress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0%;z-index:998;transition:width .1s linear}
 footer.site{background:var(--ink);color:var(--muted);border-top:1px solid rgba(249,250,245,.1);padding:56px 0 40px}
 footer.site .row{display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between;align-items:baseline}
 footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-serif}
@@ -95,6 +109,7 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Что такое CustDev и зачем он нужен", "description": "Методика проверки бизнес-идеи через разговоры с реальными людьми до запуска — как она работает и какие вопросы задавать.", "datePublished": "2026-07-28", "dateModified": "2026-07-28", "author": {"@type": "Organization", "name": "Puzzles Marketing"}, "publisher": {"@type": "Organization", "name": "Puzzles Marketing", "logo": {"@type": "ImageObject", "url": "https://nikitaapostol-hub.github.io/og-image.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://nikitaapostol-hub.github.io/blog/custdev"}, "image": "https://nikitaapostol-hub.github.io/og-image.png"}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Блог", "item": "https://nikitaapostol-hub.github.io/blog"}, {"@type": "ListItem", "position": 2, "name": "Что такое CustDev и зачем он нужен", "item": "https://nikitaapostol-hub.github.io/blog/custdev"}]}]</script>
 </head>
 <body>
+<div class="readprogress" id="readProgress"></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="pzmark" viewBox="250 668 580 572"><path fill="#6E77EE" d="M 392.731 821.175 C 411.637 820.131 474.107 816.784 488.268 829.943 C 518.696 858.218 539.801 902.492 566.001 934.992 C 589.709 964.402 626.62 902.48 655.07 942.132 C 678.735 972.092 647.989 1014.07 615.004 1002.96 C 596.558 996.749 572.744 972.93 567.74 1011.91 C 566.08 1026.41 567.146 1044.31 567.228 1059.28 C 567.473 1088.27 567.562 1117.27 567.495 1146.26 C 540.777 1139.37 538.382 1126.42 523.226 1107.54 C 513.081 1094.91 492.015 1057.13 480.397 1050.81 C 473.817 1051.11 471.775 1055.88 470.766 1061.8 L 470.961 1156.96 C 470.989 1169.16 471.905 1194.07 471.039 1205.53 C 470.842 1208.44 470.127 1211.29 468.928 1213.95 C 461.451 1230.44 441.034 1225.94 426.629 1226.55 C 404.942 1227.26 368.306 1229.18 361.61 1200.76 C 354.91 1172.32 360.733 1129.35 359.107 1099.4 C 358.496 1088.14 361.894 1063.84 348.151 1058.85 C 323.984 1050.09 311.753 1083.63 282.2 1066.63 C 273.305 1061.48 266.883 1052.95 264.408 1042.97 C 260.134 1025.16 269.207 1005.84 285.898 997.667 C 310.413 985.666 324.123 1013.22 346.219 1008.53 C 362.219 1005.13 359.217 974.411 359.151 962.082 L 358.788 895.855 C 358.625 865.199 354.344 830.697 392.731 821.175 z"/><path fill="#6E77EE" d="M 679.967 821.256 C 691.228 820.422 746.886 820.134 756.309 822.365 C 762.746 823.881 768.729 826.911 773.761 831.204 C 781.611 837.951 787.865 851.082 787.823 861.371 C 787.65 903.811 789.235 946.675 787.21 989.011 C 786.724 992.599 784.079 997.05 781.554 999.512 C 764.057 1016.57 749.401 990.409 730.531 991.662 C 708.359 993.135 690.74 1012.59 691.636 1034.19 C 692.776 1061.67 722.018 1082.05 747.793 1071.28 C 754.585 1068.4 760.533 1059.47 769.464 1059.39 C 784.14 1059.59 787.806 1073.27 787.904 1085.37 C 788.23 1114.9 788.026 1144.44 788.017 1173.97 C 787.989 1190.41 788.06 1201.9 776.037 1214.68 C 763.623 1227.87 749.597 1226.98 732.865 1227 C 725.417 1227 717.855 1227.08 710.336 1226.84 C 702.361 1226.44 687.758 1227.63 682.114 1220.8 C 672.285 1208.9 675.644 1180.7 675.782 1165.55 C 675.795 1133.29 675.487 1101.03 676.101 1068.77 C 677.757 1064.64 671.677 1044.28 665.125 1050.37 C 637.726 1075.84 617.493 1134.43 580.686 1146.81 C 579.46 1103.17 581.029 1058.02 580.572 1014.21 C 580.346 992.553 602.437 1012.47 610.535 1015.08 C 629.755 1021.29 650.693 1015.39 664.182 999.945 C 673.339 989.669 677.944 976.123 676.946 962.396 C 675.71 948.484 668.991 935.635 658.272 926.682 C 647.209 917.588 633.484 913.945 619.219 915.799 C 612.358 916.692 600.707 927.919 595.587 922.526 C 594.493 914.947 613.298 890.833 618.109 883.965 L 645.623 843.859 C 654.672 830.81 664.211 824.07 679.967 821.256 z"/></symbol></svg>
 <header class="site">
   <div class="wrap">
@@ -108,14 +123,14 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
   </div>
 </header>
 <main>
-<section class="sec" style="padding-bottom:0">
+<section class="sec article-hero">
   <div class="wrap">
     <nav class="crumbs" aria-label="Хлебные крошки"><a href="/blog">Блог</a><span aria-hidden="true">→</span><span aria-current="page">Что такое CustDev и зачем он нужен</span></nav>
-    <p class="eyebrow" data-rv style="margin-bottom:16px"><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Инструменты</p>
-    <h1 data-rv style="max-width:26ch">Что такое CustDev и зачем он нужен</h1>
+    <p class="eyebrow" data-rv style="margin-bottom:16px"><svg class="caticon" style="transform:rotate(90deg)" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Инструменты</p>
+    <h1 data-rv style="max-width:22ch">Что такое CustDev и зачем он нужен</h1>
   </div>
 </section>
-<section class="sec" style="padding-top:40px">
+<section class="sec" style="padding-top:56px">
   <div class="wrap">
     <div class="prose" data-rv>
       <p>Вопрос часто путают с обычным опросом клиентов — на самом деле это совсем другой инструмент, и разница между ними стоит бизнесу либо сэкономленных денег, либо потраченных впустую.</p>
@@ -125,9 +140,9 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
       <p>Методологию разработал предприниматель Стив Бланк, впервые описав её в книге «The Four Steps to the Epiphany» в 2005 году. Его ключевая идея переворачивает привычный порядок действий: главным активом компании считается не продукт, а понимание клиента, и это понимание нельзя получить, сидя в офисе — знаменитая формулировка Бланка звучит как «выйти из здания» — то есть буквально пойти и поговорить с живыми людьми, прежде чем что-либо строить.</p>
       <p>Самая частая ошибка при попытке проверить идею — задавать неправильные вопросы. «Купили бы вы это?» или «нравится ли вам такая идея?» — вопросы, на которые почти невозможно получить честный ответ, потому что человек из вежливости отвечает так, как, по его мнению, от него ждут, а не так, как поступил бы на самом деле. Про эту ловушку подробно написал Роб Фитцпатрик в книге «Спроси маму» — название отсылает к тому, что даже собственная мама, которая искренне хочет поддержать, соврёт и скажет, что идея отличная, если спросить неправильно. Работающая альтернатива — спрашивать не про гипотетическое будущее, а про конкретное прошлое поведение: что человек уже делал, чтобы решить эту проблему, сколько уже потратил на это денег, каким сервисом пользуется сейчас. Прошлые действия не соврут так, как соврёт вежливое предположение о будущем.</p>
       <p>У метода есть чёткие практические правила того, чего не стоит делать во время разговора: не продавать продукт, которого ещё не существует, не спорить с возражениями собеседника, не расспрашивать о гипотетическом будущем, не вдаваться в подробности устройства продукта и не ругать конкурентов вслух — любое из этих действий искажает честность ответа. Также полезно разделять два разных типа интервью: проблемное — про мотивы, потребности и реальную боль человека, и решенческое — про готовность принять решение о покупке. Смешивание этих двух типов в одном разговоре размывает результат.</p>
-      <p>Из практики Стива Бланка, который провёл через эту методику тысячи стартапов в Стэнфорде: интервью лучше проводить вдвоём — один задаёт вопросы, второй фиксирует реакции и сигналы со стороны. В одиночку легко неосознанно услышать в ответах подтверждение собственной идеи там, где его на самом деле нет.</p>
+      <p class="chunk-start">Из практики Стива Бланка, который провёл через эту методику тысячи стартапов в Стэнфорде: интервью лучше проводить вдвоём — один задаёт вопросы, второй фиксирует реакции и сигналы со стороны. В одиночку легко неосознанно услышать в ответах подтверждение собственной идеи там, где его на самом деле нет.</p>
       <h2>Итог</h2>
-      <p>CustDev — не опрос удовлетворённости и не сбор комплиментов идее, а тест-драйв идеи до того, как в неё вложены реальные деньги. Правильно проведённый, он экономит бюджет именно на отказе от невостребованного на этапе идеи — а не после того, как продукт уже создан, запущен и не нашёл своего покупателя.</p>
+      <p class="pullquote">CustDev — не опрос удовлетворённости и не сбор комплиментов идее, а тест-драйв идеи до того, как в неё вложены реальные деньги. Правильно проведённый, он экономит бюджет именно на отказе от невостребованного на этапе идеи — а не после того, как продукт уже создан, запущен и не нашёл своего покупателя.</p>
     </div>
   </div>
 </section>
@@ -138,14 +153,14 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
     <div class="grid g3" style="max-width:900px">
       <a class="card" data-rv href="/blog/ads-no-clients">
         <svg class="pzc" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg>
-        <span class="cat">Реклама и продажи</span>
+        <span class="catwrap"><svg class="caticon" style="transform:rotate(180deg)" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><span class="cat">Реклама и продажи</span><span class="readtime">· 2 мин</span></span>
         <h3>Почему реклама не приносит клиентов</h3>
         <p class="cardnote">Хорошие показатели рекламы и ноль продаж — это не парадокс, а диагностируемая ситуация.</p>
         <span class="readmore">Читать <span aria-hidden="true">→</span></span>
       </a>
       <a class="card" data-rv href="/blog/repeat-sales">
         <svg class="pzc" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg>
-        <span class="cat">Реклама и продажи</span>
+        <span class="catwrap"><svg class="caticon" style="transform:rotate(180deg)" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><span class="cat">Реклама и продажи</span><span class="readtime">· 3 мин</span></span>
         <h3>Как увеличить повторные продажи: почему клиенты возвращаются сами</h3>
         <p class="cardnote">Клиент, который уже купил однажды, — самый недооценённый источник роста.</p>
         <span class="readmore">Читать <span aria-hidden="true">→</span></span>
@@ -206,9 +221,21 @@ function cursor(){
   document.body.appendChild(d);
   addEventListener('mousemove',function(e){d.style.left=e.clientX+'px';d.style.top=e.clientY+'px';d.style.opacity='1';var t=e.target.closest&&e.target.closest('a,button,.card,input');d.style.width=t?'32px':'8px';d.style.height=t?'32px':'8px';d.style.background=t?'rgba(110,119,238,.12)':'#16181D';d.style.border=t?'1px solid rgba(110,119,238,.5)':'none';},{passive:true});
 }
+function readProgress(){
+  var bar=document.getElementById('readProgress');if(!bar)return;
+  var prose=document.querySelector('.prose');if(!prose)return;
+  function upd(){
+    var top=prose.getBoundingClientRect().top+scrollY;
+    var h=prose.offsetHeight;
+    var scrolled=scrollY+innerHeight*0.6-top;
+    var pct=Math.min(100,Math.max(0,scrolled/h*100));
+    bar.style.width=pct+'%';
+  }
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+}
 document.addEventListener('DOMContentLoaded',function(){
   
-  typo();reveal();cursor();
+  typo();reveal();cursor();readProgress();
 });
 })();
 </script>

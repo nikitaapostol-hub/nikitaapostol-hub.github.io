@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Puzzles Marketing — комплексный маркетинг полного цикла</title>
-<meta name="description" content="Puzzles Marketing — комплексный маркетинг полного цикла: стратегия, позиционирование, сайт, реклама и контент как одна система. Бесплатная консультация и разбор бизнеса.">
+<meta name="description" content="Puzzles Marketing — комплексный маркетинг полного цикла: стратегия, позиционирование, сайт, реклама и контент как одна система. Разбор бизнеса и понятная модель того, что делать дальше.">
 <link rel="canonical" href="https://nikitaapostol-hub.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Puzzles Marketing">
@@ -33,7 +33,8 @@ input::placeholder{color:var(--muted)}
 .wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
 .sec{padding:clamp(64px,9vw,140px) 0;position:relative}
 .eyebrow{font:500 13px 'Onest',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(22,24,29,.6);margin:0 0 22px;display:flex;align-items:center;gap:12px}
-.eyebrow .n{color:var(--accent);font-weight:600}
+.eyebrow .pzm{width:12px;height:12px;flex:none;color:var(--accent)}
+.eyebrow.on-dark .pzm{color:var(--accent)}
 .eyebrow.on-dark{color:var(--muted)}
 .rule{height:1px;background:var(--line);border:0;margin:0}
 h1{font-size:clamp(36px,4.9vw,66px);line-height:1.08}
@@ -90,9 +91,20 @@ header.site .btn-primary{padding:11px 20px;font-size:14px}
 .card .pzc{position:absolute;top:16px;right:16px;width:17px;height:17px;color:var(--muted);opacity:.5;transition:transform .2s,color .2s}
 .card:hover .pzc{color:var(--accent);opacity:1;transform:rotate(15deg) scale(1.12)}
 .card .num{font-family:'Unbounded',sans-serif;font-weight:500;font-size:14px;color:var(--muted);margin-bottom:22px;transition:color .2s}
+#idea .card .num{position:relative;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;color:#F9FAF5;font-size:13px;font-weight:600}
+#idea .card .num svg{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+#idea .card .num b{position:relative;z-index:1}
 .card:hover .num{color:var(--accent)}
 .card h3{font:600 18px/1.35 'Onest',sans-serif}
 .cardnote{font:400 14.5px/1.55 'Onest',sans-serif;color:rgba(22,24,29,.6);margin:10px 0 0}
+.contrastlist{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
+.contrastlist li{display:flex;align-items:flex-start;gap:12px;font:400 16px/1.55 'Onest',sans-serif;color:rgba(22,24,29,.8)}
+.contrastlist .pzb{width:13px;height:13px;flex:none;margin-top:5px}
+.chipwrap{margin-top:48px;padding-top:32px;border-top:1px solid var(--line)}
+.chiphead{font:500 13px 'Onest',sans-serif;color:rgba(22,24,29,.55);margin:0 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font:400 13.5px 'Onest',sans-serif;color:rgba(22,24,29,.68);border:1px solid var(--line);border-radius:20px;padding:8px 16px;transition:border-color .2s,color .2s}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
 .quote{position:relative;border:1px solid var(--line);padding:38px 36px;transition:transform .25s,border-color .25s;background:var(--bg)}
 .quote:hover{transform:translateY(-4px);border-color:var(--accent)}
 .quote .pzc{position:absolute;top:16px;right:16px;width:16px;height:16px;color:var(--muted);opacity:0;transition:transform .25s,opacity .25s,color .25s}
@@ -119,7 +131,9 @@ header.site .btn-primary{padding:11px 20px;font-size:14px}
 .pstep .pc{position:absolute;left:calc(6px - clamp(40px,5vw,64px));top:44px;width:24px;height:24px;transform:translateX(-50%);transition:transform .3s}
 .pstep:hover .pc{transform:translateX(-50%) rotate(9deg) scale(1.1)}
 .pstep .pc svg{display:block}
-.pstep .no{font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(26px,3vw,38px);color:var(--muted);line-height:1;transition:color .25s}
+.pstep .no{position:relative;display:inline-flex;align-items:center;justify-content:center;width:clamp(44px,5vw,52px);height:clamp(44px,5vw,52px);color:#F9FAF5;font-family:'Unbounded',sans-serif;font-weight:600;font-size:16px}
+.pstep .no svg{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.pstep .no b{position:relative;z-index:1}
 .pstep:hover .no{color:var(--accent)}
 .pstep h3{font:600 20px/1.3 'Onest',sans-serif;margin:0 0 12px}
 .pstep p{font:400 16px/1.65 'Onest',sans-serif;color:rgba(22,24,29,.75);margin:0;max-width:62ch;text-wrap:pretty}
@@ -209,7 +223,7 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
   .hero-pz{gap:12px}
 }
 </style>
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Puzzles Marketing", "description": "Комплексный маркетинг полного цикла: стратегия, позиционирование, сайт, реклама и контент как одна система.", "url": "https://nikitaapostol-hub.github.io/", "image": "https://nikitaapostol-hub.github.io/og-image.png", "areaServed": "Online", "priceRange": "$$", "knowsLanguage": ["ru", "ro"], "serviceType": ["Маркетинговая стратегия", "Позиционирование", "Сайт и лендинг", "Реклама", "Контент и SMM", "Аналитика"]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит маркетинг под ключ?", "acceptedAnswer": {"@type": "Answer", "text": "Зависит от объёма. Разовая задача вроде лендинга или настройки рекламы считается отдельно, ведение проекта — помесячно. Точная цифра определяется после консультации, когда понятно, что именно нужно. Наугад она не называется."}}, {"@type": "Question", "name": "Как организован процесс?", "acceptedAnswer": {"@type": "Answer", "text": "Стратегия, тексты, реклама и аналитика ведутся в рамках одного процесса — так не теряется логика между этапами. При необходимости для съёмки, дизайна или разработки подключаются проверенные специалисты, но управление и ответственность остаются в одном месте."}}, {"@type": "Question", "name": "Чем маркетинг отличается от таргетолога или SMM?", "acceptedAnswer": {"@type": "Answer", "text": "Таргетолог настраивает рекламу, SMM ведёт соцсети — это отдельные инструменты. Маркетинг решает, что и кому вообще продавать, через какие каналы и в каком порядке, и связывает инструменты в одну систему. Без этой рамки каждый инструмент работает сам по себе и на общий результат влияет слабо."}}, {"@type": "Question", "name": "У меня маленький бюджет. Есть смысл?", "acceptedAnswer": {"@type": "Answer", "text": "Часто да. Небольшой бюджет — это не повод не работать, а повод не размазывать его на все каналы сразу. Иногда правильный ответ — сначала починить сайт, а рекламу не запускать вовсе. Это будет прямо сказано на консультации."}}, {"@type": "Question", "name": "Через сколько будет результат?", "acceptedAnswer": {"@type": "Answer", "text": "Первые данные — через две-три недели после запуска. Устойчивый результат по заявкам — обычно второй-третий месяц. Обещать продажи с первой недели никто не станет."}}, {"@type": "Question", "name": "Что происходит на бесплатной консультации?", "acceptedAnswer": {"@type": "Answer", "text": "Около часа разговора. Заранее изучаются сайт, реклама и соцсети, затем показывается полная картина: где теряются деньги, что стоит починить в первую очередь. Понимание своей ситуации остаётся у вас независимо от того, начнётся ли дальнейшая работа."}}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Puzzles Marketing", "description": "Комплексный маркетинг полного цикла: стратегия, позиционирование, сайт, реклама и контент как одна система.", "url": "https://nikitaapostol-hub.github.io/", "image": "https://nikitaapostol-hub.github.io/og-image.png", "areaServed": "Online", "priceRange": "$$", "knowsLanguage": ["ru", "ro"], "serviceType": ["Маркетинговая стратегия", "Позиционирование", "Сайт и лендинг", "Реклама", "Контент и SMM", "Аналитика"]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит маркетинг под ключ?", "acceptedAnswer": {"@type": "Answer", "text": "Зависит от объёма. Разовая задача вроде лендинга или настройки рекламы считается отдельно, ведение проекта — помесячно. Точная цифра определяется после разбора, когда понятно, что именно нужно. Наугад она не называется."}}, {"@type": "Question", "name": "Как организован процесс?", "acceptedAnswer": {"@type": "Answer", "text": "Стратегия, тексты, реклама и аналитика ведутся в рамках одного процесса — так не теряется логика между этапами. При необходимости для съёмки, дизайна или разработки подключаются проверенные специалисты, но управление и ответственность остаются в одном месте."}}, {"@type": "Question", "name": "Чем маркетинг отличается от таргетолога или SMM?", "acceptedAnswer": {"@type": "Answer", "text": "Таргетолог настраивает рекламу, SMM ведёт соцсети — это отдельные инструменты. Маркетинг решает, что и кому вообще продавать, через какие каналы и в каком порядке, и связывает инструменты в одну систему. Без этой рамки каждый инструмент работает сам по себе и на общий результат влияет слабо."}}, {"@type": "Question", "name": "У меня маленький бюджет. Есть смысл?", "acceptedAnswer": {"@type": "Answer", "text": "Часто да. Небольшой бюджет — это не повод не работать, а повод не размазывать его на все каналы сразу. Иногда правильный ответ — сначала починить сайт, а рекламу не запускать вовсе. Это будет прямо сказано на разборе."}}, {"@type": "Question", "name": "Через сколько будет результат?", "acceptedAnswer": {"@type": "Answer", "text": "Первые данные — через две-три недели после запуска. Устойчивый результат по заявкам — обычно второй-третий месяц. Обещать продажи с первой недели никто не станет."}}, {"@type": "Question", "name": "Как проходит разбор бизнеса?", "acceptedAnswer": {"@type": "Answer", "text": "Около часа разговора. Заранее изучаются сайт, реклама и соцсети, затем показывается полная картина: где теряются деньги, что стоит починить в первую очередь. Понимание своей ситуации остаётся у вас независимо от того, начнётся ли дальнейшая работа."}}]}]</script>
 </head>
 <body>
 
@@ -232,7 +246,7 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
       <a class="navlink" href="#process">Процесс</a>
       <a class="navlink" href="#services">Что даёт</a>
       <a class="navlink" href="#approach">Подход</a>
-      <a class="btn btn-primary" href="#contact">Бесплатная консультация</a>
+      <a class="btn btn-primary" href="#contact">Записаться на разбор бизнеса</a>
     </nav>
   </div>
 </header>
@@ -242,14 +256,14 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
   <div class="bgpz" id="heroBg" aria-hidden="true"></div>
   <div class="bar">
     <div class="lock light"><svg class="mark"><use href="#pzmark"/></svg><span class="wm"><b>PUZZLES</b><span>MARKETING</span></span></div>
-    <a class="navlink" href="#contact">Бесплатная консультация</a>
+    <a class="navlink" href="#contact">Записаться на разбор бизнеса</a>
   </div>
   <div class="wrap hero-content">
     <p class="eyebrow" data-rv><span class="dash"></span>Маркетинг полного цикла</p>
     <h1 data-rv>Маркетинг, который <span class="a">работает</span> как&nbsp;система</h1>
     <p class="lede" data-rv>Стратегия, сайт, реклама и контент работают как одна система — видно, откуда приходят клиенты, а&nbsp;не только куда уходит бюджет.</p>
     <div class="cta" data-rv>
-      <a class="btn btn-primary" href="#contact">Бесплатная консультация</a>
+      <a class="btn btn-primary" href="#contact">Записаться на разбор бизнеса</a>
       <a class="btn btn-ghost" href="#process">Как это устроено <span aria-hidden="true">↓</span></a>
     </div>
     <p class="cta-note" data-rv>Без обязательств</p>
@@ -263,19 +277,19 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
 
 <section class="sec" id="idea">
   <div class="wrap">
-    <p class="eyebrow" data-rv><span class="n">01</span> Идея</p>
+    <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Идея</p>
     <h2 data-rv>Что такое маркетинг <em>на&nbsp;самом деле</em></h2>
     <div style="max-width:68ch;margin-top:34px;display:flex;flex-direction:column;gap:20px">
       <p class="lede" data-rv>Маркетинг часто путают с рекламой. Реклама — это только то, что видно снаружи: баннеры, посты, объявления. Сам маркетинг начинается раньше и отвечает на вопросы, от которых зависит всё остальное.</p>
       <p class="lede" data-rv>Кому продукт действительно нужен. Почему из всех вариантов на рынке выбирают именно этот. В какой момент человек готов принять решение и чего ему для этого не хватает. Пока эти вопросы решаются в разных местах и по-разному, усилия расходуются вхолостую. Когда на них есть общий, согласованный ответ, каждое действие — реклама, текст, публикация — начинает работать на одну цель, а не само по себе.</p>
     </div>
     <div class="grid g3">
-      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">01</div><h3>Кому вы нужны</h3><p class="cardnote">Аудитория редко совпадает с тем, кто первым приходит в голову. Точный портрет клиента экономит бюджет ещё до запуска любой активности.</p></div>
-      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">02</div><h3>Почему выбирают вас</h3><p class="cardnote">Одна и та же услуга у разных исполнителей выглядит одинаково до тех пор, пока не назван конкретный повод выбрать именно этот вариант.</p></div>
-      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">03</div><h3>Как об этом узнают</h3><p class="cardnote">Канал имеет меньше значения, чем момент: сообщение должно доходить туда, где человек уже ищет решение своей задачи.</p></div>
-      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">04</div><h3>Что убеждает выбрать именно сейчас</h3><p class="cardnote">Между интересом и решением всегда есть разрыв. Его закрывают конкретные аргументы, а не уговоры.</p></div>
-      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">05</div><h3>Что удерживает клиента после первой покупки</h3><p class="cardnote">Первая продажа обходится дороже всех последующих. Без системы возврата этот ресурс просто теряется.</p></div>
-      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">06</div><h3>Откуда видно, что это работает</h3><p class="cardnote">Ощущение «реклама вроде идёт» не показатель. Показатель — цифры, которые можно проверить.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>01</b></div><h3>Кому вы нужны</h3><p class="cardnote">Аудитория редко совпадает с тем, кто первым приходит в голову. Точный портрет клиента экономит бюджет ещё до запуска любой активности.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>02</b></div><h3>Почему выбирают вас</h3><p class="cardnote">Одна и та же услуга у разных исполнителей выглядит одинаково до тех пор, пока не назван конкретный повод выбрать именно этот вариант.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>03</b></div><h3>Как об этом узнают</h3><p class="cardnote">Канал имеет меньше значения, чем момент: сообщение должно доходить туда, где человек уже ищет решение своей задачи.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>04</b></div><h3>Что убеждает выбрать именно сейчас</h3><p class="cardnote">Между интересом и решением всегда есть разрыв. Его закрывают конкретные аргументы, а не уговоры.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>05</b></div><h3>Что удерживает клиента после первой покупки</h3><p class="cardnote">Первая продажа обходится дороже всех последующих. Без системы возврата этот ресурс просто теряется.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>06</b></div><h3>Откуда видно, что это работает</h3><p class="cardnote">Ощущение «реклама вроде идёт» не показатель. Показатель — цифры, которые можно проверить.</p></div>
     </div>
   </div>
 </section>
@@ -284,7 +298,7 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
   <div class="wrap">
     <hr class="rule">
     <div style="max-width:820px;padding-top:clamp(56px,9vw,120px)">
-      <p class="eyebrow" data-rv><span class="n">02</span> Зачем маркетинг</p>
+      <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Зачем маркетинг</p>
       <h2 data-rv>Почему без маркетинга <em>не&nbsp;обойтись</em></h2>
       <p class="lede" data-rv style="margin-top:28px">Можно делать лучший продукт в городе и остаться незамеченным. Рынок не выбирает лучшее — он выбирает то, что понял и запомнил. Маркетинг переводит реальную ценность продукта на язык, понятный тому, кто его покупает, и доводит этот смысл до нужного человека в нужный момент.</p>
       <p class="lede" data-rv style="margin-top:20px">Без этой работы даже сильный продукт остаётся неполным: он есть, а спроса на него нет; клиенты есть, но приходят случайно. Маркетинг превращает случайность в систему, которую можно повторять и на которую можно опираться.</p>
@@ -294,7 +308,7 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
 
 <section class="sec" id="situation">
   <div class="wrap">
-    <p class="eyebrow" data-rv><span class="n">03</span> Ситуация</p>
+    <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Ситуация</p>
     <h2 data-rv style="max-width:860px;text-wrap:balance">Если что-то из этого про вас — дальше есть&nbsp;смысл читать</h2>
     <div class="grid g2">
       <div class="quote" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><p>«Реклама крутится, деньги уходят. Откуда берутся клиенты — не знаю»</p></div>
@@ -307,7 +321,7 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
 
 <section class="sec inv" id="changes">
   <div class="wrap">
-    <p class="eyebrow on-dark" data-rv><span class="n">04</span> Результат</p>
+    <p class="eyebrow on-dark" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Результат</p>
     <h2 data-rv style="max-width:820px;text-wrap:balance">Что <em>меняется</em>, когда всё работает как&nbsp;система</h2>
     <div class="accline" data-accline></div>
     <div class="changes">
@@ -321,14 +335,14 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
 
 <section class="sec" id="process">
   <div class="wrap">
-    <p class="eyebrow" data-rv><span class="n">05</span> Процесс</p>
+    <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Процесс</p>
     <h2 data-rv>Как выглядит работа</h2>
     <div class="proc" id="proc">
-      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no">01</div><div><h3>Консультация</h3><p>Разбирается всё, что уже сделано: сайт, реклама, соцсети, цифры. Так находится, где именно теряются деньги и клиенты. Это бесплатно и ни к чему не обязывает — понимание своей ситуации остаётся у вас, даже если дальнейшая работа не начнётся.</p></div></div>
-      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no">02</div><div><h3>Стратегия</h3><p>Определяется, кто главный клиент, чем бизнес отличается от соседей по рынку и через какие каналы до этого клиента реально дотянуться. Без этого шага любая реклама — стрельба вслепую.</p></div></div>
-      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no">03</div><div><h3>Сборка</h3><p>Собирается то, чего не хватает: сайт или лендинг, аналитика, тексты, рекламные кампании, контент-план. Аналитика подключается сразу, а не после запуска — иначе первые недели данных теряются без возврата.</p></div></div>
-      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no">04</div><div><h3>Запуск и данные</h3><p>Кампании запускаются с одного сегмента, а не со всех сразу — так быстрее видно, что действительно работает. Первые выводы формируются в течение двух-трёх недель.</p></div></div>
-      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no">05</div><div><h3>Корректировка</h3><p>Раз в месяц формируется честная картина: что сработало, что нет, что меняется дальше. Если предыдущая гипотеза не подтвердилась, это называется прямо, а не сглаживается в отчёте.</p></div></div>
+      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>01</b></div><div><h3>Разбор</h3><p>Разбирается всё, что уже сделано: сайт, реклама, соцсети, цифры. Так находится, где именно теряются деньги и клиенты. Понимание своей ситуации остаётся у вас, даже если дальнейшая работа не начнётся.</p></div></div>
+      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>02</b></div><div><h3>Стратегия</h3><p>Определяется, кто главный клиент, чем бизнес отличается от соседей по рынку и через какие каналы до этого клиента реально дотянуться. Без этого шага любая реклама — стрельба вслепую.</p></div></div>
+      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>03</b></div><div><h3>Сборка</h3><p>Собирается то, чего не хватает: сайт или лендинг, аналитика, тексты, рекламные кампании, контент-план. Аналитика подключается сразу, а не после запуска — иначе первые недели данных теряются без возврата.</p></div></div>
+      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>04</b></div><div><h3>Запуск и данные</h3><p>Кампании запускаются с одного сегмента, а не со всех сразу — так быстрее видно, что действительно работает. Первые выводы формируются в течение двух-трёх недель.</p></div></div>
+      <div class="pstep" data-rv><span class="pc"><svg viewBox="0 0 100 100" width="24" height="24"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="none" stroke="#B7BAC3" stroke-width="6"/></svg></span><div class="no"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>05</b></div><div><h3>Корректировка</h3><p>Раз в месяц формируется честная картина: что сработало, что нет, что меняется дальше. Если предыдущая гипотеза не подтвердилась, это называется прямо, а не сглаживается в отчёте.</p></div></div>
     </div>
   </div>
 </section>
@@ -336,23 +350,27 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
 <section class="sec" id="services">
   <div class="wrap">
     <hr class="rule" style="margin-bottom:clamp(56px,9vw,120px)">
-    <p class="eyebrow" data-rv><span class="n">06</span> Что это даёт</p>
-    <h2 data-rv>Что маркетинг <em>даёт</em> бизнесу</h2>
-    <p class="lede" data-rv style="margin-top:20px;max-width:520px">Не обязательно всё сразу — в приоритете то, что даёт результат быстрее.</p>
+    <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Модель</p>
+    <h2 data-rv>Как устроен маркетинг</h2>
+    <p class="lede" data-rv style="margin-top:20px;max-width:640px">Маркетинг — не отдельная услуга, а часть того, как вообще работает бизнес: от того, что производится, до того, как это доходит до человека и почему он платит именно здесь, а&nbsp;не у соседа. Он работает не по частям, а целиком — каждая часть опирается на предыдущую.</p>
     <div class="grid g3">
-      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">01</div><h3 style="margin-bottom:12px">Стратегия и позиционирование</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Вы понимаете, кому продаёте и почему выбирают вас, а не соседа с такой же ценой.</p></div>
-      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">02</div><h3 style="margin-bottom:12px">Сайт и лендинг</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Страница, которая объясняет ценность и приводит заявки. Аналитика встроена с первого дня.</p></div>
-      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">03</div><h3 style="margin-bottom:12px">Реклама</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Бюджет уходит в каналы, которые приносят, а не в те, которые привычны.</p></div>
-      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">04</div><h3 style="margin-bottom:12px">Контент и соцсети</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Публикации, которые готовят человека к покупке, а не просто заполняют ленту.</p></div>
-      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">05</div><h3 style="margin-bottom:12px">Воронки и рассылки</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Человек, который не купил сегодня, не теряется, а постепенно доходит до решения.</p></div>
-      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num">06</div><h3 style="margin-bottom:12px">Мероприятия</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Событие, за участие в котором люди платят, потому что понимают, что получат.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>01</b></div><h3 style="margin-bottom:12px">Рынок</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Прежде чем говорить о продукте, нужно понимать рынок, в который он выходит: кто уже работает в нише, в чём конкуренты сильны и слабы, какие правила в ней сложились. Без этой картины любое решение — догадка.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>02</b></div><h3 style="margin-bottom:12px">Аудитория</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Не «все, кому может подойти», а конкретные люди с конкретной причиной купить. Разные ниши требуют разного подхода: то, что работает для доставки еды, не работает для услуг бизнесу. Сначала — понять, что человек хочет и как до него дойти.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>03</b></div><h3 style="margin-bottom:12px">Ценность и позиционирование</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Продукт объясняется не через характеристики, а через то, что он меняет для человека. Если продукт новый или непривычный, часть работы — сначала показать рынку, зачем он вообще нужен, и только потом продавать: рынок иногда нужно научить любить продукт, а не сразу требовать покупки.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>04</b></div><h3 style="margin-bottom:12px">Точки касания</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">Сегодня редко срабатывает продажа в лоб с первого раза. Человек не любит, когда ему навязывают. Работают несколько касаний, в которых он успевает узнать, привыкнуть и довериться — реклама, контент, видео, офлайн-события, личные встречи. Разговор идёт про пользу и ощущения, а не про «купите сейчас».</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>05</b></div><h3 style="margin-bottom:12px">Путь к решению</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">От первого интереса до покупки — разные этапы, и на каждом нужны разные аргументы. Кто-то готов купить сразу, кто-то ещё выбирает — и с ним нужно говорить иначе, а не одинаково со всеми.</p></div>
+      <div class="card" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><div class="num"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><b>06</b></div><h3 style="margin-bottom:12px">Аналитика и корректировка</h3><p style="font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0">То, что сработало вчера, не гарантированно работает сегодня. Решения опираются на цифры, а не на ощущение, что «вроде хорошо получилось». Что не работает — меняется, что работает — усиливается.</p></div>
+    </div>
+    <div class="chipwrap" data-rv>
+      <p class="chiphead">На практике это выглядит как:</p>
+      <div class="chips"><span class="chip">Стратегия и позиционирование</span><span class="chip">Сайт и лендинг</span><span class="chip">Реклама</span><span class="chip">Контент и видео</span><span class="chip">Воронки и рассылки</span><span class="chip">Мероприятия</span></div>
     </div>
   </div>
 </section>
 
 <section class="sec" id="start">
   <div class="wrap">
-    <p class="eyebrow" data-rv><span class="n">07</span> С чего начать</p>
+    <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> С чего начать</p>
     <h2 data-rv>Дальше выбор <em>за&nbsp;вами</em></h2>
     <div class="entries" id="entries">
       <div class="entry" data-rv data-entry>
@@ -370,7 +388,7 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
 <section class="sec" id="razbory">
   <div class="wrap">
     <hr class="rule" style="margin-bottom:clamp(56px,9vw,120px)">
-    <p class="eyebrow" data-rv><span class="n">08</span> Скоро</p>
+    <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Скоро</p>
     <h2 data-rv>Разборы</h2>
     <p class="lede" data-rv style="margin-top:20px;max-width:60ch">Здесь регулярно разбираются чужие бизнесы: что получилось, что нет и почему. Не критика, а разбор того, как принимаются решения в маркетинге. Первые разборы скоро здесь.</p>
     <div class="grid g3">
@@ -385,7 +403,7 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
 <section class="sec" id="blog">
   <div class="wrap">
     <div style="max-width:960px">
-      <p class="eyebrow" data-rv><span class="n">09</span> Блог</p>
+      <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Блог</p>
       <h2 data-rv style="max-width:700px;text-wrap:balance">Про маркетинг простым&nbsp;языком</h2>
       <p class="lede" data-rv style="margin-top:20px;max-width:58ch">О том, как это работает на самом деле — без терминов, которыми принято пугать заказчика.</p>
       <div class="grid g3">
@@ -403,10 +421,15 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
     <div class="about">
       <div class="vis" data-rv><div class="bgpz" id="aboutPz" style="position:absolute;inset:0"></div></div>
       <div class="txt">
-        <p class="eyebrow" data-rv><span class="n">10</span> Подход</p>
+        <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Подход</p>
         <h2 data-rv style="font-size:clamp(26px,2.6vw,36px);margin-bottom:24px">Один процесс, а&nbsp;не набор услуг</h2>
-        <p data-rv>Маркетинг по частям почти не работает. Реклама без позиционирования сжигает бюджет. Сайт без аналитики не показывает, что происходит на самом деле. Контент без стратегии — расход времени, который не приближает к продаже.</p>
-        <p data-rv>Когда эти части ведутся как один процесс — от анализа до запуска и корректировки — решения на каждом этапе опираются на предыдущий, а не начинаются заново. Ничего не теряется на стыках между задачами.</p>
+        <ul class="contrastlist">
+          <li data-rv><svg class="pzb" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><span>Не реклама ради рекламы — а продажи, которые из неё вырастают.</span></li>
+          <li data-rv><svg class="pzb" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><span>Не только цифровые каналы — а любая точка, где бизнес встречается с человеком: от рекламного ролика до личной встречи или мероприятия.</span></li>
+          <li data-rv><svg class="pzb" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><span>Не отдельные задачи от разных людей — а один процесс с общей логикой от начала до конца.</span></li>
+          <li data-rv><svg class="pzb" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><span>Не универсальный шаблон — а разбор конкретного рынка, конкретной аудитории, конкретного продукта.</span></li>
+          <li data-rv><svg class="pzb" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><span>Не обещание результата — а цифры, которые можно проверить.</span></li>
+        </ul>
         <p data-rv>Puzzles Marketing — про маркетинг полного цикла: не набор отдельных услуг, а работа, где каждая часть усиливает остальные.</p>
       </div>
     </div>
@@ -415,15 +438,15 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
 
 <section class="sec" id="faq">
   <div class="wrap">
-    <p class="eyebrow" data-rv><span class="n">11</span> Вопросы</p>
+    <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Вопросы</p>
     <h2 data-rv>Что обычно спрашивают</h2>
     <div class="faqwrap" data-rv id="faq">
-      <div class="qa"><button aria-expanded="false">Сколько стоит маркетинг под ключ?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Зависит от объёма. Разовая задача вроде лендинга или настройки рекламы считается отдельно, ведение проекта — помесячно. Точная цифра определяется после консультации, когда понятно, что именно нужно. Наугад она не называется.</p></div></div>
+      <div class="qa"><button aria-expanded="false">Сколько стоит маркетинг под ключ?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Зависит от объёма. Разовая задача вроде лендинга или настройки рекламы считается отдельно, ведение проекта — помесячно. Точная цифра определяется после разбора, когда понятно, что именно нужно. Наугад она не называется.</p></div></div>
       <div class="qa"><button aria-expanded="false">Как организован процесс?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Стратегия, тексты, реклама и аналитика ведутся в рамках одного процесса — так не теряется логика между этапами. При необходимости для съёмки, дизайна или разработки подключаются проверенные специалисты, но управление и ответственность остаются в одном месте.</p></div></div>
       <div class="qa"><button aria-expanded="false">Чем маркетинг отличается от таргетолога или SMM?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Таргетолог настраивает рекламу, SMM ведёт соцсети — это отдельные инструменты. Маркетинг решает, что и кому вообще продавать, через какие каналы и в каком порядке, и связывает инструменты в одну систему. Без этой рамки каждый инструмент работает сам по себе и на общий результат влияет слабо.</p></div></div>
-      <div class="qa"><button aria-expanded="false">У меня маленький бюджет. Есть смысл?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Часто да. Небольшой бюджет — это не повод не работать, а повод не размазывать его на все каналы сразу. Иногда правильный ответ — сначала починить сайт, а рекламу не запускать вовсе. Это будет прямо сказано на консультации.</p></div></div>
+      <div class="qa"><button aria-expanded="false">У меня маленький бюджет. Есть смысл?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Часто да. Небольшой бюджет — это не повод не работать, а повод не размазывать его на все каналы сразу. Иногда правильный ответ — сначала починить сайт, а рекламу не запускать вовсе. Это будет прямо сказано на разборе.</p></div></div>
       <div class="qa"><button aria-expanded="false">Через сколько будет результат?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Первые данные — через две-три недели после запуска. Устойчивый результат по заявкам — обычно второй-третий месяц. Обещать продажи с первой недели никто не станет.</p></div></div>
-      <div class="qa"><button aria-expanded="false">Что происходит на бесплатной консультации?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Около часа разговора. Заранее изучаются сайт, реклама и соцсети, затем показывается полная картина: где теряются деньги, что стоит починить в первую очередь. Понимание своей ситуации остаётся у вас независимо от того, начнётся ли дальнейшая работа.</p></div></div>
+      <div class="qa"><button aria-expanded="false">Как проходит разбор бизнеса?<svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></button><div class="ans"><p>Около часа разговора. Заранее изучаются сайт, реклама и соцсети, затем показывается полная картина: где теряются деньги, что стоит починить в первую очередь. Понимание своей ситуации остаётся у вас независимо от того, начнётся ли дальнейшая работа.</p></div></div>
     </div>
   </div>
 </section>
@@ -431,14 +454,14 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
 <section class="final inv" id="contact">
   <div class="finalpz" id="finalPz" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="eyebrow on-dark" data-rv><span class="n">12</span> Контакт</p>
-    <h2 data-rv>Начнём <em>с&nbsp;разговора</em></h2>
-    <p class="lede" data-rv>Час консультации: разбор бизнеса даёт понятную картину того, что чинить в первую очередь. Без обязательств и без презентации услуг.</p>
+    <p class="eyebrow on-dark" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Контакт</p>
+    <h2 data-rv>Начнём <em>с&nbsp;разбора</em></h2>
+    <p class="lede" data-rv>Час времени: разбор бизнеса даёт понятную картину того, что чинить в первую очередь. Без презентации услуг.</p>
     <form data-rv id="leadForm" novalidate>
       <input name="name" autocomplete="name" placeholder="Имя" aria-label="Имя" required>
       <input name="contact" placeholder="Телефон или Telegram" aria-label="Телефон или Telegram" required>
       <input name="site" placeholder="Ссылка на сайт или страницу в соцсетях" aria-label="Ссылка на сайт или соцсети">
-      <button class="btn btn-primary" type="submit" id="submitBtn" style="justify-content:center;margin-top:12px">Записаться на консультацию</button>
+      <button class="btn btn-primary" type="submit" id="submitBtn" style="justify-content:center;margin-top:12px">Записаться на разбор</button>
       <p class="note">Ответ — в течение дня. Никаких рассылок и звонков без предупреждения.</p>
     </form>
     <div class="sent" id="sentMsg"><svg viewBox="0 0 100 100" width="26" height="26"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="#6E77EE"/></svg><p>Заявка принята. Материалы будут изучены, ответ — в течение дня.</p></div>
@@ -464,7 +487,7 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
   </div>
 </footer>
 
-<div class="sticky" id="sticky"><a class="btn btn-primary" href="#contact">Бесплатная консультация</a></div>
+<div class="sticky" id="sticky"><a class="btn btn-primary" href="#contact">Записаться на разбор бизнеса</a></div>
 
 <script>
 (function(){

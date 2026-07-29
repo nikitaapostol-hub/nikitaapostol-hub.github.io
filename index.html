@@ -59,12 +59,24 @@ h2{font-size:clamp(28px,3.4vw,46px);line-height:1.14}
 header.site{position:fixed;left:0;right:0;top:0;z-index:90;background:rgba(249,250,245,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transform:translateY(-100%);opacity:0;transition:transform .4s cubic-bezier(.22,.61,.36,1),opacity .3s;pointer-events:none}
 header.site.show{transform:none;opacity:1;pointer-events:auto}
 header.site .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:13px;padding-bottom:13px}
-header.site nav{display:flex;gap:30px;align-items:center}
+header.site nav{display:flex;gap:26px;align-items:center}
 .navlink{position:relative;font:500 14px 'Onest',sans-serif;color:rgba(22,24,29,.72)}
 .navlink::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:0;background:var(--accent);transition:width .3s}
 .navlink:hover::after{width:100%}
-@media(max-width:720px){.navlink{display:none}}
+.navsep{width:1px;height:16px;background:var(--line);flex:none}
+.navpage{color:var(--ink);font-weight:600}
 header.site .btn-primary{padding:11px 20px;font-size:14px}
+.burger{display:none;width:36px;height:36px;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:none;border:none;cursor:pointer;flex:none;padding:0}
+.burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobilenav{display:none;flex-direction:column;gap:2px;padding:6px clamp(20px,5vw,72px) 22px;border-top:1px solid var(--line);background:rgba(249,250,245,.98)}
+.mobilenav a{padding:14px 0;font:500 15px 'Onest',sans-serif;color:var(--ink);border-bottom:1px solid var(--line)}
+.mobilenav a.btn{border:none;text-align:center;margin-top:14px;justify-content:center}
+.mobilenav hr{border:0;border-top:1px solid var(--line);margin:6px 0}
+.mobilenav.open{display:flex}
+@media(max-width:720px){header.site nav{display:none}.burger{display:flex}}
 /* hero */
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden}
 .hero .bar{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:26px clamp(20px,5vw,72px);max-width:1240px;width:100%;margin:0 auto}
@@ -101,9 +113,11 @@ header.site .btn-primary{padding:11px 20px;font-size:14px}
 .caticon{width:11px;height:11px;flex:none;color:var(--accent)}
 .cat{font:500 12px 'Onest',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
 .readtime{font:400 12px 'Onest',sans-serif;color:rgba(22,24,29,.4);margin-left:2px}
-#blog .card h3{margin-top:14px}
-#blog .card .readmore{display:inline-flex;align-items:center;gap:6px;font:500 14px 'Onest',sans-serif;color:var(--ink);margin-top:18px;transition:gap .2s,color .2s}
-#blog .card:hover .readmore{gap:10px;color:var(--accent)}
+#blog .card h3,#razbory .card h3{margin-top:14px}
+#blog .card .readmore,#razbory .card .readmore{display:inline-flex;align-items:center;gap:6px;font:500 14px 'Onest',sans-serif;color:var(--ink);margin-top:18px;transition:gap .2s,color .2s}
+#blog .card:hover .readmore,#razbory .card:hover .readmore{gap:10px;color:var(--accent)}
+.casetype{display:inline-flex;align-items:center;font:600 11.5px 'Onest',sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#fff;background:var(--accent);padding:6px 13px;border-radius:3px}
+.principle-preview{font:400 13.5px/1.55 'Onest',sans-serif;color:rgba(22,24,29,.45);font-style:italic;margin:12px 0 0}
 .contrastlist{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
 .contrastlist li{display:flex;align-items:flex-start;gap:12px;font:400 16px/1.55 'Onest',sans-serif;color:rgba(22,24,29,.8)}
 .contrastlist .pzb{width:13px;height:13px;flex:none;margin-top:5px}
@@ -253,8 +267,23 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
       <a class="navlink" href="#process">Процесс</a>
       <a class="navlink" href="#services">Что даёт</a>
       <a class="navlink" href="#approach">Подход</a>
+      <span class="navsep" aria-hidden="true"></span>
+      <a class="navlink navpage" href="/blog">Блог</a>
+      <a class="navlink navpage" href="/cases">Разборы</a>
       <a class="btn btn-primary" href="#contact">Записаться на разбор бизнеса</a>
     </nav>
+    <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobilenav" id="mobileNav">
+    <a href="#process">Процесс</a>
+    <a href="#services">Что даёт</a>
+    <a href="#approach">Подход</a>
+    <hr>
+    <a href="/blog">Блог</a>
+    <a href="/cases">Разборы</a>
+    <a class="btn btn-primary" href="#contact">Записаться на разбор бизнеса</a>
   </div>
 </header>
 
@@ -395,15 +424,46 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
 <section class="sec" id="razbory">
   <div class="wrap">
     <hr class="rule" style="margin-bottom:clamp(56px,9vw,120px)">
-    <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Скоро</p>
-    <h2 data-rv>Разборы</h2>
-    <p class="lede" data-rv style="margin-top:20px;max-width:60ch">Здесь регулярно разбираются чужие бизнесы: что получилось, что нет и почему. Не критика, а разбор того, как принимаются решения в маркетинге. Первые разборы скоро здесь.</p>
-    <div class="grid g3">
-      <article class="soon" data-rv><span class="tag">Скоро</span><p style="font:500 17px/1.45 'Onest',sans-serif;color:rgba(22,24,29,.55);margin:22px 0 0">Почему у отеля идеальная реклама и пустые номера</p></article>
-      <article class="soon" data-rv><span class="tag">Скоро</span><p style="font:500 17px/1.45 'Onest',sans-serif;color:rgba(22,24,29,.55);margin:22px 0 0">Кофейня с очередью и кофейня без. Разница не в кофе</p></article>
-      <article class="soon" data-rv><span class="tag">Скоро</span><p style="font:500 17px/1.45 'Onest',sans-serif;color:rgba(22,24,29,.55);margin:22px 0 0">Что не так с сайтами клиник</p></article>
+    <div style="max-width:700px">
+      <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Практика</p>
+      <h2 data-rv>Разборы</h2>
+      <p class="lede" data-rv style="margin-top:20px;max-width:60ch">Конкретные ситуации из практики и известные кейсы — что видно снаружи, где на самом деле проблема и что с ней можно сделать.</p>
     </div>
-    <a href="/razbory" class="btn btn-line" style="margin-top:32px;pointer-events:none;color:var(--muted);border-color:var(--line)">Все разборы — скоро</a>
+    <div class="grid g2">
+      <a class="card" data-rv href="/cases/hotel-ctr">
+        <svg class="pzc" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg>
+        <span class="casetype">Из практики</span>
+        <h3>Почему у отеля был идеальный CTR и пустые номера</h3>
+        <p class="cardnote">Реклама показывала CTR 10–12% — а брони не было.</p>
+        <p class="principle-preview">Хорошая реклама может проигрывать образу, который уже сложился в голове аудитории.</p>
+        <span class="readmore">Читать разбор <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" data-rv href="/cases/family-mascots">
+        <svg class="pzc" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg>
+        <span class="casetype">Из практики</span>
+        <h3>Как обычная локация стала местным Диснейлендом</h3>
+        <p class="cardnote">Решение о поездке платит родитель — но выбирает ребёнок.</p>
+        <p class="principle-preview">Когда решение принимает не тот, кто платит, реклама для плательщика бьёт мимо.</p>
+        <span class="readmore">Читать разбор <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" data-rv href="/cases/red-bull">
+        <svg class="pzc" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg>
+        <span class="casetype">Публичный кейс</span>
+        <h3>Red Bull не продаёт энергетик - и именно поэтому его покупают</h3>
+        <p class="cardnote">Компания, которая формально продаёт энергетик в банке, управляет собственной медиастудией.</p>
+        <p class="principle-preview">Чем меньше бренд продаёт напрямую внутри своего контента, тем больше доверия получает.</p>
+        <span class="readmore">Читать разбор <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" data-rv href="/cases/coffee-queue">
+        <svg class="pzc" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg>
+        <span class="casetype">Типовой случай</span>
+        <h3>Кофейня с очередью и кофейня без. Разница не в кофе</h3>
+        <p class="cardnote">Кофе одного уровня, а в одном месте очередь, в другом хоть шаром покати.</p>
+        <p class="principle-preview">Очередь формируется не из превосходства продукта, а из ясного повода зайти именно сюда и сейчас.</p>
+        <span class="readmore">Читать разбор <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+    <a href="/cases" class="btn btn-line" style="margin-top:32px">Все разборы <span aria-hidden="true">→</span></a>
   </div>
 </section>
 
@@ -507,7 +567,7 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
     <div class="row">
       <div class="lock dark"><svg class="mark"><use href="#pzmark"/></svg><span class="wm"><b>PUZZLES</b><span>MARKETING</span></span></div>
       <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
-        <nav aria-label="Разделы"><a href="/razbory">Разборы</a><a href="/blog">Блог</a></nav>
+        <nav aria-label="Разделы"><a href="/cases">Разборы</a><a href="/blog">Блог</a></nav>
         <div class="ficons">
           <a href="https://instagram.com/username" aria-label="Instagram" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
           <a href="tel:+37360000000" aria-label="Телефон"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h3l1.5 4-2 1.4a12 12 0 0 0 4.6 4.6l1.4-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A15.5 15.5 0 0 1 5 5.1 1.5 1.5 0 0 1 6.5 3.5z"/></svg></a>
@@ -678,10 +738,24 @@ function cursor(){
   addEventListener('mousemove',function(e){d.style.left=e.clientX+'px';d.style.top=e.clientY+'px';d.style.opacity='1';var t=e.target.closest&&e.target.closest('a,button,.card,.quote,.entry,input');d.style.width=t?'32px':'8px';d.style.height=t?'32px':'8px';d.style.background=t?'rgba(110,119,238,.12)':'#16181D';d.style.border=t?'1px solid rgba(110,119,238,.5)':'none';},{passive:true});
 }
 
+/* mobile burger menu */
+function burgerMenu(){
+  var btn=document.getElementById('burgerBtn');
+  var panel=document.getElementById('mobileNav');
+  if(!btn||!panel)return;
+  btn.addEventListener('click',function(){
+    var open=panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  [].slice.call(panel.querySelectorAll('a')).forEach(function(a){
+    a.addEventListener('click',function(){panel.classList.remove('open');btn.setAttribute('aria-expanded','false');});
+  });
+}
+
 document.addEventListener('DOMContentLoaded',function(){
   fillBg(document.getElementById('heroBg'),[{x:10,y:20,rot:-14,size:130,dur:9,delay:0},{x:80,y:14,rot:22,size:92,dur:11,delay:1.3},{x:72,y:66,rot:-26,size:160,dur:10,delay:.6},{x:20,y:74,rot:12,size:104,dur:12,delay:1.9}]);
   var ap=document.getElementById('aboutPz');if(ap)fillBg(ap,[{x:6,y:10,rot:-8,size:120,dur:10,delay:0,fill:'#E4E4E4'},{x:52,y:20,rot:14,size:100,dur:11,delay:.8,fill:'#E4E4E4'},{x:18,y:52,rot:-18,size:130,dur:12,delay:.4,fill:'#E4E4E4'},{x:58,y:58,rot:8,size:96,dur:10,delay:1.4,fill:'#6E77EE'}]);
-  typo();reveal();processScroll();finalAssembly();faq();entries();sticky();form();cursor();intro();
+  typo();reveal();processScroll();finalAssembly();faq();entries();sticky();form();cursor();intro();burgerMenu();
 });
 })();
 </script>

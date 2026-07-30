@@ -132,6 +132,13 @@ header.site .btn-primary{padding:11px 20px;font-size:14px}
 .quote .sit-img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transition:transform .25s ease-out}
 .quote:hover .sit-img{transform:rotate(2deg)}
 .quote p{font:500 clamp(18px,1.7vw,21px)/1.45 'Onest',sans-serif;margin:0;text-wrap:pretty;max-width:38ch}
+.rescard{position:relative;border:1px solid var(--line);padding:28px 32px 34px;transition:transform .25s,border-color .25s;background:var(--bg)}
+.rescard:hover{transform:translateY(-4px);border-color:var(--accent)}
+.rescard .res-img-wrap{height:clamp(160px,22vw,220px);display:flex;align-items:flex-end;justify-content:center;padding:0 18px;margin-bottom:22px}
+.rescard .res-img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transition:transform .25s ease-out}
+.rescard:hover .res-img{transform:rotate(2deg)}
+.rescard h3{font:600 18px/1.35 'Onest',sans-serif;margin:0 0 10px;text-wrap:pretty}
+.rescard p{font:400 15.5px/1.6 'Onest',sans-serif;color:rgba(22,24,29,.62);margin:0;text-wrap:pretty}
 .soon{border:1px solid var(--line);padding:30px 28px;opacity:.7;transition:opacity .3s,border-color .3s}
 .soon:hover{opacity:1;border-color:var(--muted)}
 .tag{display:inline-block;border:1px solid var(--line);color:rgba(22,24,29,.5);font:500 12px 'Onest',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px}
@@ -361,16 +368,15 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
   </div>
 </section>
 
-<section class="sec inv" id="changes">
+<section class="sec" id="changes">
   <div class="wrap">
-    <p class="eyebrow on-dark" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Результат</p>
+    <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Результат</p>
     <h2 data-rv style="max-width:820px;text-wrap:balance">Что <em>меняется</em>, когда всё работает как&nbsp;система</h2>
-    <div class="accline" data-accline></div>
-    <div class="changes">
-      <div class="it" data-rv><h3>Видно, сколько стоит один клиент.</h3><p>И можно решать, устраивает это или нет.</p></div>
-      <div class="it" data-rv><h3>Понятно, какой канал приносит, а какой ест бюджет.</h3><p>Деньги перестают уходить в никуда.</p></div>
-      <div class="it" data-rv><h3>Ответственность не размазана между подрядчиками.</h3><p>За результат отвечает один процесс, а не пять разных отчётов.</p></div>
-      <div class="it" data-rv><h3>Решения принимаются по цифрам.</h3><p>А не по тому, что «вроде красиво получилось».</p></div>
+    <div class="grid g2">
+      <div class="rescard" data-rv><div class="res-img-wrap"><img class="res-img" src="/results-1.png" alt="" loading="lazy" width="953" height="816"></div><h3>Один канал можно приостановить — а поток клиентов не обрывается вместе с ним.</h3><p>Часть спроса держится сама: люди возвращаются, рекомендуют, узнают бренд в момент выбора — независимо от того, что именно сейчас включено, а что нет.</p></div>
+      <div class="rescard" data-rv><div class="res-img-wrap"><img class="res-img" src="/results-2.png" alt="" loading="lazy" width="892" height="596"></div><h3>Есть понятная причина выбрать именно вас — а не «качественно» и «индивидуальный подход», как у всех вокруг.</h3><p>Место в голове клиента занято осознанно, а не оставлено на волю случая.</p></div>
+      <div class="rescard" data-rv><div class="res-img-wrap"><img class="res-img" src="/results-3.png" alt="" loading="lazy" width="793" height="732"></div><h3>Клиенты возвращаются сами — не ради очередной скидки.</h3><p>Их узнают и помнят, и это держит дольше, чем цена первой покупки.</p></div>
+      <div class="rescard" data-rv><div class="res-img-wrap"><img class="res-img" src="/results-4.png" alt="" loading="lazy" width="968" height="554"></div><h3>Понятно, откуда на самом деле пришёл клиент — из рекламы, по рекомендации, с мероприятия или из старой переписки.</h3><p>Ничего не теряется в передаче между разными людьми и разными каналами, каким бы ни был сам путь.</p></div>
     </div>
   </div>
 </section>

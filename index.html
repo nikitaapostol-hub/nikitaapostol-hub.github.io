@@ -126,10 +126,11 @@ header.site .btn-primary{padding:11px 20px;font-size:14px}
 .chips{display:flex;flex-wrap:wrap;gap:10px}
 .chip{font:400 13.5px 'Onest',sans-serif;color:rgba(22,24,29,.68);border:1px solid var(--line);border-radius:20px;padding:8px 16px;transition:border-color .2s,color .2s}
 .chip:hover{border-color:var(--accent);color:var(--ink)}
-.quote{position:relative;border:1px solid var(--line);padding:38px 36px;transition:transform .25s,border-color .25s;background:var(--bg)}
+.quote{position:relative;border:1px solid var(--line);padding:28px 36px 38px;transition:transform .25s,border-color .25s;background:var(--bg)}
 .quote:hover{transform:translateY(-4px);border-color:var(--accent)}
-.quote .pzc{position:absolute;top:16px;right:16px;width:16px;height:16px;color:var(--muted);opacity:0;transition:transform .25s,opacity .25s,color .25s}
-.quote:hover .pzc{color:var(--accent);opacity:1;transform:rotate(12deg)}
+.quote .sit-img-wrap{height:clamp(160px,22vw,220px);display:flex;align-items:flex-end;justify-content:center;padding:0 18px;margin-bottom:22px}
+.quote .sit-img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transition:transform .25s ease-out}
+.quote:hover .sit-img{transform:rotate(2deg)}
 .quote p{font:500 clamp(18px,1.7vw,21px)/1.45 'Onest',sans-serif;margin:0;text-wrap:pretty;max-width:38ch}
 .soon{border:1px solid var(--line);padding:30px 28px;opacity:.7;transition:opacity .3s,border-color .3s}
 .soon:hover{opacity:1;border-color:var(--muted)}
@@ -347,10 +348,10 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
     <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Ситуация</p>
     <h2 data-rv style="max-width:860px;text-wrap:balance">Если что-то из этого про вас — дальше есть&nbsp;смысл читать</h2>
     <div class="grid g2">
-      <div class="quote" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><p>«Реклама крутится, деньги уходят. Откуда берутся клиенты — не знаю»</p></div>
-      <div class="quote" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><p>«Сайт делал один, рекламу ведёт второй, соцсети третий. За результат не отвечает никто»</p></div>
-      <div class="quote" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><p>«Контент выходит регулярно. Зачем именно такой — объяснить не может никто»</p></div>
-      <div class="quote" data-rv><svg class="pzc" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg><p>«Каждый подрядчик показывает хорошие цифры. Продажи при этом не растут»</p></div>
+      <div class="quote" data-rv><div class="sit-img-wrap"><img class="sit-img" src="/situation-1.png" alt="" loading="lazy" width="723" height="810"></div><p>«CTR хороший, заявки идут, а в кассе цифры не сходятся»</p></div>
+      <div class="quote" data-rv><div class="sit-img-wrap"><img class="sit-img" src="/situation-2.png" alt="" loading="lazy" width="880" height="744"></div><p>«Каждый новый подрядчик неделю разбирается в бизнесе с нуля — и снова платишь за то, чтобы просто объяснить, чем вы занимаетесь»</p></div>
+      <div class="quote" data-rv><div class="sit-img-wrap"><img class="sit-img" src="/situation-3.png" alt="" loading="lazy" width="514" height="913"></div><p>«Реклама останавливается — и всё останавливается вместе с ней. Значит, работала не система, а шум поверх пустоты»</p></div>
+      <div class="quote" data-rv><div class="sit-img-wrap"><img class="sit-img" src="/situation-4.png" alt="" loading="lazy" width="852" height="787"></div><p>«Объяснить за один разговор, чем вы отличаетесь от конкурента с такой же ценой, не получается — ни у вас, ни у того, кто ведёт вашу рекламу»</p></div>
     </div>
   </div>
 </section>

@@ -179,6 +179,9 @@ header.site .btn-primary{padding:11px 20px;font-size:14px}
 .entry:hover{border-color:var(--accent)}
 .entry .top{display:flex;align-items:center;gap:20px;padding:30px 28px;cursor:pointer}
 .entry .top .no{font-family:'Unbounded',sans-serif;font-weight:500;font-size:26px;color:var(--muted);line-height:1}
+.entry .eimg-wrap{height:150px;display:flex;align-items:center;justify-content:center;padding:26px 28px 0}
+.entry .eimg{max-width:180px;max-height:100%;width:auto;height:auto;object-fit:contain;transition:transform .25s ease-out}
+.entry:hover .eimg{transform:rotate(2deg)}
 .entry .top .t{flex:1;font:600 clamp(17px,1.6vw,19px)/1.35 'Onest',sans-serif}
 .entry .top .pk{width:20px;height:20px;color:var(--muted);transition:transform .35s,color .35s;flex:none}
 .entry.open .top .pk{transform:translateX(6px) rotate(90deg);color:var(--accent)}
@@ -434,12 +437,14 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
     <h2 data-rv>Дальше выбор <em>за&nbsp;вами</em></h2>
     <div class="entries" id="entries">
       <div class="entry" data-rv data-entry>
-        <div class="top"><span class="no">01</span><span class="t">У меня уже что-то работает</span><svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></div>
-        <div class="body"><div class="in"><p>Есть сайт, идёт реклама, ведутся соцсети — но непонятно, что из этого приносит результат. Разбор начинается с того, что уже есть: устраняется то, что теряет деньги, и убирается то, что просто расходует бюджет впустую. Часто сам бюджет на этом этапе увеличивать не нужно.</p><a class="btn btn-line" href="#contact">Разобрать то, что есть</a></div></div>
+        <div class="eimg-wrap"><img class="eimg" src="/start-1.png" alt="" loading="lazy" width="719" height="755"></div>
+        <div class="top"><span class="t">У меня уже что-то работает</span><svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></div>
+        <div class="body"><div class="in"><p>Что-то уже работает: сайт, реклама, соцсети, может быть — участие в мероприятиях или партнёрства. Но непонятно, что из этого реально приносит результат. Разбор начинается с того, что уже есть: устраняется то, что теряет деньги, и убирается то, что просто расходует ресурсы впустую. Часто сам бюджет на этом этапе увеличивать не нужно.</p><a class="btn btn-line" href="#contact">Разобрать то, что есть</a></div></div>
       </div>
       <div class="entry" data-rv data-entry>
-        <div class="top"><span class="no">02</span><span class="t">Старт с нуля</span><svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></div>
-        <div class="body"><div class="in"><p>Есть продукт и желание, остального пока нет. Тогда всё выстраивается по порядку: сначала кому и что продаётся, потом сайт, потом трафик. В таком порядке, а не наоборот — иначе реклама поведёт людей туда, где их нечем убедить.</p><a class="btn btn-line" href="#contact">Собрать с нуля</a></div></div>
+        <div class="eimg-wrap"><img class="eimg" src="/start-2.png" alt="" loading="lazy" width="785" height="777"></div>
+        <div class="top"><span class="t">Старт с нуля</span><svg class="pk" viewBox="0 0 100 100"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg></div>
+        <div class="body"><div class="in"><p>Есть продукт и желание, остального пока нет. Тогда всё выстраивается по порядку: сначала кому и что продаётся, затем — как это доносится до человека, будь то сайт, реклама или личный разговор, и только потом всё это масштабируется. В таком порядке, а не наоборот — иначе даже точная реклама поведёт людей туда, где их нечем убедить.</p><a class="btn btn-line" href="#contact">Собрать с нуля</a></div></div>
       </div>
     </div>
   </div>

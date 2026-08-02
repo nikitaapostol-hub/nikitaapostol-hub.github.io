@@ -196,6 +196,16 @@ header.site .btn-primary{padding:11px 20px;font-size:14px}
 .about .txt{flex:1 1 420px;max-width:640px}
 .about .txt p{font:400 17px/1.7 'Onest',sans-serif;color:rgba(22,24,29,.8);margin:0 0 20px;max-width:64ch;text-wrap:pretty}
 .about .txt p:last-child{margin-bottom:0}
+/* why */
+.why-flex{display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,80px);align-items:center;margin-top:28px}
+.why-txt{flex:1 1 460px;max-width:640px}
+.why-imgwrap{flex:1 1 320px;max-width:420px;height:clamp(200px,26vw,300px);display:flex;align-items:center;justify-content:center;padding:20px}
+.why-img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transition:transform .25s ease-out}
+.why-imgwrap:hover .why-img{transform:rotate(2deg)}
+@media(max-width:900px){
+  .why-flex{flex-direction:column}
+  .why-imgwrap{order:-1;max-width:100%;width:100%}
+}
 /* faq */
 .faqwrap{max-width:780px;border-top:1px solid var(--line);margin-top:32px}
 .qa{border-bottom:1px solid var(--line)}
@@ -361,11 +371,16 @@ footer.site nav{display:flex;gap:24px;flex-wrap:wrap;font:400 14px 'Onest',sans-
 <section class="sec" id="why" style="padding-top:0">
   <div class="wrap">
     <hr class="rule">
-    <div style="max-width:820px;padding-top:clamp(56px,9vw,120px)">
-      <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Зачем маркетинг</p>
-      <h2 data-rv>Почему без маркетинга <em>не&nbsp;обойтись</em></h2>
-      <p class="lede" data-rv style="margin-top:28px">Можно делать лучший продукт в городе и остаться незамеченным. Рынок не выбирает лучшее — он выбирает то, что понял и запомнил. Маркетинг переводит реальную ценность продукта на язык, понятный тому, кто его покупает, и доводит этот смысл до нужного человека в нужный момент.</p>
-      <p class="lede" data-rv style="margin-top:20px">Без этой работы даже сильный продукт остаётся неполным: он есть, а спроса на него нет; клиенты есть, но приходят случайно. Маркетинг превращает случайность в систему, которую можно повторять и на которую можно опираться.</p>
+    <div style="padding-top:clamp(56px,9vw,120px)">
+      <div class="why-flex">
+        <div class="why-txt">
+          <p class="eyebrow" data-rv><svg class="pzm" viewBox="0 0 100 100" aria-hidden="true"><path d="M28,18 H40 A10,10 0 0 0 60,18 H72 A10,10 0 0 1 82,28 V72 A10,10 0 0 1 72,82 H28 A10,10 0 0 1 18,72 V62 A10,10 0 0 1 18,40 V28 A10,10 0 0 1 28,18 Z" fill="currentColor"/></svg> Зачем маркетинг</p>
+          <h2 data-rv>Почему без маркетинга <em>не&nbsp;обойтись</em></h2>
+          <p class="lede" data-rv style="margin-top:28px">Можно делать лучший продукт в городе и остаться незамеченным. Рынок не выбирает лучшее — он выбирает то, что понял и запомнил. Маркетинг переводит реальную ценность продукта на язык, понятный тому, кто его покупает, и доводит этот смысл до нужного человека в нужный момент.</p>
+          <p class="lede" data-rv style="margin-top:20px">Без этой работы даже сильный продукт остаётся неполным: он есть, а спроса на него нет; клиенты есть, но приходят случайно. Маркетинг превращает случайность в систему, которую можно повторять и на которую можно опираться.</p>
+        </div>
+        <div class="why-imgwrap" data-rv><img class="why-img" src="/why-marketing.png" alt="" loading="lazy" width="966" height="523"></div>
+      </div>
     </div>
   </div>
 </section>

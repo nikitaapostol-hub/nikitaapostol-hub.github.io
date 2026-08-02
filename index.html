@@ -197,14 +197,14 @@ header.site .btn-primary{padding:11px 20px;font-size:14px}
 .about .txt p{font:400 17px/1.7 'Onest',sans-serif;color:rgba(22,24,29,.8);margin:0 0 20px;max-width:64ch;text-wrap:pretty}
 .about .txt p:last-child{margin-bottom:0}
 /* why */
-.why-flex{display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,80px);align-items:center;margin-top:28px}
+.why-flex{display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,80px);align-items:flex-start;margin-top:28px}
 .why-txt{flex:1 1 460px;max-width:640px}
-.why-imgwrap{flex:1 1 320px;max-width:420px;height:clamp(200px,26vw,300px);display:flex;align-items:center;justify-content:center;padding:20px}
-.why-img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transition:transform .25s ease-out}
+.why-imgwrap{flex:1 1 320px;max-width:400px;margin-top:44px;padding:0 16px}
+.why-img{display:block;width:100%;height:auto;object-fit:contain;transition:transform .25s ease-out}
 .why-imgwrap:hover .why-img{transform:rotate(2deg)}
 @media(max-width:900px){
-  .why-flex{flex-direction:column}
-  .why-imgwrap{order:-1;max-width:100%;width:100%}
+  .why-flex{flex-direction:column;gap:32px}
+  .why-imgwrap{order:-1;max-width:100%;width:100%;margin-top:0;padding:0}
 }
 /* faq */
 .faqwrap{max-width:780px;border-top:1px solid var(--line);margin-top:32px}
